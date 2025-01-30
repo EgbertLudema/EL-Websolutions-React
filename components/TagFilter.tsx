@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatePresence } from "motion/react";
+import * as motion from "motion/react-client";
 import { useState } from "react";
 import Link from "next/link";
 import { BlogPost } from "@/lib/server/getBlogs";
@@ -19,54 +21,96 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     // Filter blogs
     const filteredBlogs = selectedTags.length
         ? allBlogs.filter((blog) =>
-              selectedTags.every((tag) => blog.tags?.includes(tag)) // Must contain ALL selected tags
+              selectedTags.every((tag) => blog.tags?.includes(tag)) // Must contain all selected tags
           )
         : allBlogs; // Show all if no tags are selected
 
     return (
-        <div className="container mx-auto p-6">
-            <h1 className="text-3xl font-bold">Blog Posts</h1>
+        <div>
+            <h2 className="text-2xl font-bold">Blog Posts</h2>
 
-            {/* Tag filter */}
-            <div className="mt-4 flex flex-wrap gap-2">
+            {/* Animated tag filter */}
+            <motion.div layout className="mt-4 flex flex-wrap gap-2">
                 {allTags.map((tag) => (
-                    <button
+                    <motion.button
                         key={tag}
+                        layout
                         onClick={() => toggleTag(tag)}
                         className={`px-3 py-1 rounded ${
                             selectedTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200"
                         }`}
+                        transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                        }}
                     >
                         {tag}
-                    </button>
+                    </motion.button>
                 ))}
-            </div>
+            </motion.div>
 
-            {/* Blog List */}
-            <ul className="mt-6 space-y-4">
-                {filteredBlogs.length > 0 ? (
-                    filteredBlogs.map((blog) => (
-                        <li key={blog.slug} className="border p-4 rounded-md shadow">
-                            <h2 className="text-xl font-semibold">
-                                <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
-                            </h2>
-                            <p>{blog.description}</p>
-                            <small>{blog.date} - {blog.status}</small>
+            {/* Grid for blogs */}
+            <motion.div
+                layout
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center"
+            >
+                <AnimatePresence>
+                    {filteredBlogs.length > 0 ? (
+                        filteredBlogs.map((blog) => (
+                            <motion.div
+                                key={blog.slug}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 20,
+                                }}
+                                className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between"
+                            >
+                                <h2 className="text-xl font-semibold">
+                                    <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
+                                </h2>
+                                <p className="flex-grow">{blog.description}</p>
+                                <small>{blog.date} - {blog.status}</small>
 
-                            {/* Shows blog tags */}
-                            <div className="mt-2 flex gap-2">
-                                {blog.tags?.map((tag) => (
-                                    <span key={tag} className="px-2 py-1 text-xs bg-gray-200 rounded">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </li>
-                    ))
-                ) : (
-                    <p>No blogs found matching the selected tags.</p>
-                )}
-            </ul>
+                                {/* Animated tags inside each blog */}
+                                <motion.div layout className="mt-2 flex gap-2">
+                                    {blog.tags?.map((tag) => (
+                                        <motion.button
+                                            key={tag}
+                                            layout
+                                            onClick={() => toggleTag(tag)}
+                                            className={`px-2 py-1 text-xs rounded ${
+                                                selectedTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200"
+                                            }`}
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 300,
+                                                damping: 20,
+                                            }}
+                                        >
+                                            {tag}
+                                        </motion.button>
+                                    ))}
+                                </motion.div>
+                            </motion.div>
+                        ))
+                    ) : (
+                        <motion.p
+                            key="no-blogs"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            No blogs found matching the selected tags.
+                        </motion.p>
+                    )}
+                </AnimatePresence>
+            </motion.div>
         </div>
     );
 }
