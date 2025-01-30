@@ -1,26 +1,26 @@
-import { getAllBlogs, getBlogBySlug } from "@/lib/getBlogs";
-import { MDXRemote } from "next-mdx-remote/rsc"; // MDX Renderer for RSC
+import { getAllBlogs, getBlogBySlug } from "@/lib/server/getBlogs";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { compileMDX } from "next-mdx-remote/rsc";
 
-// ✅ Generate Static Paths for Each Blog
+// Generate Static Paths for Each Blog
 export async function generateStaticParams() {
-    const blogs = getAllBlogs();
+    const blogs = await getAllBlogs();
     return blogs.map((blog) => ({
         slug: blog.slug,
     }));
 }
 
-// ✅ Dynamic Blog Page Component
+// Dynamic Blog Page Component
 export default async function BlogPage({ params }: { params: { slug: string } }) {
-    const blog = getBlogBySlug(params.slug);
+    const blog = await getBlogBySlug(params.slug);
 
     if (!blog) {
         return <div>Blog Not Found</div>;
     }
 
-    // ✅ Compile MDX content
-    const { content: mdxContent } = await compileMDX({
+    const { content } = await compileMDX<{ title: string }>({
         source: blog.content,
+        components: {},
     });
 
     return (
@@ -29,8 +29,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
             <p className="text-gray-600">{blog.data.description}</p>
             <small>{blog.data.date} - {blog.data.status}</small>
 
-            {/* ✅ Correct MDX Rendering */}
-            {mdxContent}
+            {content}
         </div>
     );
 }
