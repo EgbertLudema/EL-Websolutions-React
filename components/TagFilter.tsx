@@ -27,7 +27,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
 
     return (
         <div>
-            <h2 className="text-2xl font-bold">Blog Posts</h2>
+            <h2 className="text-2xl font-bold text-black dark:text-white">Blog Posts</h2>
 
             {/* Animated tag filter */}
             <motion.div layout className="mt-4 flex flex-wrap gap-2">
@@ -36,8 +36,10 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                         key={tag}
                         layout
                         onClick={() => toggleTag(tag)}
-                        className={`px-3 py-1 rounded ${
-                            selectedTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200"
+                        className={`px-3 py-1 rounded transition-colors ${
+                            selectedTags.includes(tag)
+                                ? "bg-blue-500 text-white dark:bg-blue-400 dark:text-gray-900"
+                                : "bg-gray-200 dark:bg-gray-700 dark:text-white"
                         }`}
                         transition={{
                             type: "spring",
@@ -69,10 +71,13 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                     stiffness: 200,
                                     damping: 20,
                                 }}
-                                className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between"
+                                className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between 
+                                bg-gray-100 dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600"
                             >
                                 <h2 className="text-xl font-semibold">
-                                    <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
+                                    <Link href={`/blog/${blog.slug}`} className="hover:underline">
+                                        {blog.title}
+                                    </Link>
                                 </h2>
                                 <p className="flex-grow">{blog.description}</p>
                                 <small>{blog.date} - {blog.status}</small>
@@ -84,8 +89,10 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                             key={tag}
                                             layout
                                             onClick={() => toggleTag(tag)}
-                                            className={`px-2 py-1 text-xs rounded ${
-                                                selectedTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200"
+                                            className={`px-2 py-1 text-xs rounded transition-colors ${
+                                                selectedTags.includes(tag)
+                                                    ? "bg-blue-500 text-white dark:bg-blue-400 dark:text-gray-900"
+                                                    : "bg-gray-200 dark:bg-gray-700 dark:text-white"
                                             }`}
                                             transition={{
                                                 type: "spring",
@@ -105,6 +112,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
+                            className="text-gray-600 dark:text-gray-300"
                         >
                             No blogs found matching the selected tags.
                         </motion.p>
