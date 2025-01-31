@@ -18,16 +18,10 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 .container {
-  @apply max-w-[968px] mx-auto px-4;
+  @apply max-w-[968px] mx-auto;
 }
 
 @layer utilities {
