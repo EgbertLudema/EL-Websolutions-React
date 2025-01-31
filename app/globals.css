@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  @apply max-w-[968px] mx-auto px-4;
+  @apply max-w-[968px] mx-auto;
 }
 
 @layer utilities {
