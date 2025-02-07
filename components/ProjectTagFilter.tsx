@@ -4,9 +4,9 @@ import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
 import { useState } from "react";
 import Link from "next/link";
-import { BlogPost } from "@/lib/server/getBlogs";
+import { ProjectPost } from "@/lib/server/getProjects";
 
-export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[]; allTags: string[] }) {
+export default function TagFilter({ allProjects, allTags }: { allProjects: ProjectPost[]; allTags: string[] }) {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
     // Toggle tag selection
@@ -18,17 +18,15 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
         );
     };
 
-    // Filter blogs
-    const filteredBlogs = selectedTags.length
-        ? allBlogs.filter((blog) =>
-              selectedTags.every((tag) => blog.tags?.includes(tag)) // Must contain all selected tags
+    // Filter projects
+    const filteredProjects = selectedTags.length
+        ? allProjects.filter((project) =>
+              selectedTags.every((tag) => project.tags?.includes(tag)) // Must contain all selected tags
           )
-        : allBlogs; // Show all if no tags are selected
+        : allProjects; // Show all if no tags are selected
 
     return (
         <div>
-            <h2 className="text-2xl font-bold text-black dark:text-white">Blog Posts</h2>
-
             {/* Animated tag filter */}
             <motion.div layout className="mt-4 flex flex-wrap gap-2">
                 {allTags.map((tag) => (
@@ -52,16 +50,16 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                 ))}
             </motion.div>
 
-            {/* Grid for blogs */}
+            {/* Grid for projects */}
             <motion.div
                 layout
                 className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center"
             >
                 <AnimatePresence>
-                    {filteredBlogs.length > 0 ? (
-                        filteredBlogs.map((blog) => (
+                    {filteredProjects.length > 0 ? (
+                        filteredProjects.map((project) => (
                             <motion.div
-                                key={blog.slug}
+                                key={project.slug}
                                 layout
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -75,16 +73,16 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                 bg-gray-100 dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600"
                             >
                                 <h2 className="text-xl font-semibold">
-                                    <Link href={`/blog/${blog.slug}`} className="hover:underline">
-                                        {blog.title}
+                                    <Link href={`/project/${project.slug}`} className="hover:underline">
+                                        {project.title}
                                     </Link>
                                 </h2>
-                                <p className="flex-grow">{blog.description}</p>
-                                <small>{blog.date} - {blog.status}</small>
+                                <p className="flex-grow">{project.description}</p>
+                                <small>{project.status}</small>
 
-                                {/* Animated tags inside each blog */}
+                                {/* Animated tags inside each project */}
                                 <motion.div layout className="mt-2 flex gap-2">
-                                    {blog.tags?.map((tag) => (
+                                    {project.tags?.map((tag) => (
                                         <motion.button
                                             key={tag}
                                             layout
@@ -108,13 +106,13 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                         ))
                     ) : (
                         <motion.p
-                            key="no-blogs"
+                            key="no-projects"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             className="text-gray-600 dark:text-gray-300"
                         >
-                            No blogs found matching the selected tags.
+                            No projects found matching the selected tags.
                         </motion.p>
                     )}
                 </AnimatePresence>
