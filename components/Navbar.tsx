@@ -20,8 +20,14 @@ export default function Navbar() {
                     <Link href="/" className="text-gray-700 dark:text-gray-300 hover:underline">
                         Home
                     </Link>
-                    <Link href="/blogs" className="text-gray-700 dark:text-gray-300 hover:underline">
+                    <Link href="/project" className="text-gray-700 dark:text-gray-300 hover:underline">
+                        Projects
+                    </Link>
+                    <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:underline">
                         Blogs
+                    </Link>
+                    <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:underline">
+                        About
                     </Link>
                     <ThemeToggle />
                 </div>

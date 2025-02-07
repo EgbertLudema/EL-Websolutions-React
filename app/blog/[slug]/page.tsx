@@ -1,5 +1,4 @@
 import { getAllBlogs, getBlogBySlug } from "@/lib/server/getBlogs";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { compileMDX } from "next-mdx-remote/rsc";
 
 // Generate Static Paths for Each Blog
