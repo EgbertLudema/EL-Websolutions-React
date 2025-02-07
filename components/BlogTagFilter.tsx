@@ -36,8 +36,8 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                         onClick={() => toggleTag(tag)}
                         className={`px-3 py-1 rounded transition-colors ${
                             selectedTags.includes(tag)
-                                ? "bg-blue-500 text-white dark:bg-blue-400 dark:text-gray-900"
-                                : "bg-gray-200 dark:bg-gray-700 dark:text-white"
+                                ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
+                                : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
                         }`}
                         transition={{
                             type: "spring",
@@ -70,7 +70,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                     damping: 20,
                                 }}
                                 className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between 
-                                bg-gray-100 dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600"
+                                bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white border border-neutral-300 dark:border-neutral-600"
                             >
                                 <h2 className="text-xl font-semibold">
                                     <Link href={`/blog/${blog.slug}`} className="hover:underline">
@@ -89,8 +89,8 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                             onClick={() => toggleTag(tag)}
                                             className={`px-2 py-1 text-xs rounded transition-colors ${
                                                 selectedTags.includes(tag)
-                                                    ? "bg-blue-500 text-white dark:bg-blue-400 dark:text-gray-900"
-                                                    : "bg-gray-200 dark:bg-gray-700 dark:text-white"
+                                                    ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
+                                                    : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
                                             }`}
                                             transition={{
                                                 type: "spring",
@@ -110,7 +110,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="text-gray-600 dark:text-gray-300"
+                            className="text-neutral-600 dark:text-neutral-300"
                         >
                             No blogs found matching the selected tags.
                         </motion.p>

@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Next portfolio",
-  description: "",
+  description: ""
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviderWrapper>
           <Navbar />
           <main className="container mx-auto">{children}</main>
+          <Footer />
         </ThemeProviderWrapper>
       </body>
     </html>
