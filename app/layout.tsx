@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} bg-white text-black dark:bg-black dark:text-white`}>
         <ThemeProviderWrapper>
           <Navbar />
-          <main className="container mx-auto">{children}</main>
+          {children}
           <Footer />
         </ThemeProviderWrapper>
       </body>

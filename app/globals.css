@@ -6,6 +6,13 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --primary-color: #9b87f5;
+    --blue: #0ea5e9;
+    --cyan: #3dbcc2;
+    --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--blue));
+    --light-background-gradient: linear-gradient(135deg, rgba(155, 135, 245, 0.2), rgba(14, 165, 233, 0.2));
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    --color-gray-700: #4b5563;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,8 +29,32 @@ body {
     font-size: 16px;
 }
 
+main{
+    background: var(--light-background-gradient);
+}
+
 .container {
     @apply max-w-[1260px] mx-auto;
+}
+
+.bg-gradient-primary {
+    background: var(--primary-gradient);
+}
+
+/* Text */
+h1{
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: transparent;
+}
+.sub-title{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 12px;
+}
+.bg-clip-text{
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 @layer utilities {
@@ -33,7 +64,27 @@ body {
 }
 
 /* Homepage */
-
+button.noisy_button{
+    background: var(--primary-gradient);
+    position: relative;
+    color: #fff;
+}
+button.noisy_button::before{
+    content: "";
+    background-color: transparent;
+    background-image: var(--noise);
+    background-repeat: repeat;
+    -webkit-background-size: 182px;
+    -moz-background-size: 182px;
+    -o-background-size: 182px;
+    background-size: 182px;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 /* Footer */
 .social-link{
     display: block;
