@@ -19,11 +19,11 @@ export default function Navbar() {
     if (!mounted) return null; // Prevents hydration mismatch
 
     return (
-        <nav className="bg-white dark:bg-neutral-900 shadow-md p-4">
+        <nav className="bg-white dark:bg-neutral-900 shadow-md p-2">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo or Brand */}
                 <Link href="/" className="text-xl font-bold text-black dark:text-white">
-                    <Image src={theme === "dark" ? "/images/EL-white-no-bg-name-no-padding.png" : "/images/EL-color-no-bg-name-no-padding.png"} width={160} height={50} alt="Logo EL Websolutions" />
+                    <Image src="/images/EL-color-no-bg-name-no-padding.png" width={180} height={70} alt="Logo EL Websolutions" />
                 </Link>
 
                 {/* Desktop Menu */}

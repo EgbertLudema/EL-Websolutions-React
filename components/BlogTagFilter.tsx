@@ -36,7 +36,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                         onClick={() => toggleTag(tag)}
                         className={`px-3 py-1 rounded transition-colors ${
                             selectedTags.includes(tag)
-                                ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
+                                ? "bg-violet-400 text-white dark:bg-violet-300 dark:text-neutral-900"
                                 : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
                         }`}
                         transition={{
@@ -53,7 +53,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
             {/* Grid for blogs */}
             <motion.div
                 layout
-                className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center"
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
             >
                 <AnimatePresence>
                     {filteredBlogs.length > 0 ? (
@@ -89,7 +89,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                             onClick={() => toggleTag(tag)}
                                             className={`px-2 py-1 text-xs rounded transition-colors ${
                                                 selectedTags.includes(tag)
-                                                    ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
+                                                    ? "bg-violet-400 text-white dark:bg-violet-300 dark:text-neutral-900"
                                                     : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
                                             }`}
                                             transition={{

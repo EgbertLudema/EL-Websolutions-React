@@ -53,7 +53,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
             {/* Grid for projects */}
             <motion.div
                 layout
-                className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 place-items-center"
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
             >
                 <AnimatePresence>
                     {filteredProjects.length > 0 ? (
