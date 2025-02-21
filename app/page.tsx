@@ -27,6 +27,10 @@ export default function HomePage() {
                 </div>
             </main>
             <section className="container py-8">
+                <p className=" text-center sub-title mb-6 backdrop-blur-md">Services</p>
+                <h2 className="text-center mb-6">Where can I help you with?</h2>
+            </section>
+            <section className="container py-8">
                 <p className=" text-center sub-title mb-6 backdrop-blur-md">Portfolio</p>
                 <h2 className="text-center mb-6">Featured projects</h2>
             </section>
