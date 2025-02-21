@@ -18,12 +18,19 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
         );
     };
 
-    // Filter blogs
+    // Filter blogs based on selected tags
     const filteredBlogs = selectedTags.length
         ? allBlogs.filter((blog) =>
               selectedTags.every((tag) => blog.tags?.includes(tag)) // Must contain all selected tags
           )
         : allBlogs; // Show all if no tags are selected
+
+    // Sort: Unfinished blogs (no date) first, then by date (newest first)
+    const sortedBlogs = [...filteredBlogs].sort((a, b) => {
+        if (!a.date) return -1; // If 'a' has no date, it goes first
+        if (!b.date) return 1; // If 'b' has no date, 'a' stays lower
+        return new Date(b.date).getTime() - new Date(a.date).getTime(); // Otherwise, sort by date (newest first)
+    });
 
     return (
         <div>
@@ -56,8 +63,8 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                 className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
             >
                 <AnimatePresence>
-                    {filteredBlogs.length > 0 ? (
-                        filteredBlogs.map((blog) => (
+                    {sortedBlogs.length > 0 ? (
+                        sortedBlogs.map((blog) => (
                             <motion.div
                                 key={blog.slug}
                                 layout

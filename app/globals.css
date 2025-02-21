@@ -52,7 +52,9 @@ main{
     background: var(--light-background-gradient);
 }
 
-
+.hero{
+    min-height: calc(100vh - 70px);
+}
 
 .bg-gradient-primary {
     background: var(--primary-gradient);

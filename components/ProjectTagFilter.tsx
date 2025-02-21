@@ -18,12 +18,19 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
         );
     };
 
-    // Filter projects
+    // Filter projects based on selected tags
     const filteredProjects = selectedTags.length
         ? allProjects.filter((project) =>
               selectedTags.every((tag) => project.tags?.includes(tag)) // Must contain all selected tags
           )
         : allProjects; // Show all if no tags are selected
+
+    // Sort: Unfinished projects (no date) first, then by date (newest first)
+    const sortedProjects = [...filteredProjects].sort((a, b) => {
+        if (!a.date) return -1; // If 'a' has no date, it goes first
+        if (!b.date) return 1; // If 'b' has no date, 'a' stays lower
+        return new Date(b.date).getTime() - new Date(a.date).getTime(); // Otherwise, sort by date (newest first)
+    });
 
     return (
         <div>
@@ -56,8 +63,8 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                 className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
             >
                 <AnimatePresence>
-                    {filteredProjects.length > 0 ? (
-                        filteredProjects.map((project) => (
+                    {sortedProjects.length > 0 ? (
+                        sortedProjects.map((project) => (
                             <motion.div
                                 key={project.slug}
                                 layout

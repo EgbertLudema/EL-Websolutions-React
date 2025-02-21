@@ -20,7 +20,7 @@ export default function Navbar() {
 
     return (
         <nav className="bg-white dark:bg-neutral-900 shadow-md p-2">
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="container mx-auto flex justify-between items-center h-[54px]">
                 {/* Logo or Brand */}
                 <Link href="/" className="text-xl font-bold text-black dark:text-white">
                     <Image src="/images/EL-color-no-bg-name-no-padding.png" width={180} height={70} alt="Logo EL Websolutions" />

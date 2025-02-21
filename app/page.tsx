@@ -1,11 +1,20 @@
-import { div } from "motion/react-client";
 import Link from "next/link";
+import Portfolio from "../components/homepage/portfolio";
+import { getAllProjects } from "@/lib/server/getProjects";
+import Blog from "@/components/homepage/blog";
+import { getAllBlogs } from "@/lib/server/getBlogs";
+import Services from "@/components/homepage/services";
+import Skills from "@/components/homepage/skills";
+import Contact from "@/components/contact";
 
-export default function HomePage() {
+export default async function HomePage() {
+    const allProjects = await getAllProjects();
+    const allBlogs = await getAllBlogs();
+
     return (
         <div>
-            <main>
-                <div className="container relative flex flex-col justify-center items-center py-8 min-h-screen">
+            <main className="shadow-md">
+                <div className="container relative flex flex-col justify-center items-center py-12 min-h-screen hero">
                     <p className=" text-center sub-title mb-6 backdrop-blur-md">Available for Freelance projects</p>
                     <h1 className="text-center mb-6">Crafting digital experiences</h1>
                     <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">Full-stack developer specializing in creating beautiful, functional, and user-centered digital experiences</p>
@@ -26,29 +35,11 @@ export default function HomePage() {
                     </svg>
                 </div>
             </main>
-            <section className="container py-8">
-                <p className=" text-center sub-title mb-6 backdrop-blur-md">Services</p>
-                <h2 className="text-center mb-6">Where can I help you with?</h2>
-            </section>
-            <section className="container py-8">
-                <p className=" text-center sub-title mb-6 backdrop-blur-md">Portfolio</p>
-                <h2 className="text-center mb-6">Featured projects</h2>
-            </section>
-            <section className="container py-8">
-                <p className=" text-center sub-title mb-6 backdrop-blur-md">Skills</p>
-                <h2 className="text-center mb-6">My expertises</h2>
-
-            </section>
-            <section className="container py-8">
-                <p className=" text-center sub-title mb-6 backdrop-blur-md">Blog</p>
-                <h2 className="text-center mb-6">Recent articles</h2>
-            </section>
-            <section className="py-8 contact">
-                <div className="container">
-                    <p className=" text-center sub-title mb-6 backdrop-blur-md">contact</p>
-                    <h2 className="text-center mb-6">Get in touch</h2>
-                </div>
-            </section>
+            <Services />
+            <Portfolio allProjects={allProjects} />  
+            <Skills />        
+            <Blog allBlogs={allBlogs} />
+            <Contact />
         </div>
     );
 }
