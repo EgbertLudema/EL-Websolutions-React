@@ -10,16 +10,33 @@ export default function Navbar() {
     const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
 
     // Ensure theme is loaded before rendering
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    if (!mounted) return null; // Prevents hydration mismatch
+    // Handle scroll event to toggle sticky class
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 60) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    if (!mounted) return null; 
 
     return (
-        <nav className="bg-white dark:bg-neutral-900 shadow-md p-2">
+        <nav className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 ${isSticky ? "bg-white dark:bg-neutral-900 shadow-lg py-2 backdrop-blur-md" : "bg-transparent py-4"}`}>
             <div className="container mx-auto flex justify-between items-center h-[54px]">
                 {/* Logo or Brand */}
                 <Link href="/" className="text-xl font-bold text-black dark:text-white">
@@ -41,6 +58,9 @@ export default function Navbar() {
                         About
                     </Link>
                     <ThemeToggle />
+                    <Link href="/contact">
+                        <button className="py-2 px-3 text-sm rounded-lg noisy_button hover:scale-105 transition">Get in touch</button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}

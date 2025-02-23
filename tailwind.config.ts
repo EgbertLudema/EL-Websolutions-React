@@ -19,6 +19,7 @@ const config: Config = {
         darkBg: "#111827", 
         lightText: "#111827",
         darkText: "#ffffff", 
+        primary: "#9b87f5",
       },
     },
   },

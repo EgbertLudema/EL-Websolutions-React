@@ -7,22 +7,24 @@ import matter from "gray-matter";
 export interface ProjectFrontmatter {
     title: string;
     description: string;
+    thumbnail: string;
     date: string;
     status: string;
     tags?: string[];
-    links?: { text: string; url: string }[];
-    gallery?: string[];
+    links?: { caption: string; url: string }[];
+    gallery?: {src: string, alt: string, caption: string}[];
 }
 
 export interface ProjectPost {
     slug: string;
     title: string;
     description: string;
+    thumbnail: string;
     date: string;
     status: string;
     tags?: string[];
-    links?: { text: string; url: string }[];
-    gallery?: string[];
+    links?: { caption: string; url: string }[];
+    gallery?: {src: string, alt: string, caption: string}[];
 }
 
 const PROJECTS_DIR = path.join(process.cwd(), "app/projects");

@@ -2,12 +2,22 @@
 
 import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ProjectPost } from "@/lib/server/getProjects";
 
 export default function TagFilter({ allProjects, allTags }: { allProjects: ProjectPost[]; allTags: string[] }) {
+    const searchParams = useSearchParams();
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+    // Set initial selected tag from URL query (if present)
+    useEffect(() => {
+        const tagFromURL = searchParams.get("tag");
+        if (tagFromURL) {
+            setSelectedTags([tagFromURL]);
+        }
+    }, [searchParams]);
 
     // Toggle tag selection
     const toggleTag = (tag: string) => {

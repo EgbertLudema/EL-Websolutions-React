@@ -52,10 +52,6 @@ main{
     background: var(--light-background-gradient);
 }
 
-.hero{
-    min-height: calc(100vh - 70px);
-}
-
 .bg-gradient-primary {
     background: var(--primary-gradient);
 }
@@ -101,4 +97,8 @@ button.noisy_button::before{
 }
 .social-link:hover{
     transform: scale(1.1);
+}
+/* Articles(blogs & projects) */
+.article{
+    /* Add css for everything */
 }
