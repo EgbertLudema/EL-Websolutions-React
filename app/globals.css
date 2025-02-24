@@ -99,6 +99,6 @@ button.noisy_button::before{
     transform: scale(1.1);
 }
 /* Articles(blogs & projects) */
-.article{
-    /* Add css for everything */
+.article article h2{
+    margin-top: .75em;
 }
