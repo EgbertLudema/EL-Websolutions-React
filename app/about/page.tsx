@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="container relative flex align-center justify-center py-8">
+        <div className="container pt-[140px] relative flex align-center justify-center py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 {/* left column */}
                 <div>

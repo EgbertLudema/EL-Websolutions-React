@@ -35,7 +35,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     return (
         <div>
             {/* Animated tag filter */}
-            <motion.div layout className="mt-4 flex flex-wrap gap-2">
+            <motion.div layout className="mt-4 flex flex-wrap gap-4">
                 {allTags.map((tag) => (
                     <motion.button
                         key={tag}
@@ -60,7 +60,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
             {/* Grid for blogs */}
             <motion.div
                 layout
-                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center"
             >
                 <AnimatePresence>
                     {sortedBlogs.length > 0 ? (

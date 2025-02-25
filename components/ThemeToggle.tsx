@@ -19,7 +19,7 @@ export default function ThemeToggle() {
 
     return (
         <button
-            className="toggle-container bg-blue-100 dark:bg-slate-500"
+            className="toggle-container bg-white dark:bg-slate-500"
             style={{
                 ...container,
                 justifyContent: isDarkMode ? "flex-start" : "flex-end",

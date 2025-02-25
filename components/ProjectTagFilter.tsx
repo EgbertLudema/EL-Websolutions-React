@@ -45,7 +45,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
     return (
         <div>
             {/* Animated tag filter */}
-            <motion.div layout className="mt-4 flex flex-wrap gap-2">
+            <motion.div layout className="mt-4 flex flex-wrap gap-4">
                 {allTags.map((tag) => (
                     <motion.button
                         key={tag}
@@ -53,7 +53,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                         onClick={() => toggleTag(tag)}
                         className={`px-3 py-1 rounded transition-colors ${
                             selectedTags.includes(tag)
-                                ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
+                                ? "bg-primary text-white dark:bg-primary dark:text-neutral-900"
                                 : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
                         }`}
                         transition={{
@@ -70,7 +70,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
             {/* Grid for projects */}
             <motion.div
                 layout
-                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center"
+                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center"
             >
                 <AnimatePresence>
                     {sortedProjects.length > 0 ? (
@@ -86,39 +86,52 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                     stiffness: 200,
                                     damping: 20,
                                 }}
-                                className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between 
-                                bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white border border-neutral-300 dark:border-neutral-600"
+                                className="rounded-md overflow-hidden shadow w-full aspect-square flex flex-col justify-between h-[400px]
+                                bg-white dark:bg-neutral-800 text-black dark:text-white"
                             >
-                                <h2 className="text-xl font-semibold">
-                                    <Link href={`/project/${project.slug}`} className="hover:underline">
-                                        {project.title}
-                                    </Link>
-                                </h2>
-                                <p className="flex-grow">{project.description}</p>
-                                <small>{project.status}</small>
+                                {/* Thumbnail */}
+                                {project.thumbnail && (
+                                    <div className="aspect-video overflow-hidden flex-3">
+                                        <img
+                                            src={project.thumbnail}
+                                            alt={project.title}
+                                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                )}
+                                {/* Content */}
+                                <div className="p-6 flex flex-col flex-2">
+                                    <h2 className="text-xl font-semibold">
+                                        <Link href={"/project/${project.slug}"} className="hover:underline">
+                                            {project.title}
+                                        </Link>
+                                    </h2>
+                                    <p className="flex-grow">{project.description}</p>
+                                    <small>{project.status}</small>
 
-                                {/* Animated tags inside each project */}
-                                <motion.div layout className="mt-2 flex gap-2">
-                                    {project.tags?.map((tag) => (
-                                        <motion.button
-                                            key={tag}
-                                            layout
-                                            onClick={() => toggleTag(tag)}
-                                            className={`px-2 py-1 text-xs rounded transition-colors ${
-                                                selectedTags.includes(tag)
-                                                    ? "bg-indigo-400 text-white dark:bg-indigo-300 dark:text-neutral-900"
-                                                    : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
-                                            }`}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 20,
-                                            }}
-                                        >
-                                            {tag}
-                                        </motion.button>
-                                    ))}
-                                </motion.div>
+                                    {/* Animated tags inside each project */}
+                                    <motion.div layout className="mt-2 flex gap-2">
+                                        {project.tags?.map((tag) => (
+                                            <motion.button
+                                                key={tag}
+                                                layout
+                                                onClick={() => toggleTag(tag)}
+                                                className={`px-2 py-1 text-xs rounded transition-colors ${
+                                                    selectedTags.includes(tag)
+                                                        ? "bg-primary text-white dark:bg-primary dark:text-neutral-900"
+                                                        : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
+                                                }`}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 300,
+                                                    damping: 20,
+                                                }}
+                                            >
+                                                {tag}
+                                            </motion.button>
+                                        ))}
+                                    </motion.div>
+                                </div>
                             </motion.div>
                         ))
                     ) : (

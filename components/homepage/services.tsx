@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client";
+import Link from "next/link";
 import { FaCartShopping, FaWordpress, FaAndroid } from "react-icons/fa6";
 import { MdDesignServices } from "react-icons/md";
 import { TbWorldSearch } from "react-icons/tb";
@@ -67,26 +68,29 @@ export default function Services(){
                             <p className="text-muted-foreground mb-4">{service.description}</p>
                             <span className="text-primary font-medium">{service.price}</span>
                             <div className="mt-4 pt-4 border-t border-border">
-                                <a
-                                href="#contact"
+                                <Link
+                                // TODO: Add href to services
+                                href="#"
                                 className="inline-flex items-center text-sm font-medium text-black dark:text-white hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
                                 >
-                                Learn More
-                                <svg
-                                    className="ml-2 w-4 h-4"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 5l7 7-7 7"
-                                    />
-                                </svg>
-                                </a>
+                                  <div>
+                                    Learn more
+                                  </div>
+                                    <svg
+                                        className="ml-2 w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                        />
+                                    </svg>
+                                </Link>
                             </div>
                         </motion.div>
                     ))}

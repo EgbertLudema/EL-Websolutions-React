@@ -57,7 +57,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                                             {project.tags.map((tag) => (
                                                 <div
                                                     key={tag}
-                                                    className="px-3 py-1 text-sm border border border-primary rounded-md text-primary hover:scale-105 transition"
+                                                    className="px-3 py-1 text-sm border border-primary rounded-md text-primary hover:scale-105 transition"
                                                 >
                                                     <Link href={`/project?tag=${encodeURIComponent(tag)}`}>
                                                         <div>
