@@ -45,21 +45,21 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-6 justify-center items-center">
-                    <Link href="/" className="text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         Home
                     </Link>
-                    <Link href="/project" className="text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/project" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         Projects
                     </Link>
-                    <Link href="/blog" className="text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/blog" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         Blogs
                     </Link>
-                    <Link href="/about" className="text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/about" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         About
                     </Link>
                     <ThemeToggle />
                     <Link href="/contact">
-                        <button className="py-2 px-3 text-sm rounded-lg noisy_button hover:scale-105 transition">Get in touch</button>
+                        <button className="py-2 px-3 text-md rounded-lg noisy_button hover:scale-105 transition">Get in touch</button>
                     </Link>
                 </div>
 

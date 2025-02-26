@@ -40,6 +40,32 @@
     .container {
         @apply max-w-[1260px] mx-auto;
     }
+    .gradient-border {
+        position: relative;
+        @apply rounded-md;
+    }
+    .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        z-index: -1;
+        background: linear-gradient(135deg, #9b87f5, #0ea5e9);
+        border-radius: inherit;
+    }
+    .gradient-border::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: white;
+        border-radius: inherit;
+        mask-image: radial-gradient(white, white);
+        -webkit-mask-image: radial-gradient(white, white);
+    }
+    .gradient-text{
+        @apply leading-tight text-transparent bg-clip-text bg-gradient-primary;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 body {

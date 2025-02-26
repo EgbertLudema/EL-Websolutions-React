@@ -19,7 +19,7 @@ export default function ThemeToggle() {
 
     return (
         <button
-            className="toggle-container bg-white dark:bg-slate-500"
+            className="toggle-container shadow-md border border-gray-200 bg-white dark:bg-slate-500 dark:border-slate-400"
             style={{
                 ...container,
                 justifyContent: isDarkMode ? "flex-start" : "flex-end",

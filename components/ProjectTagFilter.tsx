@@ -53,8 +53,8 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                         onClick={() => toggleTag(tag)}
                         className={`px-3 py-1 rounded transition-colors ${
                             selectedTags.includes(tag)
-                                ? "bg-primary text-white dark:bg-primary dark:text-neutral-900"
-                                : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
+                                ? "bg-primary text-white "
+                                : "border border-primary text-primary"
                         }`}
                         transition={{
                             type: "spring",
@@ -70,7 +70,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
             {/* Grid for projects */}
             <motion.div
                 layout
-                className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center"
+                className="relative mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center"
             >
                 <AnimatePresence>
                     {sortedProjects.length > 0 ? (
@@ -86,28 +86,41 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                     stiffness: 200,
                                     damping: 20,
                                 }}
-                                className="rounded-md overflow-hidden shadow w-full aspect-square flex flex-col justify-between h-[400px]
-                                bg-white dark:bg-neutral-800 text-black dark:text-white"
+                                className="group rounded-md overflow-hidden shadow hover:shadow-md w-full aspect-square flex flex-col 
+                                justify-between h-[420pxbg-white dark:bg-neutral-800 text-black dark:text-white transition"
                             >
                                 {/* Thumbnail */}
                                 {project.thumbnail && (
-                                    <div className="aspect-video overflow-hidden flex-3">
+                                    <div className="aspect-video overflow-hidden flex-3 shadow-md">
                                         <img
                                             src={project.thumbnail}
                                             alt={project.title}
-                                            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                            className="object-cover w-full h-full group-hover:scale-105 group-hover:rotate-1 transition-transform duration-300"
                                         />
                                     </div>
                                 )}
                                 {/* Content */}
-                                <div className="p-6 flex flex-col flex-2">
-                                    <h2 className="text-xl font-semibold">
-                                        <Link href={"/project/${project.slug}"} className="hover:underline">
-                                            {project.title}
-                                        </Link>
-                                    </h2>
-                                    <p className="flex-grow">{project.description}</p>
-                                    <small>{project.status}</small>
+                                <div className="p-6 flex flex-col flex-2 gap-2">
+                                    <div className="flex flex-row justify-between items-center gap-4">
+                                        <div className="project-head-content-text">
+                                            <small>{project.status}</small>
+                                            <h2 className="text-xl font-semibold">
+                                                {project.title}
+                                            </h2>
+                                        </div>
+                                        <div className="project-head-content-discover">
+                                            <Link href={`/project/${project.slug}`}>
+                                                <p className="p-2 flex flex-row rounded-md bg-primary text-white hover:scale-105 transition">
+                                                    discover
+                                                    <svg className="transform -rotate-90" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" >
+                                                        <path d="m19 12-7 7-7-7"></path>
+                                                    </svg>
+                                                </p>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    
+                                    <p className="flex-grow line-clamp-2">{project.description}</p>
 
                                     {/* Animated tags inside each project */}
                                     <motion.div layout className="mt-2 flex gap-2">
@@ -116,10 +129,10 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                                 key={tag}
                                                 layout
                                                 onClick={() => toggleTag(tag)}
-                                                className={`px-2 py-1 text-xs rounded transition-colors ${
+                                                className={`px-2 py-1 text-xs rounded hover:scale-105 transition ${
                                                     selectedTags.includes(tag)
-                                                        ? "bg-primary text-white dark:bg-primary dark:text-neutral-900"
-                                                        : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
+                                                        ? "bg-primary text-white "
+                                                        : "border border-primary text-primary"
                                                 }`}
                                                 transition={{
                                                     type: "spring",
@@ -140,7 +153,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="text-neutral-600 dark:text-neutral-300"
+                            className="absolute text-neutral-600 dark:text-neutral-300 w-full text-center"
                         >
                             No projects found matching the selected tags.
                         </motion.p>
