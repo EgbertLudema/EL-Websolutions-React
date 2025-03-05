@@ -87,7 +87,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                     damping: 20,
                                 }}
                                 className="group rounded-md overflow-hidden shadow hover:shadow-md w-full aspect-square flex flex-col 
-                                justify-between h-[420pxbg-white dark:bg-neutral-800 text-black dark:text-white transition-shadow"
+                                justify-between h-[420px] bg-white dark:bg-neutral-800 text-black dark:text-white transition-shadow"
                             >
                                 {/* Thumbnail */}
                                 {project.thumbnail && (
