@@ -31,7 +31,9 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                         >
                             <h3 className="text-xl font-semibold">
                                 <Link href={`/blog/${blog.slug}`} className="hover:underline">
-                                    {blog.title}
+                                    <div>
+                                        {blog.title}
+                                    </div>
                                 </Link>
                             </h3>
                             <p className="mt-2">{blog.description}</p>

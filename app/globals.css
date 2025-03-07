@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: Remove noise or apply to all gradients */
+
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
@@ -66,6 +68,22 @@
         @apply leading-tight text-transparent bg-clip-text bg-gradient-primary;
         -webkit-text-fill-color: transparent;
     }
+    .noise {
+        background-color: transparent;
+        background-image: var(--noise);
+        background-repeat: repeat;
+        -webkit-background-size: 182px;
+        -moz-background-size: 182px;
+        -o-background-size: 182px;
+        background-size: 182px;
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: "";
+    }
 }
 
 body {
@@ -77,6 +95,9 @@ body {
 main{
     background: var(--light-background-gradient);
 }
+/* main::before {
+    @apply noise;
+} */
 
 .bg-gradient-primary {
     background: var(--primary-gradient);

@@ -4,7 +4,10 @@ import { getAllProjects } from "@/lib/server/getProjects";
 import Blog from "@/components/homepage/blog";
 import { getAllBlogs } from "@/lib/server/getBlogs";
 import Services from "@/components/homepage/services";
-import Skills from "@/components/homepage/skills";
+import USPS from "@/components/homepage/usps";
+import Reviews from "@/components/homepage/reviews";
+import FAQHomepage from "@/components/homepage/FAQ";
+import CTA from "@/components/homepage/CTA";
 import Contact from "@/components/contact";
 
 export default async function HomePage() {
@@ -36,9 +39,12 @@ export default async function HomePage() {
                 </div>
             </main>
             <Services />
+            <USPS />
             <Portfolio allProjects={allProjects} />  
-            <Skills />        
+            <Reviews />
+            <CTA />
             <Blog allBlogs={allBlogs} />
+            <FAQHomepage />
             <Contact />
         </div>
     );
