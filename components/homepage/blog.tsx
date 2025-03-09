@@ -21,6 +21,9 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
             <div className="container">
                 <p className="text-center sub-title mb-6">Blog</p>
                 <h2 className="text-center mb-6">Latest Articles</h2>
+                <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">
+                    Insights, tutorials, and thoughts on web development, design, and digital trends.
+                </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
                     {recentBlogs.map((blog) => (

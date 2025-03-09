@@ -8,7 +8,7 @@ import USPS from "@/components/homepage/usps";
 import Reviews from "@/components/homepage/reviews";
 import FAQHomepage from "@/components/homepage/FAQ";
 import CTA from "@/components/homepage/CTA";
-import Contact from "@/components/contact";
+import Contact from "@/components/Contact";
 
 export default async function HomePage() {
     const allProjects = await getAllProjects();
@@ -18,7 +18,7 @@ export default async function HomePage() {
         <div>
             <main className="shadow-md">
                 <div className="container relative flex flex-col justify-center items-center py-12 min-h-screen hero">
-                    <p className=" text-center sub-title mb-6 backdrop-blur-md">Available for Freelance projects</p>
+                    <p className=" text-center sub-title px-4 py-1.5 mb-6 text-sm font-medium bg-white/10 backdrop-blur-md rounded-full text-primary animate-fade-in">Available for Freelance projects</p>
                     <h1 className="text-center mb-6">Crafting digital experiences</h1>
                     <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">Full-stack developer specializing in creating beautiful, functional, and user-centered digital experiences</p>
                     <div className="flex justify-center gap-4">
@@ -39,8 +39,8 @@ export default async function HomePage() {
                 </div>
             </main>
             <Services />
-            <USPS />
             <Portfolio allProjects={allProjects} />  
+            <USPS />
             <Reviews />
             <CTA />
             <Blog allBlogs={allBlogs} />
