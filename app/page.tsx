@@ -23,7 +23,7 @@ export default async function HomePage() {
                     <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">Full-stack developer specializing in creating beautiful, functional, and user-centered digital experiences</p>
                     <div className="flex justify-center gap-4">
                         <Link href="/contact">
-                            <button className="py-3 px-8 rounded-lg noisy_button hover:scale-105 transition">Get in touch</button>
+                            <button className="py-3 px-8 gradient-btn">Get in touch</button>
                         </Link>
                         <Link href="/project">
                             <button className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:scale-105 hover:bg-white hover:bg-opacity-20 transition">View projects</button>

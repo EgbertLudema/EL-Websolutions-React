@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client";
+import Link from "next/link";
 import { FaClock, FaMobileAlt, FaChartLine, FaHeadset } from "react-icons/fa";
 import { IoMdPricetag } from "react-icons/io";
 import { BsDiagram3 } from "react-icons/bs";
@@ -54,7 +55,7 @@ export default function USPS() {
             className="group bg-neutral-50 dark:bg-neutral-900 shadow-md p-6 rounded-xl hover:shadow-lg flex flex-col gap-4 transition-all duration-300"
           >
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-white dark:bg-neutral-800 rounded-full">
+              <div className="p-4 bg-white shadow-md dark:bg-neutral-800 rounded-full">
                 <reason.icon className="text-2xl text-primary" />
               </div>
               <h3 className="text-lg font-semibold">{reason.title}</h3>
