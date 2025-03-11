@@ -1,22 +1,15 @@
-"use client"
+import EmailLink from "./ui/emailLink";
 
 export default function Footer() { 
     const currentYear = new Date().getFullYear();
+
     return (
         <footer className="bg-neutral-100 dark:bg-neutral-900">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center text-center">
                     <div className="flex flex-col justify-items-start space-y-4">
-                        {/* Email */}
-                        <p className="text-start">
-                            <a
-                                target="_blank"
-                                href="mailto:info@el-websolutions.com"
-                                className="primary-color hover:underline hover:text-indigo-600 transition"
-                            >
-                                info@el-websolutions.com
-                            </a>
-                        </p>
+                        {/* Email Copy Feature */}
+                        <EmailLink color="primary" />
 
                         {/* Social Links */}
                         <ul className="flex space-x-4">

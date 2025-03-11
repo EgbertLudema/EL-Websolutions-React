@@ -64,6 +64,9 @@
     .light-gradient-bg{
         background: var(--light-background-gradient);
     }
+    .hover-underline{
+        @apply relative pb-1 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:transition-all before:duration-200 before:group-hover:w-full;
+    }
 }
 
 body {
