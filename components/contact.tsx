@@ -19,7 +19,7 @@ export default function Contact() {
                         <motion.div 
                             initial={{ opacity: 0, x: -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 15 }}
                             className="p-8 bg-gradient-primary text-white"
                         >
                             <h3 className="text-3xl font-semibold mb-6">Contact Information</h3>
@@ -27,9 +27,9 @@ export default function Contact() {
                                 <EmailLink color="white" />
 
                                 {/* Location */}
-                                <div className="flex items-center space-x-4">
-                                    <FaLocationDot className="w-6 h-6" />
-                                    <span>Friesland, NL</span>
+                                <div className="flex items-center space-x-2">
+                                    <FaLocationDot className="w-4 h-4" />
+                                    <span className="text-sm">Friesland, NL</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -38,7 +38,7 @@ export default function Contact() {
                         <motion.form 
                             initial={{ opacity: 0, x: 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 15 }}
                             className="p-8 dark:bg-neutral-900"
                         >
                             <div className="space-y-6">

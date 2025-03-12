@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function CTA() {
     return (
-        <section className="py-20 shadow-md gradient-bg">
+        <section className="py-20 shadow-md gradient-bg dark:light-gradient-bg">
             <div className="container">
                 <div className="flex flex-col items-center justify-center gap-4">
                     <h2 className="text-center text-white mb-6">Ready to get started?</h2>
