@@ -9,6 +9,7 @@ import Reviews from "@/components/homepage/reviews";
 import FAQHomepage from "@/components/homepage/FAQ";
 import CTA from "@/components/homepage/CTA";
 import Contact from "@/components/Contact";
+import GoogleReviews from "@/components/googleReviews";
 
 export default async function HomePage() {
     const allProjects = await getAllProjects();
@@ -41,7 +42,8 @@ export default async function HomePage() {
             <Services />
             <Portfolio allProjects={allProjects} />  
             <USPS />
-            <Reviews />
+            <GoogleReviews />
+            {/* <Reviews /> */}
             <CTA />
             <Blog allBlogs={allBlogs} />
             <FAQHomepage />
