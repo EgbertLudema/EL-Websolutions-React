@@ -5,7 +5,6 @@ import Blog from "@/components/homepage/blog";
 import { getAllBlogs } from "@/lib/server/getBlogs";
 import Services from "@/components/homepage/services";
 import USPS from "@/components/homepage/usps";
-import Reviews from "@/components/homepage/reviews";
 import FAQHomepage from "@/components/homepage/FAQ";
 import CTA from "@/components/homepage/CTA";
 import Contact from "@/components/Contact";
@@ -24,10 +23,10 @@ export default async function HomePage() {
                     <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">Full-stack developer specializing in creating beautiful, functional, and user-centered digital experiences</p>
                     <div className="flex justify-center gap-4">
                         <Link href="/contact">
-                            <button className="py-3 px-8 gradient-btn">Get in touch</button>
+                            <div className="px-8 py-3 gradient-btn shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition">Get in touch</div>
                         </Link>
                         <Link href="/project">
-                            <button className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:scale-105 hover:bg-white hover:bg-opacity-20 transition">View projects</button>
+                            <div className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:bg-white hover:bg-opacity-20 shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition">View projects</div>
                         </Link>
                     </div>
                     <div>
@@ -43,7 +42,6 @@ export default async function HomePage() {
             <Portfolio allProjects={allProjects} />  
             <USPS />
             <GoogleReviews />
-            {/* <Reviews /> */}
             <CTA />
             <Blog allBlogs={allBlogs} />
             <FAQHomepage />

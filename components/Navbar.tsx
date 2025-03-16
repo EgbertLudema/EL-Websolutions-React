@@ -59,7 +59,7 @@ export default function Navbar() {
                     </Link>
                     <ThemeToggle />
                     <Link href="/contact">
-                        <button className="py-2 px-3 gradient-btn">Get in touch</button>
+                        <div className="py-2 px-3 gradient-btn">Get in touch</div>
                     </Link>
                 </div>
 

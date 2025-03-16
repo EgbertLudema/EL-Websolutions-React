@@ -15,8 +15,8 @@ const services = [
   {
     icon: BsCode,
     title: "Custom web development",
-    description: "Custom websites and web applications built with modern technologies",
-    price: "From €899",
+    description: "A custom website. Build with next.js as front-end & wordpress as cms.",
+    price: "Depends on the project",
   },
   {
     icon: FaWordpress,
