@@ -36,7 +36,7 @@ export default function Navbar() {
     if (!mounted) return null; 
 
     return (
-        <nav className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 ${isSticky ? "bg-white dark:bg-neutral-900 shadow-lg py-2 backdrop-blur-md" : "bg-transparent py-4"}`}>
+        <nav className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b ${isSticky ? "bg-white/70 dark:bg-slate-950/80 border-slate-300 dark:border-slate-700 shadow-lg py-2 backdrop-blur-md" : "bg-transparent border-transparent py-4"}`}>
             <div className="container mx-auto flex justify-between items-center h-[54px]">
                 {/* Logo or Brand */}
                 <Link href="/" className="text-xl font-bold text-black dark:text-white">

@@ -17,7 +17,7 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
     const recentBlogs = sortedBlogs.slice(0, 3);
 
     return (
-        <section className="py-12 shadow-md bg-gradient-to-b from-transparent to-neutral-100 dark:to-neutral-800">
+        <section className="py-12 shadow-md bg-gradient-to-b from-transparent to-neutral-100 dark:to-slate-900">
             <div className="container">
                 <p className="text-center sub-title mb-6">Blog</p>
                 <h2 className="text-center mb-6">Latest Articles</h2>
@@ -29,8 +29,8 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                     {recentBlogs.map((blog) => (
                         <div
                             key={blog.slug}
-                            className="p-4 rounded-md shadow-md w-full bg-neutral-100 dark:bg-neutral-800 
-                            text-black dark:text-white border border-neutral-300 dark:border-neutral-600"
+                            className="p-4 rounded-md shadow-md w-full bg-neutral-100 dark:bg-slate-800 
+                            text-black dark:text-white border border-neutral-300 dark:border-slate-600"
                         >
                             <h3 className="text-xl font-semibold">
                                 <Link href={`/blog/${blog.slug}`} className="hover:underline">

@@ -18,7 +18,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
     const recentProjects = sortedProjects.slice(0, 3);
 
     return (
-        <section className="py-20 shadow-md bg-gradient-to-b from-transparent to-neutral-100 dark:from-neutral-800 dark:to-neutral-900">
+        <section className="py-20 shadow-md bg-neutral-100 dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700">
             <div className="container flex flex-col items-center">
                 <p className="text-center sub-title mb-6">Portfolio</p>
                 <h2 className="text-center mb-12">Featured Projects</h2>
@@ -30,17 +30,19 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="rounded-md overflow-hidden shadow-md w-full bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white hover:shadow-lg transition"
+                            className="rounded-md overflow-hidden shadow-md w-full bg-neutral-100 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
                         >
                             <Link href={`/project/${project.slug}`} className="h-full flex flex-col"> 
                                 {/* Thumbnail */}
                                 {project.thumbnail && (
-                                    <div className="aspect-video overflow-hidden flex-1">
+                                    <div className="relative aspect-video overflow-hidden flex-1">
                                         <img
                                             src={project.thumbnail}
                                             alt={project.title}
                                             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                                         />
+                                        {/* Dark mode overlay */}
+                                        <div className="absolute inset-0 bg-black/30 dark:bg-black/30 pointer-events-none"></div>
                                     </div>
                                 )}
 

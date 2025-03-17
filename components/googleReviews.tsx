@@ -50,7 +50,7 @@ export default function GoogleReviews() {
     
 
     return (
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-backgroundpy-20 shadow-md bg-neutral-100 dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Testimonials</span>
@@ -100,7 +100,7 @@ export default function GoogleReviews() {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        className="flex flex-col bg-muted p-6 rounded-xl shadow-md dark:bg-neutral-900"
+                                        className="flex flex-col bg-white p-6 rounded-xl shadow-md dark:bg-slate-800"
                                     >
                                         <div className="flex items-center mb-4">
                                             {review.authorAttribution.photoUri ? (
