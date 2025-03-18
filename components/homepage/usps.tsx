@@ -40,10 +40,10 @@ const reasons = [
 
 export default function USPS() {
   return (
-    <section className="py-20 shadow-md border-b border-slate-300 dark:border-slate-700">
+    <section className="py-20 dark:border-b dark:border-slate-700">
       <div className="container">
         <p className="text-center sub-title mb-6">Why choose me</p>
-        <h2 className="text-center mb-6">What sets me apart</h2>
+        <h2 className="text-center mb-12">What sets me apart</h2>
       </div>
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
         {reasons.map((reason, index) => (
@@ -52,7 +52,7 @@ export default function USPS() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group bg-neutral-50 dark:bg-slate-900 shadow-md p-6 rounded-xl hover:shadow-lg flex flex-col gap-4 transition-all duration-300"
+            className="group bg-slate-50 dark:bg-slate-900 shadow-md p-6 rounded-xl hover:shadow-lg flex flex-col gap-4 transition-all duration-300"
           >
             <div className="flex items-center gap-4">
               <div className="p-4 bg-white shadow-md dark:bg-slate-800 rounded-full">

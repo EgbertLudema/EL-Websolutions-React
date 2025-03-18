@@ -122,7 +122,7 @@ export default function Contact() {
                             initial={{ opacity: 0, x: 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                            className="p-8 dark:bg-neutral-900"
+                            className="p-8 dark:bg-slate-800"
                             onSubmit={handleSubmit}
                         >
                             <div className="space-y-6">
@@ -135,7 +135,7 @@ export default function Contact() {
                                         required
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-neutral-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <div>
@@ -150,7 +150,7 @@ export default function Contact() {
                                             setEmail(e.target.value);
                                             validateEmail(e.target.value);
                                         }}
-                                        className={`w-full px-4 py-2 border border-border dark:border-neutral-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
+                                        className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
                                             !emailValid ? "border-red-500" : ""
                                         }`}
                                     />
@@ -167,7 +167,7 @@ export default function Contact() {
                                         required
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-neutral-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <motion.button

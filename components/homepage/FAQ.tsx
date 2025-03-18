@@ -35,7 +35,7 @@ const FAQHomepage = () => {
     };
 
     return (
-        <section className="py-20 bg-muted">
+        <section className="py-20 bg-slate-100 dark:bg-slate-800">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Questions</span>
@@ -56,7 +56,7 @@ const FAQHomepage = () => {
                         >
                             <button
                                 onClick={() => toggleQuestion(index)}
-                                className="flex justify-between items-center w-full text-left p-5 bg-background rounded-lg shadow-sm hover:shadow-md transition-all"
+                                className="flex justify-between items-center w-full text-left p-5 bg-white dark:bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition-all"
                             >
                                 <div className="flex items-center">
                                     <BiHelpCircle className="w-5 h-5 text-primary mr-3" />

@@ -50,7 +50,7 @@ export default function GoogleReviews() {
     
 
     return (
-        <section className="py-20 bg-backgroundpy-20 shadow-md bg-neutral-100 dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700">
+        <section className="py-20 bg-backgroundpy-20 shadow-md bg-slate-100 dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Testimonials</span>

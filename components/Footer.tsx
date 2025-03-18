@@ -4,7 +4,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-neutral-100 dark:bg-neutral-900">
+        <footer className="bg-slate-100 dark:bg-slate-900">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center text-center">
                     <div className="flex flex-col justify-items-start space-y-4">
@@ -79,10 +79,10 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-neutral-500 dark:text-neutral-400 p-4 text-center">
+            <div className="text-slate-500 dark:text-slate-400 p-4 text-center">
                 <p>Build with Next.js, Tailwind.css, Motion.dev</p>
             </div>
-            <div className="text-neutral-500 dark:text-neutral-400 border-t border-neutral-200 dark:border-neutral-500 p-4 text-center">
+            <div className="text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-500 p-4 text-center">
                 <p>© {currentYear} - EL Websolutions</p>
             </div>
         </footer>

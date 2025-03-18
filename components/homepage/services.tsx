@@ -49,7 +49,7 @@ export default function Services(){
         <section className="py-20 shadow-md">
             <div className="container">
                 <p className=" text-center sub-title mb-6">Services</p>
-                <h2 className="text-center mb-6">What I Offer</h2>
+                <h2 className="text-center mb-12">What I Offer</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
@@ -57,7 +57,7 @@ export default function Services(){
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group bg-neutral-50 dark:bg-slate-800 shadow-md p-6 rounded-xl hover:shadow-lg transition-all duration-300"
+                        className="group bg-slate-50 dark:bg-slate-800 shadow-md p-6 rounded-xl hover:shadow-lg transition-all duration-300"
                         >
                             <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                                 <service.icon size={24} />

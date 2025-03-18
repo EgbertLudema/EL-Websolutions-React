@@ -1,47 +1,86 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaRegUser, FaRegCalendarAlt, FaArrowRight } from "react-icons/fa";
 import { BlogPost } from "@/lib/server/getBlogs";
+
+function formatDate(dateString?: string) {
+    if (!dateString) return "In progress";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+}
 
 export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
     if (!allBlogs || allBlogs.length === 0) {
-        return <p className="text-center text-neutral-600 dark:text-neutral-300">No blogs found.</p>;
+        return <p className="text-center text-muted-foreground">No blogs found.</p>;
     }
 
-    // Sort: Unfinished blogs (no date) first, then by date (newest first)
+    // Sorteren: Onvoltooide blogs (geen datum) eerst, dan op datum (nieuwste eerst)
     const sortedBlogs = [...allBlogs].sort((a, b) => {
-        if (!a.date) return -1; // If 'a' has no date, it goes first
-        if (!b.date) return 1; // If 'b' has no date, 'a' stays lower
-        return new Date(b.date).getTime() - new Date(a.date).getTime(); // Otherwise, sort by date (newest first)
+        if (!a.date) return -1;
+        if (!b.date) return 1;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
-    // Take the first 3 blogs
+    // Maximaal 3 blogs tonen
     const recentBlogs = sortedBlogs.slice(0, 3);
 
     return (
-        <section className="py-12 shadow-md bg-gradient-to-b from-transparent to-neutral-100 dark:to-slate-900">
-            <div className="container">
-                <p className="text-center sub-title mb-6">Blog</p>
-                <h2 className="text-center mb-6">Latest Articles</h2>
-                <p className="text-center text-lg mb-8 text-gray-700 dark:text-gray-400">
-                    Insights, tutorials, and thoughts on web development, design, and digital trends.
-                </p>
+        <section className="py-20 bg-background">
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                    <span className="text-primary font-medium">Blog</span>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Latest Articles</h2>
+                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                        Insights, tutorials, and thoughts on web development, design, and digital trends.
+                    </p>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
-                    {recentBlogs.map((blog) => (
-                        <div
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {recentBlogs.map((blog, index) => (
+                        <motion.article
                             key={blog.slug}
-                            className="p-4 rounded-md shadow-md w-full bg-neutral-100 dark:bg-slate-800 
-                            text-black dark:text-white border border-neutral-300 dark:border-slate-600"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col"
                         >
-                            <h3 className="text-xl font-semibold">
-                                <Link href={`/blog/${blog.slug}`} className="hover:underline">
-                                    <div>
+                            <div className="aspect-video overflow-hidden">
+                                <img
+                                    src={blog.thumbnail?.[0] || "/placeholder.jpg"}
+                                    alt={blog.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">
+                                    <span className="flex items-center">
+                                        <FaRegCalendarAlt className="w-4 h-4 mr-1" />
+                                        {formatDate(blog.date)}
+                                    </span>
+                                    <span className="flex items-center">
+                                        <FaRegUser className="w-4 h-4 mr-1" />
+                                        {blog.author || "Unknown"}
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                                    <Link href={`/blog/${blog.slug}`} className="hover:underline">
                                         {blog.title}
-                                    </div>
-                                </Link>
-                            </h3>
-                            <p className="mt-2">{blog.description}</p>
-                            <small className="block mt-2">{blog.status}</small>
-                        </div>
+                                    </Link>
+                                </h3>
+                                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-grow">{blog.description}</p>
+                                <div className="flex justify-end">
+                                    <Link
+                                        href={`/blog/${blog.slug}`}
+                                        className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium"
+                                    >
+                                        Read More
+                                        <FaArrowRight className="ml-1 w-4 h-4" />
+                                    </Link>
+                                </div>
+                            </div>
+                        </motion.article>
                     ))}
                 </div>
             </div>

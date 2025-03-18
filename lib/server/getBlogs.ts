@@ -8,10 +8,10 @@ export interface BlogFrontmatter {
     title: string;
     description: string;
     date: string;
-    status: string;
+    author: string;
     tags?: string[];
     links?: { text: string; url: string }[];
-    gallery?: string[];
+    thumbnail: string;
 }
 
 export interface BlogPost {
@@ -19,10 +19,10 @@ export interface BlogPost {
     title: string;
     description: string;
     date: string;
-    status: string;
+    author: string;
     tags?: string[];
     links?: { text: string; url: string }[];
-    gallery?: string[];
+    thumbnail: string;
 }
 
 const BLOGS_DIR = path.join(process.cwd(), "app/blogs");
