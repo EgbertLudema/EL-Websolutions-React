@@ -30,8 +30,10 @@
         -webkit-text-fill-color: transparent;
     }
     h2 {
-      @apply text-4xl;
-      @apply font-semibold;
+      @apply text-4xl font-semibold;
+    }
+    h3{
+        @apply text-xl font-semibold;
     }
 }
 @layer utilities {
@@ -55,6 +57,12 @@
     .gradient-btn {
         @apply rounded-lg text-white primary-gradient hover:scale-105 transition;
     }
+    .primary-btn{
+        @apply rounded-lg bg-primary text-sm font-medium text-white hover:bg-white hover:text-primary shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition;
+    }
+    .secondair-btn{
+        @apply rounded-lg bg-transparent text-sm font-medium text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 shadow-sm border border-slate-400 dark:border-white/40 hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition;
+    }
     .white-btn{
         @apply text-white font-medium text-sm px-8 py-3 border border-white border-opacity-20 bg-white bg-opacity-10 rounded-md hover:scale-105 transition;
     }
@@ -73,10 +81,6 @@ body {
     color: rgb(var(--foreground-rgb));
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 16px;
-}
-
-main{
-    @apply light-gradient-bg;
 }
 
 .bg-gradient-primary {

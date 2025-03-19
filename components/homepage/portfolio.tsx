@@ -76,7 +76,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                     ))}
                 </div>
                 <Link href="/project">
-                    <div className="mt-8 py-3 px-6 rounded-lg bg-primary text-white hover:bg-white hover:text-primary shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition">   
+                    <div className="mt-8 py-3 px-6 primary-btn">   
                         View all projects
                     </div>
                 </Link>

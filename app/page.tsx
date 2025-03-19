@@ -6,7 +6,7 @@ import { getAllBlogs } from "@/lib/server/getBlogs";
 import Services from "@/components/homepage/services";
 import USPS from "@/components/homepage/usps";
 import FAQHomepage from "@/components/homepage/FAQ";
-import CTA from "@/components/homepage/CTA";
+import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import GoogleReviews from "@/components/googleReviews";
 
@@ -16,7 +16,7 @@ export default async function HomePage() {
 
     return (
         <div>
-            <main className="shadow-md">
+            <main className="shadow-md light-gradient-bg">
                 <div className="container relative flex flex-col justify-center items-center py-12 min-h-screen hero">
                     <p className=" text-center sub-title px-4 py-1.5 mb-6 text-sm font-medium bg-white/10 backdrop-blur-md rounded-full text-primary animate-fade-in">Available for Freelance projects</p>
                     <h1 className="text-center mb-6">Crafting digital experiences</h1>
