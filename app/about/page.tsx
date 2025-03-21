@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/Breadcrumbs';
 import CTA from '@/components/CTA';
 import Draggable from '@/components/Draggable';
 import Image from "next/image";
@@ -6,9 +7,10 @@ import Link from 'next/link';
 export default function AboutPage() {
     return (
         <div>
-            <main className="container mt-[140px] relative flex flex-col justify-center py-8">
+            <main className="container mt-[140px] relative flex flex-col justify-center items-center py-8">
+                <Breadcrumbs />
                 <h1 className="text-center">About me</h1>
-                <p className="text-center text-slate-600 dark:text-slate-400 pb-8">Get to know the developer behind the code. Passionate about creating beautiful, functional digital experiences.</p>
+                <p className="text-center text-slate-600 dark:text-slate-400 pb-12">Get to know the developer behind the code. Passionate about creating beautiful, functional digital experiences.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     {/* left column */}
                     <div>
@@ -27,11 +29,11 @@ export default function AboutPage() {
                             Currently I'm focussed on creating headless Wordpress website with Next.js.
                         </p>
                         <div className="flex flex-row gap-3 pt-8">
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">React</span>
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Wordpress</span>
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Jetpack Compose</span>
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Svelte</span>
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">UI/UX Design</span>
+                            <span className="px-3 py-1 tag-selected">React</span>
+                            <span className="px-3 py-1 tag-selected">Wordpress</span>
+                            <span className="px-3 py-1 tag-selected">Jetpack Compose</span>
+                            <span className="px-3 py-1 tag-selected">Svelte</span>
+                            <span className="px-3 py-1 tag-selected">UI/UX Design</span>
                         </div>
                         <div className="flex flex-row gap-4 pt-8">
                             <Link className='py-2 px-4 primary-btn' href="/contact">
@@ -46,7 +48,7 @@ export default function AboutPage() {
                     {/* right column */}
                     <div className="flex justify-end">
                         <Image 
-                            className="bg-neutral-200 dark:bg-neutral-800 transition-all duration-100 rounded-lg shadow-lg" 
+                            className="bg-slate-200 dark:bg-slate-800 transition-all duration-100 rounded-lg shadow-lg" 
                             src="/images/Portret_Egbert_NoBG.png" 
                             width={500} 
                             height={500} 
