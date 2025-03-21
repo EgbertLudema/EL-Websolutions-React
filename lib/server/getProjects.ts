@@ -27,7 +27,7 @@ export interface ProjectPost {
     gallery?: {src: string, alt: string, caption: string}[];
 }
 
-const PROJECTS_DIR = path.join(process.cwd(), "app/projects");
+const PROJECTS_DIR = path.join(process.cwd(), "app/project-list");
 
 export async function getAllProjects(): Promise<ProjectPost[]> {
     const files = await fs.readdir(PROJECTS_DIR);

@@ -38,7 +38,7 @@
 }
 @layer utilities {
     .container {
-        @apply px-2 xl:p-0 max-w-screen-xl mx-auto ;
+        @apply px-2 xl:px-0 max-w-screen-xl mx-auto ;
     }
     .primary-color{
         color: var(--primary-color);
@@ -74,6 +74,12 @@
     }
     .hover-underline{
         @apply relative pb-1 before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[1px] before:transition-all before:duration-200 before:group-hover:w-full;
+    }
+    .tag{
+        @apply text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-full px-2 py-1 text-xs;
+    }
+    .tag-selected{
+        @apply text-primary bg-primary/30 rounded-full px-2 py-1 text-xs;
     }
 }
 

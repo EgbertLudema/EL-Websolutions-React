@@ -1,3 +1,4 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getAllBlogs, getBlogBySlug } from "@/lib/server/getBlogs";
 import { compileMDX } from "next-mdx-remote/rsc";
 
@@ -24,9 +25,10 @@ export default async function BlogPage({ params }: { params: { slug: string } })
 
     return (
         <div className="prose mx-auto p-6">
+            <Breadcrumbs />
             <h1 className="text-3xl font-bold">{blog.data.title}</h1>
             <p className="text-neutral-600">{blog.data.description}</p>
-            <small>{blog.data.date} - {blog.data.status}</small>
+            <small>{blog.data.date}</small>
 
             {content}
         </div>

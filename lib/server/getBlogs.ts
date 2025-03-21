@@ -25,7 +25,7 @@ export interface BlogPost {
     thumbnail: string;
 }
 
-const BLOGS_DIR = path.join(process.cwd(), "app/blogs");
+const BLOGS_DIR = path.join(process.cwd(), "app/blog-list");
 
 export async function getAllBlogs(): Promise<BlogPost[]> {
     const files = await fs.readdir(BLOGS_DIR);

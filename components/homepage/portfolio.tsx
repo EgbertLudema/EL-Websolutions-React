@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProjectPost } from "@/lib/server/getProjects";
 import * as motion from "motion/react-client";
+import Breadcrumbs from "../Breadcrumbs";
 
 export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] }) {
     if (!allProjects || allProjects.length === 0) {
@@ -32,7 +33,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="rounded-md overflow-hidden shadow-md w-full bg-slate-100 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
                         >
-                            <Link href={`/project/${project.slug}`} className="h-full flex flex-col"> 
+                            <Link href={`/projects/${project.slug}`} className="h-full flex flex-col"> 
                                 {/* Thumbnail */}
                                 {project.thumbnail && (
                                     <div className="relative aspect-video overflow-hidden flex-1">
@@ -41,8 +42,6 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                                             alt={project.title}
                                             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                                         />
-                                        {/* Dark mode overlay */}
-                                        <div className="absolute inset-0 dark:bg-black/30 pointer-events-none"></div>
                                     </div>
                                 )}
 
@@ -59,7 +58,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                                             {project.tags.map((tag) => (
                                                 <div
                                                     key={tag}
-                                                    className="px-3 py-1 text-sm border border-primary rounded-md text-primary hover:scale-105 transition"
+                                                    className="px-3 py-1 tag hover:scale-105 transition"
                                                 >
                                                     <Link href={`/project?tag=${encodeURIComponent(tag)}`}>
                                                         <div>

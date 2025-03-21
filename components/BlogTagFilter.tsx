@@ -80,12 +80,12 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                 bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white border border-neutral-300 dark:border-neutral-600"
                             >
                                 <h2 className="text-xl font-semibold">
-                                    <Link href={`/blog/${blog.slug}`} className="hover:underline">
+                                    <Link href={`/blogs/${blog.slug}`} className="hover:underline">
                                         {blog.title}
                                     </Link>
                                 </h2>
                                 <p className="flex-grow">{blog.description}</p>
-                                <small>{blog.status}</small>
+                                <small>{blog.date}</small>
 
                                 {/* Animated tags inside each blog */}
                                 <motion.div layout className="mt-2 flex gap-2">

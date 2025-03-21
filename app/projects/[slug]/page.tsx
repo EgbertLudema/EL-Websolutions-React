@@ -1,7 +1,10 @@
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getAllProjects, getProjectBySlug } from "@/lib/server/getProjects";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaWrench } from "react-icons/fa6";
 
 // Generate Static Paths for Each Project
 export async function generateStaticParams() {
@@ -27,23 +30,31 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
     return (
         <main className="article">
-            <div className="container pt-[140px] pb-12 flex flex-col gap-4">
+            <div className="container mt-[140px] py-12 flex flex-col items-start gap-4">
+
+                <Breadcrumbs />
 
                 <div className="flex flex-col gap-2">
                     {/* Project Title */}
                     <h1 className="text-4xl font-bold mb-2">{project.data?.title ?? "Untitled Project"}</h1>
 
                     {/* Metadata */}
-                    <div className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-                        <span>{project.data?.date ?? "Unknown Date"} - {project.data?.status ?? "No Status"}</span>
+                    <div className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 flex flex-row gap-2 items-center">
+                        {project.data?.status !== "In Progress" ? (
+                            <FaRegCalendarAlt className="w-3 h-3" />
+                        ) : (
+                            <FaWrench className="w-3 h-3" />
+                        )}
+                        <span>{project.data.status}</span>
                     </div>
+
 
                     {/* Tags */}
                     {project.data?.tags && project.data.tags.length > 0 && (
                         <div className="mt-4 flex flex-wrap gap-2">
                             {project.data.tags.map((tag) => (
                                 <Link key={tag} href={`/projects?tag=${encodeURIComponent(tag)}`}>
-                                    <span className="px-3 py-1 text-sm bg-primary text-white rounded-md hover:scale-105 transition">
+                                    <span className="px-3 py-1 tag-selected hover:scale-105 transition">
                                         {tag}
                                     </span>
                                 </Link>
@@ -52,7 +63,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     )}
                 </div>
 
-                <hr className="mt-6 border-neutral-500 dark:border-neutral-300" />
+                <hr className="mt-6 w-full border-neutral-500 dark:border-neutral-300" />
 
                 {/* MDX Content (Main Body) */}
                 <article className="prose dark:prose-invert mt-6 flex flex-col gap-4">
