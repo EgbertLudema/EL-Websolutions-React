@@ -10,6 +10,11 @@ export default async function BlogsPage() {
         <main className="container py-8 min-h-screen mt-[140px]">
             <Breadcrumbs />
             <h1 className="text-3xl font-bold text-black dark:text-white">Blogs</h1>
+
+            <h2>Featured articles</h2>
+
+            {/* Searchbar */}
+            <h3>Filter by categorie</h3>
             <BlogTagFilter allBlogs={allBlogs} allTags={allTags} />
         </main>
     );

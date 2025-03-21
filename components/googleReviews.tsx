@@ -100,7 +100,7 @@ export default function GoogleReviews() {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        className="flex flex-col bg-white p-6 rounded-xl shadow-md dark:bg-slate-800"
+                                        className="flex flex-col justify-start h-full bg-white p-6 rounded-xl shadow-md dark:bg-slate-800"
                                     >
                                         <div className="flex items-center mb-4">
                                             {review.authorAttribution.photoUri ? (
@@ -140,7 +140,7 @@ export default function GoogleReviews() {
                                         {/* <p className="text-foreground italic mt-2">{review.originalText?.text}</p> */}
 
                                         <a
-                                            className="self-end mt-8 inline-flex items-center gap-2 text-gray-700 dark:text-gray-200 dark:hover:text-white hover:text-gray-900 transition"
+                                            className="self-end mt-auto inline-flex items-center gap-2 text-gray-700 dark:text-gray-200 dark:hover:text-white hover:text-gray-900 transition"
                                             href={googleData.googleMapsUri}
                                             target="_blank"
                                             rel="noopener noreferrer"

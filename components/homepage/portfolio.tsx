@@ -31,12 +31,12 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="rounded-md overflow-hidden shadow-md w-full bg-slate-100 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
+                            className="group rounded-md overflow-hidden shadow-md w-full bg-slate-100 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
                         >
                             <Link href={`/projects/${project.slug}`} className="h-full flex flex-col"> 
                                 {/* Thumbnail */}
                                 {project.thumbnail && (
-                                    <div className="relative aspect-video overflow-hidden flex-1">
+                                    <div className="relative aspect-video overflow-hidden">
                                         <img
                                             src={project.thumbnail}
                                             alt={project.title}
@@ -46,21 +46,21 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                                 )}
 
                                 {/* Project Details */}
-                                <div className="p-6 flex flex-1 gap-2 flex-col">
+                                <div className="p-6 flex gap-4 justify-start flex-col">
                                     <div>
-                                        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                        <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+                                        <h3 className="text-xl text-slate-800 dark:text-slate-200 group-hover:text-primary font-semibold mb-2 transition-colors">{project.title}</h3>
+                                        <p className="text-slate-600 dark:text-slate-400">{project.description}</p>
                                     </div>
 
                                     {/* Tags (Always aligned at the bottom) */}
                                     {project.tags?.length ? (
-                                        <div className="flex flex-wrap gap-2 mt-auto">
+                                        <div className="flex flex-wrap gap-2 justify-self-end">
                                             {project.tags.map((tag) => (
                                                 <div
                                                     key={tag}
                                                     className="px-3 py-1 tag hover:scale-105 transition"
                                                 >
-                                                    <Link href={`/project?tag=${encodeURIComponent(tag)}`}>
+                                                    <Link href={`/projects?tag=${encodeURIComponent(tag)}`}>
                                                         <div>
                                                             {tag}
                                                         </div>

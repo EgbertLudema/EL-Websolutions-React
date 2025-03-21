@@ -42,8 +42,8 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
     return (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Animated tag filter */}
-            <motion.div className="w-full flex flex-col gap-3 p-4 border border-slate-300 rounded-lg">
-                <h3 className="font-medium">Filter</h3>
+            <motion.div className="w-full flex flex-col gap-3 p-4 border border-slate-300 dark:border-slate-700 rounded-lg">
+                <h3 className="font-medium text-slate-800 dark:text-slate-200">Filter</h3>
                 <div className="flex flex-row flex-wrap items-start content-start gap-3">
                     {allTags.map((tag) => (
                         <motion.button
@@ -51,7 +51,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                             layout
                             onClick={() => toggleTag(tag)}
                             className={`transition ${
-                                selectedTags.includes(tag) ? "tag-selected" : "tag"
+                                selectedTags.includes(tag) ? "tag-big-selected" : "tag-big"
                             }`}
                         >
                             {tag}
@@ -87,7 +87,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                         />
                                     </div>
                                     <div className="p-5">
-                                        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                                        <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors">{project.title}</h3>
                                         <p className="mb-4 line-clamp-2 text-slate-600 dark:text-slate-400">{project.description}</p>
                                         <div className="flex flex-wrap gap-2 mb-3">
                                             {project.tags?.map((tag) => (
@@ -117,7 +117,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="col-span-3 text-center text-slate-600 dark:text-slate-300"
+                            className="col-span-3 text-center text-slate-500 dark:text-slate-400"
                         >
                             No projects found matching the selected tags.
                         </motion.p>

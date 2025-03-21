@@ -5,6 +5,8 @@ import * as motion from "motion/react-client";
 import { useState } from "react";
 import Link from "next/link";
 import { BlogPost } from "@/lib/server/getBlogs";
+import { FaC } from "react-icons/fa6";
+import { FaCalendarAlt } from "react-icons/fa";
 
 export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[]; allTags: string[] }) {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -35,16 +37,16 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     return (
         <div>
             {/* Animated tag filter */}
-            <motion.div layout className="mt-4 flex flex-wrap gap-4">
+            <motion.div layout className="mt-4 flex flex-wrap justify-center gap-4">
                 {allTags.map((tag) => (
                     <motion.button
                         key={tag}
                         layout
                         onClick={() => toggleTag(tag)}
-                        className={`px-3 py-1 rounded transition-colors ${
+                        className={`transition ${
                             selectedTags.includes(tag)
-                                ? "bg-violet-400 text-white dark:bg-violet-300 dark:text-neutral-900"
-                                : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
+                                ? "tag-big-selected"
+                                : "tag-big"
                         }`}
                         transition={{
                             type: "spring",
@@ -85,7 +87,15 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                     </Link>
                                 </h2>
                                 <p className="flex-grow">{blog.description}</p>
-                                <small>{blog.date}</small>
+                                <small className="flex flex-row gap-1 items-center">
+                                    <FaCalendarAlt />
+                                    {new Date(blog.date).toLocaleDateString("en-GB", {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric",
+                                    })}
+                                </small>
+
 
                                 {/* Animated tags inside each blog */}
                                 <motion.div layout className="mt-2 flex gap-2">
@@ -94,10 +104,10 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                                             key={tag}
                                             layout
                                             onClick={() => toggleTag(tag)}
-                                            className={`px-2 py-1 text-xs rounded transition-colors ${
+                                            className={`transition ${
                                                 selectedTags.includes(tag)
-                                                    ? "bg-violet-400 text-white dark:bg-violet-300 dark:text-neutral-900"
-                                                    : "bg-neutral-200 dark:bg-neutral-700 dark:text-white"
+                                                    ? "tag-selected"
+                                                    : "tag"
                                             }`}
                                             transition={{
                                                 type: "spring",
@@ -117,7 +127,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="text-neutral-600 dark:text-neutral-300"
+                            className="text-neutral-700 dark:text-neutral-400"
                         >
                             No blogs found matching the selected tags.
                         </motion.p>

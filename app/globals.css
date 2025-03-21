@@ -78,8 +78,14 @@
     .tag{
         @apply text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-full px-2 py-1 text-xs;
     }
+    .tag-big{
+        @apply text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-full px-3 py-1 text-sm;
+    }
     .tag-selected{
         @apply text-primary bg-primary/30 rounded-full px-2 py-1 text-xs;
+    }
+    .tag-big-selected{
+        @apply text-primary bg-primary/30 rounded-full px-3 py-1 text-sm;
     }
 }
 
