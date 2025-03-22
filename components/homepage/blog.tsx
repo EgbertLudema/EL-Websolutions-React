@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaRegUser, FaRegCalendarAlt, FaArrowRight } from "react-icons/fa";
+import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
 import { BlogPost } from "@/lib/server/getBlogs";
 
 function formatDate(dateString?: string) {
@@ -16,14 +16,12 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
         return <p className="text-center text-muted-foreground">No blogs found.</p>;
     }
 
-    // Sorteren: Onvoltooide blogs (geen datum) eerst, dan op datum (nieuwste eerst)
     const sortedBlogs = [...allBlogs].sort((a, b) => {
         if (!a.date) return -1;
         if (!b.date) return 1;
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.date).getTime() - new Date(b.date).getTime();
     });
 
-    // Maximaal 3 blogs tonen
     const recentBlogs = sortedBlogs.slice(0, 3);
 
     return (
@@ -39,48 +37,40 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {recentBlogs.map((blog, index) => (
-                        <motion.article
-                            key={blog.slug}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col"
-                        >
-                            <div className="aspect-video overflow-hidden">
-                                <img
-                                    src={blog.thumbnail?.[0] || "/placeholder.jpg"}
-                                    alt={blog.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">
-                                    <span className="flex items-center">
-                                        <FaRegCalendarAlt className="w-4 h-4 mr-1" />
-                                        {formatDate(blog.date)}
-                                    </span>
-                                    <span className="flex items-center">
-                                        <FaRegUser className="w-4 h-4 mr-1" />
-                                        {blog.author || "Unknown"}
-                                    </span>
+                        <Link key={blog.slug} href={`/blog/${blog.slug}`} className="group">
+                            <motion.article
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full"
+                            >
+                                <div className="aspect-video overflow-hidden">
+                                    <img
+                                        src={blog.thumbnail?.[0] || "/placeholder.jpg"}
+                                        alt={blog.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                                    <Link href={`/blog/${blog.slug}`} className="hover:underline">
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">
+                                        <span className="flex items-center">
+                                            <FaRegCalendarAlt className="w-4 h-4 mr-1" />
+                                            {formatDate(blog.date)}
+                                        </span>
+                                        <span className="flex items-center">
+                                            <FaRegUser className="w-4 h-4 mr-1" />
+                                            {blog.author || "Unknown"}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                                         {blog.title}
-                                    </Link>
-                                </h3>
-                                <p className="text-slate-600 dark:text-slate-400 mb-4 flex-grow">{blog.description}</p>
-                                <div className="flex justify-end">
-                                    <Link
-                                        href={`/blog/${blog.slug}`}
-                                        className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium"
-                                    >
-                                        Read More
-                                        <FaArrowRight className="ml-1 w-4 h-4" />
-                                    </Link>
+                                    </h3>
+                                    <p className="text-slate-600 dark:text-slate-400 mb-4 flex-grow">
+                                        {blog.description}
+                                    </p>
                                 </div>
-                            </div>
-                        </motion.article>
+                            </motion.article>
+                        </Link>
                     ))}
                 </div>
             </div>

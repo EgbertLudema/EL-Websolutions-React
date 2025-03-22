@@ -8,9 +8,9 @@ import { BsCode } from "react-icons/bs";
 const services = [
   {
     icon: MdDesignServices,
-    title: "UI/UX Design",
-    description: "User-centric design solutions that enhance user experience",
-    price: "From €499",
+    title: "Wireframing",
+    description: "Wireframing for your website or app",
+    price: "From €89",
   },
   {
     icon: BsCode,

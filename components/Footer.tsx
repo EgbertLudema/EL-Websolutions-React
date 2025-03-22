@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-slate-100 dark:bg-slate-900">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 pt-12 pb-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 pt-12 pb-4">
                     <div className="flex flex-col justify-items-start space-y-4">
                         <h3 className="text-slate-800 dark:text-slate-300">About me:</h3>
                         <p className="text-slate-700 dark:text-slate-400">
@@ -102,10 +102,10 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-slate-500 dark:text-slate-400 p-4 text-center">
+            <div className="text-slate-500 dark:text-slate-400 mt-6 py-4 text-center">
                 <p>Build with Next.js, Tailwind.css, Motion.dev</p>
             </div>
-            <div className="text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-500 p-4 text-center">
+            <div className="text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-500 py-4 text-center">
                 <p>© {currentYear} - EL Websolutions</p>
             </div>
         </footer>

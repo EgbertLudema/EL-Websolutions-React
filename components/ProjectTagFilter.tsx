@@ -11,7 +11,7 @@ import { FaRegCalendarAlt, FaWrench } from "react-icons/fa";
 export default function TagFilter({ allProjects, allTags }: { allProjects: ProjectPost[]; allTags: string[] }) {
     const searchParams = useSearchParams();
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
-    
+
     useEffect(() => {
         const tagFromURL = searchParams.get("tag");
         if (tagFromURL) {
@@ -36,7 +36,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
     const sortedProjects = [...filteredProjects].sort((a, b) => {
         if (!a.date) return -1;
         if (!b.date) return 1;
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.date).getTime() - new Date(b.date).getTime();
     });
 
     return (
@@ -59,23 +59,26 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                     ))}
                 </div>
             </motion.div>
-            
-            {/* Grid for projects */}
-            <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {/* Grid for projects with height animation */}
+            <motion.div
+                layout
+                className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
                 <AnimatePresence>
                     {sortedProjects.length > 0 ? (
                         sortedProjects.map((project, index) => (
                             <motion.div
-                            key={project.slug}
-                            layout
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 200,
-                                damping: 20,
-                            }}
+                                key={project.slug}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 20,
+                                }}
                                 className="group relative dark:bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                             >
                                 <Link href={`/projects/${project.slug}`}>
@@ -87,16 +90,18 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                         />
                                     </div>
                                     <div className="p-5">
-                                        <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors">{project.title}</h3>
-                                        <p className="mb-4 line-clamp-2 text-slate-600 dark:text-slate-400">{project.description}</p>
+                                        <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-200 group-hover:text-primary transition-colors">
+                                            {project.title}
+                                        </h3>
+                                        <p className="mb-4 line-clamp-2 text-slate-600 dark:text-slate-400">
+                                            {project.description}
+                                        </p>
                                         <div className="flex flex-wrap gap-2 mb-3">
                                             {project.tags?.map((tag) => (
                                                 <span
                                                     key={tag}
                                                     className={`transition ${
-                                                        selectedTags.includes(tag)
-                                                            ? "tag-selected"
-                                                            : "tag"
+                                                        selectedTags.includes(tag) ? "tag-selected" : "tag"
                                                     }`}
                                                 >
                                                     {tag}
@@ -104,7 +109,11 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                                             ))}
                                         </div>
                                         <small className="text-xs text-slate-600 dark:text-slate-400 flex flex-row gap-1 items-center">
-                                            {project.status !== "In Progress" ? <FaRegCalendarAlt className="w-3 h-3" /> : <FaWrench className="w-3 h-3" />}
+                                            {project.status !== "In Progress" ? (
+                                                <FaRegCalendarAlt className="w-3 h-3" />
+                                            ) : (
+                                                <FaWrench className="w-3 h-3" />
+                                            )}
                                             {project.status}
                                         </small>
                                     </div>
@@ -117,13 +126,13 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="col-span-3 text-center text-slate-500 dark:text-slate-400"
+                            className="col-span-3 text-center text-slate-500 dark:text-slate-400 py-20"
                         >
                             No projects found matching the selected tags.
                         </motion.p>
                     )}
                 </AnimatePresence>
-            </div>
+            </motion.div>
         </div>
     );
 }
