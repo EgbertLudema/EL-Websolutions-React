@@ -1,48 +1,7 @@
 import * as motion from "motion/react-client";
 import Link from "next/link";
-import { FaCartShopping, FaWordpress, FaAndroid } from "react-icons/fa6";
-import { MdDesignServices } from "react-icons/md";
-import { TbWorldSearch } from "react-icons/tb";
-import { BsCode } from "react-icons/bs";
 
-const services = [
-  {
-    icon: MdDesignServices,
-    title: "Wireframing",
-    description: "Wireframing for your website or app",
-    price: "From €89",
-  },
-  {
-    icon: BsCode,
-    title: "Custom web development",
-    description: "A custom website. Build with next.js as front-end & wordpress as cms.",
-    price: "Depends on the project",
-  },
-  {
-    icon: FaWordpress,
-    title: "Wordpress website",
-    description: "Custom or theme-based websites built with Wordpress",
-    price: "From €449",
-  },
-  {
-    icon: FaCartShopping,
-    title: "Webshop",
-    description: "Custom or theme based webshops built with Shopify or Woocommerce",
-    price: "From €1299",
-  },
-  {
-    icon: TbWorldSearch,
-    title: "Basic SEO optimization",
-    description: "SEO for your website to rank higher on search engines",
-    price: "Depends on the project",
-  },
-  {
-    icon: FaAndroid,
-    title: "App Development",
-    description: "Android app development with Jetpack Compose",
-    price: "Contact for more",
-  }
-];
+import services from "@/data/services"
 
 export default function Services(){
     return(
@@ -73,9 +32,9 @@ export default function Services(){
                                 href="#"
                                 className="inline-flex items-center text-sm font-medium text-black dark:text-white hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
                                 >
-                                  <div>
+                                <div>
                                     Learn more
-                                  </div>
+                                </div>
                                     <svg
                                         className="ml-2 w-4 h-4"
                                         fill="none"

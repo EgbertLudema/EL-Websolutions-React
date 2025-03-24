@@ -25,7 +25,7 @@ export default async function HomePage() {
                         <Link href="/contact">
                             <div className="px-8 py-3 gradient-btn shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition">Get in touch</div>
                         </Link>
-                        <Link href="/project">
+                        <Link href="/projects">
                             <div className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:bg-white hover:bg-opacity-20 shadow-sm hover:scale-[102%] hover:-translate-y-1 hover:shadow-md transition">View projects</div>
                         </Link>
                     </div>

@@ -5,7 +5,6 @@ import * as motion from "motion/react-client";
 import { useState } from "react";
 import Link from "next/link";
 import { BlogPost } from "@/lib/server/getBlogs";
-import { FaC } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 
 export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[]; allTags: string[] }) {
