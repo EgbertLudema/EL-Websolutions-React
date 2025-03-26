@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { BlogPost } from "@/lib/server/getBlogs";
 import { FaCalendarAlt } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa6";
 
 export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[]; allTags: string[] }) {
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -36,7 +37,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     return (
         <div>
             {/* Animated tag filter */}
-            <motion.div layout className="mt-4 flex flex-wrap justify-center gap-4">
+            <motion.div layout className="mt-4 flex flex-wrap justify-start gap-4">
                 {allTags.map((tag) => (
                     <motion.button
                         key={tag}
@@ -66,59 +67,74 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                 <AnimatePresence>
                     {sortedBlogs.length > 0 ? (
                         sortedBlogs.map((blog) => (
-                            <motion.div
-                                key={blog.slug}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{
-                                    type: "spring",
-                                    stiffness: 200,
-                                    damping: 20,
-                                }}
-                                className="p-4 rounded-md shadow w-full aspect-square flex flex-col justify-between 
-                                bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white border border-neutral-300 dark:border-neutral-600"
-                            >
-                                <h2 className="text-xl font-semibold">
-                                    <Link href={`/blogs/${blog.slug}`} className="hover:underline">
-                                        {blog.title}
-                                    </Link>
-                                </h2>
-                                <p className="flex-grow">{blog.description}</p>
-                                <small className="flex flex-row gap-1 items-center">
-                                    <FaCalendarAlt />
-                                    {new Date(blog.date).toLocaleDateString("en-GB", {
-                                        day: "2-digit",
-                                        month: "short",
-                                        year: "numeric",
-                                    })}
-                                </small>
+                            <Link key={blog.slug} href={`/blog/${blog.slug}`} className="group w-full h-full">
+                                <motion.article
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                                    className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full"
+                                >
+                                    <div className="aspect-video overflow-hidden">
+                                        <img
+                                            src={blog.thumbnail?.[0] || "/placeholder.jpg"}
+                                            alt={blog.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">
+                                            <span className="flex items-center gap-1">
+                                                <FaCalendarAlt className="w-4 h-4" />
+                                                {blog.date
+                                                    ? new Date(blog.date).toLocaleDateString("nl-NL", {
+                                                        day: "numeric",
+                                                        month: "long",
+                                                        year: "numeric",
+                                                    })
+                                                    : "In progress"}
+                                            </span>
+                                            <span className="flex items-center gap-1">
+                                                <FaRegUser className="w-4 h-4" />
+                                                {blog.author || "Unknown"}
+                                            </span>
+                                        </div>
+                                        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                                            {blog.title}
+                                        </h3>
+                                        <p className="text-slate-600 dark:text-slate-400 mb-4 flex-grow">
+                                            {blog.description}
+                                        </p>
 
-
-                                {/* Animated tags inside each blog */}
-                                <motion.div layout className="mt-2 flex gap-2">
-                                    {blog.tags?.map((tag) => (
-                                        <motion.button
-                                            key={tag}
-                                            layout
-                                            onClick={() => toggleTag(tag)}
-                                            className={`transition ${
-                                                selectedTags.includes(tag)
-                                                    ? "tag-selected"
-                                                    : "tag"
-                                            }`}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 20,
-                                            }}
-                                        >
-                                            {tag}
-                                        </motion.button>
-                                    ))}
-                                </motion.div>
-                            </motion.div>
+                                        {/* Tags inside blog card */}
+                                        <motion.div layout className="flex flex-wrap gap-2 mt-auto">
+                                            {blog.tags?.map((tag) => (
+                                                <motion.button
+                                                    key={tag}
+                                                    layout
+                                                    onClick={(e) => {
+                                                        e.preventDefault(); // Prevent link navigation
+                                                        toggleTag(tag);
+                                                    }}
+                                                    className={`transition ${
+                                                        selectedTags.includes(tag)
+                                                            ? "tag-selected"
+                                                            : "tag-blog"
+                                                    }`}
+                                                    transition={{
+                                                        type: "spring",
+                                                        stiffness: 300,
+                                                        damping: 20,
+                                                    }}
+                                                >
+                                                    {tag}
+                                                </motion.button>
+                                            ))}
+                                        </motion.div>
+                                    </div>
+                                </motion.article>
+                            </Link>
                         ))
                     ) : (
                         <motion.p
@@ -126,7 +142,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="text-neutral-700 dark:text-neutral-400"
+                            className="text-neutral-700 dark:text-neutral-400 col-span-full text-center mt-10"
                         >
                             No blogs found matching the selected tags.
                         </motion.p>

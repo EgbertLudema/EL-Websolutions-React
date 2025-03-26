@@ -17,7 +17,7 @@ const services = [
         icon: LuLaptop,
         title: "Custom web development",
         link: "/services/custom-web-development",
-        description: "A custom website. Built with Next.js as front-end & WordPress as CMS.",
+        description: "A custom website. Built with Next.js as front-end & WordPress as CMS",
         text: "Custom web development involves building websites tailored to your specific needs. Unlike template-based solutions, custom development ensures unique designs, optimized performance, and flexible functionality that align with your business goals. By leveraging Next.js for the front-end and WordPress as a CMS, I create scalable and SEO-friendly websites.",
         price: "Depends on the project",
         tags: ["development", "custom", "scalable", "Next.js", "WordPress", "CMS"],
@@ -45,7 +45,7 @@ const services = [
     },
     {
         icon: TbWorldSearch,
-        title: "Basic SEO optimization",
+        title: "Basic SEO",
         link: "/services/seo",
         description: "SEO for your website to rank higher on search engines",
         text: "Search Engine Optimization (SEO) improves your website’s visibility in search engine results. My SEO services include keyword optimization, site speed improvements, mobile-friendliness, and metadata enhancements to help your website rank higher and attract more organic traffic.",
@@ -69,7 +69,7 @@ const services = [
         link: "/services/maintenance-support",
         description: "Maintenance and support for your website or app",
         text: "I provide ongoing maintenance and support services to ensure your website or app runs smoothly and stays up-to-date. Whether it's fixing bugs, adding new features, or updating content, I offer reliable support to keep your digital presence in top shape.",
-        price: "From €29/month",
+        price: "From €19/month",
         tags: ["maintenance", "support", "updates", "custom plugins"],
         image: "path/to/image/",
     }

@@ -78,6 +78,13 @@
     .tag{
         @apply text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-full px-2 py-1 text-xs;
     }
+    .tag-secondair{
+        @apply text-white rounded-full px-2 py-1 text-sm;
+        background: var(--blue);
+    }
+    .tag-blog{
+        @apply text-slate-600 dark:text-slate-400 bg-slate-200 dark:bg-slate-600 rounded-full px-2 py-1 text-xs;
+    }
     .tag-big{
         @apply text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 rounded-full px-3 py-1 text-sm;
     }

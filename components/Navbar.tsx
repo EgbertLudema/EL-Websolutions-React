@@ -2,16 +2,26 @@
 
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
-import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { IoIosArrowDown } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Navbar() {
-    const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
-    const [servicesOpen, setServicesOpen] = useState(false); // State for services submenu
+    const [servicesOpen, setServicesOpen] = useState(false);
+    const [isServicesHovered, setIsServicesHovered] = useState(false);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const submenuItems = [
+        { label: "Wireframing", href: "/services/wireframing" },
+        { label: "Wordpress websites", href: "/services/wordpress" },
+        { label: "Custom websites", href: "/services/custom-web-development" },
+        { label: "Webshops", href: "/services/webshop" },
+        { label: "SEO", href: "/services/seo" },
+      ];
 
     // Ensure theme is loaded before rendering
     useEffect(() => {
@@ -45,18 +55,59 @@ export default function Navbar() {
                     </Link>
 
                     {/* Services Menu with Submenu */}
-                    <div className="relative group">
-                        <Link href="/services" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
-                            Services ▾
+                    <div
+                        className="relative py-2"
+                        onMouseEnter={() => setIsServicesHovered(true)}
+                        onMouseLeave={() => {
+                            setIsServicesHovered(false);
+                            setHoveredIndex(null);
+                        }}
+                    >
+                        <Link
+                            href="/services"
+                            className="flex flex-row gap-2 items-center text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary"
+                        >
+                            Services
+                            <IoIosArrowDown className={`transition ${isServicesHovered ? "rotate-180 text-primary" : ""}`} />
                         </Link>
-                        <div className="absolute left-0 mt-2 hidden group-hover:flex flex-col bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden w-48">
-                            <Link href="/services/web-development" className="px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-800">
-                                Web Development
-                            </Link>
-                            {/* TODO: */}
-                            {/* Add more submenu items */}
-                            {/* FIX hover */}
-                        </div>
+
+                        {/* Submenu */}
+                        {isServicesHovered && (
+                            <div className="absolute left-0 mt-2 w-max z-50">
+                            <div className="relative flex flex-col p-2 bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden">
+                                {/* Highlight */}
+                                <AnimatePresence>
+                                    {hoveredIndex !== null && (
+                                        <motion.div
+                                            layout
+                                            layoutId="highlight"
+                                            className="absolute left-2 right-2 h-[40px] bg-gray-100 dark:bg-slate-800 rounded-md z-0"
+                                            style={{ top: `calc(0.5rem + ${hoveredIndex * 40}px)` }}
+                                            initial={{ opacity: 0, scale: 0.95 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 300,
+                                                damping: 25,
+                                            }}
+                                        />
+                                    )}
+                                </AnimatePresence>
+
+                                {/* Items */}
+                                {submenuItems.map((item, index) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    onMouseEnter={() => setHoveredIndex(index)}
+                                    className="relative z-10 p-2 whitespace-nowrap text-neutral-700 dark:text-neutral-300 transition"
+                                >
+                                    {item.label}
+                                </Link>
+                                ))}
+                            </div>
+                            </div>
+                        )}
                     </div>
 
                     <Link href="/projects" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
@@ -82,40 +133,55 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden mt-2 space-y-2 text-center bg-white dark:bg-slate-900 shadow-md py-4">
-                    <Link href="/" className="block text-neutral-700 dark:text-neutral-300 hover:underline">
+                <div className="md:hidden mt-2 text-center bg-white dark:bg-slate-900 shadow-md py-4 space-y-2">
+                    <Link href="/" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
                         Home
                     </Link>
 
                     {/* Services Dropdown for Mobile */}
                     <div className="relative">
-                        <button className="block w-full text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setServicesOpen(!servicesOpen)}>
-                            Services ▾
+                        <button
+                            className="flex justify-center items-center gap-1 w-full text-neutral-700 dark:text-neutral-300 hover:underline"
+                            onClick={() => setServicesOpen(!servicesOpen)}
+                        >
+                            Services
+                            <IoIosArrowDown className={`transition-transform duration-200 ${servicesOpen ? "rotate-180 text-primary" : ""}`} />
                         </button>
                         {servicesOpen && (
                             <div className="mt-2 flex flex-col bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden w-full">
-                                <Link href="/services/web-development" className="px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-800">
-                                    Web Development
-                                </Link>
-                                {/* TODO: */}
-                                {/* Add more submenu items */}
-                                {/* FIX hover */}
+                                {submenuItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className="px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                                        onClick={() => {
+                                            setIsOpen(false);
+                                            setServicesOpen(false);
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ))}
                             </div>
                         )}
                     </div>
 
-                    <Link href="/projects" className="block text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/projects" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
                         Projects
                     </Link>
-                    <Link href="/blogs" className="block text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/blogs" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
                         Blogs
                     </Link>
-                    <Link href="/about" className="block text-neutral-700 dark:text-neutral-300 hover:underline">
+                    <Link href="/about" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
                         About
                     </Link>
-                    <ThemeToggle />
-                    <Link href="/contact">
-                        <div className="py-2 px-3 gradient-btn">Get in touch</div>
+
+                    <div className="flex justify-center">
+                        <ThemeToggle />
+                    </div>
+
+                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                        <div className="py-2 px-3 gradient-btn inline-block">Get in touch</div>
                     </Link>
                 </div>
             )}
