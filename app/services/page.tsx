@@ -11,7 +11,7 @@ import FAQServices from "@/components/services/FAQ";
 export default function ServicesPage() {
     return (
         <div>
-            <main className="container mt-[140px] relative flex flex-col justify-center items-center py-8">
+            <main className="container mt-[100px] relative flex flex-col justify-center items-center py-8">
                 <h1 className="text-center">Professional Services</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">
                     Comprehensive digital solutions designed to help your business thrive.

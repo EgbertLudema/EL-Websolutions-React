@@ -23,7 +23,7 @@ export default async function BlogsPage() {
     const recentBlogs = sortedBlogs.slice(0, 2);
 
     return (
-        <main className="container py-8 min-h-screen mt-[140px]">
+        <main className="container py-8 min-h-screen mt-[100px]">
             <Breadcrumbs />
             <h1 className="text-3xl font-bold text-black dark:text-white">Blogs</h1>
 

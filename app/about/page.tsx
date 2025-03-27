@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function AboutPage() {
     return (
         <div>
-            <main className="container mt-[140px] relative flex flex-col justify-center items-center py-8">
+            <main className="container mt-[100px] relative flex flex-col justify-center items-center py-8">
                 <Breadcrumbs />
                 <h1 className="text-center">About me</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">Get to know the developer behind the code. Passionate about creating beautiful, functional digital experiences.</p>
