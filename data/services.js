@@ -8,10 +8,10 @@ const services = [
         title: "Wireframing",
         link: "/services/wireframing",
         description: "Wireframing for your website or app",
-        text: "Wireframing is a way to design a website service at the structural level. A wireframe is commonly used to lay out content and functionality on a page. Wireframes are used early in the development process to establish the basic structure of a page before visual design and content is added.",
+        text: "Wireframing is a crucial step in the design process that allows you to visualize the layout and functionality of your website or application before diving into the actual development. It serves as a blueprint, helping you to plan the user experience and interface effectively. By creating wireframes, you can identify potential issues early on, ensuring a smoother development process and a more user-friendly end product.",
         price: "From €59",
         tags: ["design", "website structure"],
-        image: "path/to/image/",
+        image: "/images/services/image_1.jpg",
     },
     {
         icon: LuLaptop,

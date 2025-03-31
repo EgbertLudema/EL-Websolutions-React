@@ -61,9 +61,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                                                     className="px-3 py-1 tag hover:scale-105 transition"
                                                 >
                                                     <Link href={`/projects?tag=${encodeURIComponent(tag)}`}>
-                                                        <div>
-                                                            {tag}
-                                                        </div>
+                                                        {tag}
                                                     </Link>
                                                 </div>
                                             ))}

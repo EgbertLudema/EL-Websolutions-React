@@ -13,11 +13,9 @@ export default function CTA() {
                     <p className="text-center text-white mb-8">
                         Please take a few minutes to tell me about it.
                     </p>
-                    <Link href="/contact">
-                        <div className="white-btn dark:gradient-btn shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-none flex flex-row items-center gap-2">
-                            Get in touch
-                            <FaArrowRight/>
-                        </div>
+                    <Link href="/contact" className="white-btn dark:gradient-btn shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-none flex flex-row items-center gap-2">
+                        Get in touch
+                        <FaArrowRight/>
                     </Link>
                 </div>
             </div>
