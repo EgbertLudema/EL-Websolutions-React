@@ -33,7 +33,7 @@ export default function Services(){
                             {/* Bottom Content pinned to bottom */}
                             <div className="mt-auto pt-4 border-t border-border">
                                 <Link
-                                    href="#"
+                                    href={service.link}
                                     className="inline-flex items-center text-sm font-medium text-black dark:text-white hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
                                 >
                                     <div>Learn more</div>

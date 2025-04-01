@@ -74,42 +74,51 @@ export default function Navbar() {
                         </Link>
 
                         {/* Submenu */}
-                        {isServicesHovered && (
-                            <div className="absolute left-0 mt-2 w-max z-50">
-                            <div className="relative flex flex-col p-2 bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden">
-                                {/* Highlight */}
-                                <AnimatePresence>
+                        <AnimatePresence>
+                            {isServicesHovered && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute left-0 mt-2 w-max z-50"
+                                >
+                                <div className="relative flex flex-col p-2 bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden">
+                                    {/* Highlight */}
+                                    <AnimatePresence>
                                     {hoveredIndex !== null && (
                                         <motion.div
-                                            layout
-                                            layoutId="highlight"
-                                            className="absolute left-2 right-2 h-[40px] bg-gray-100 dark:bg-slate-800 rounded-md z-0"
-                                            style={{ top: `calc(0.5rem + ${hoveredIndex * 40}px)` }}
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 25,
-                                            }}
+                                        layout
+                                        layoutId="highlight"
+                                        className="absolute left-2 right-2 h-[40px] bg-gray-100 dark:bg-slate-800 rounded-md z-0"
+                                        style={{ top: `calc(0.5rem + ${hoveredIndex * 40}px)` }}
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 25,
+                                        }}
                                         />
                                     )}
-                                </AnimatePresence>
+                                    </AnimatePresence>
 
-                                {/* Items */}
-                                {submenuItems.map((item, index) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onMouseEnter={() => setHoveredIndex(index)}
-                                    className="relative z-10 p-2 whitespace-nowrap text-neutral-700 dark:text-neutral-300 transition"
-                                >
-                                    {item.label}
-                                </Link>
-                                ))}
-                            </div>
-                            </div>
-                        )}
+                                    {/* Items */}
+                                    {submenuItems.map((item, index) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        onMouseEnter={() => setHoveredIndex(index)}
+                                        className="relative z-10 p-2 whitespace-nowrap text-neutral-700 dark:text-neutral-300 transition"
+                                    >
+                                        {item.label}
+                                    </Link>
+                                    ))}
+                                </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
 
                     <Link href="/projects" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">

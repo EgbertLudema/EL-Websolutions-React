@@ -31,7 +31,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group rounded-md overflow-hidden shadow-md w-full bg-slate-100 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
+                            className="group rounded-md overflow-hidden shadow-md w-full bg-slate-50 dark:bg-slate-800 text-black dark:text-white hover:shadow-lg transition"
                         >
                             <Link href={`/projects/${project.slug}`} className="h-full flex flex-col"> 
                                 {/* Thumbnail */}
