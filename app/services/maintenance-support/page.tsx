@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import ServiceHero from "@/components/services/ServiceHero";
 
-export default function WordpressPage() {
+export default function MaintenanceSupportPage() {
     const faqData = [
         {
           question: "What is your development process like?",
@@ -31,14 +31,14 @@ export default function WordpressPage() {
         }
     ];
 
-    const wordpress = services.find(s => s.title === "Wordpress website");
+    const maintenanceSupport = services.find(s => s.title === "Maintenance & Support");
 
-    if (!wordpress) return null;
+    if (!maintenanceSupport) return null;
 
 
     return (
         <>
-            <ServiceHero service={wordpress} />
+            <ServiceHero service={maintenanceSupport} />
             <GoogleReviews />
             <USPS />
             <FAQ questions={faqData} />

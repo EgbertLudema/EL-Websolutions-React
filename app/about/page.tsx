@@ -89,7 +89,7 @@ export default function AboutPage() {
                 </div>
             </section>
             <section className="container mt-12">
-                <h2 className="text-center">Personal project</h2>
+                <h2 className="text-center">Personal projects</h2>
             </section>
             <section className="container mt-12">
                 <h2 className="text-center">My values</h2>

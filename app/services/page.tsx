@@ -39,7 +39,7 @@ export default function ServicesPage() {
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">
                     Comprehensive digital solutions designed to help your business thrive.
                 </p>
-                <div className="py-12 flex flex-col gap-12">
+                <div className="py-12 flex flex-col gap-20">
                     {services.map((service, index) => (
                         <motion.div 
                             key={service.title} 
@@ -48,15 +48,15 @@ export default function ServicesPage() {
                             transition={{ duration: 0.5}}
                             className={`flex flex-row gap-8 items-center ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
                         >
-                            <div className="w-1/2">
+                            <div className="w-1/2 rounded-lg overflow-hidden shadow-lg">
                                 <img src={service.image} alt={`thumbnail of ${service.title}`} />
                             </div>
-                            <div className="w-1/2 flex flex-col items-start gap-4">
+                            <div className="w-1/2 flex flex-col items-start gap-8">
                                 <h2 className="text-3xl">{service.title}</h2>
                                 <p className="text-slate-600 dark:text-slate-400">{service.text}</p>
                                 <ul className="flex flex-row flex-wrap gap-3">
                                     {service.tags.map((tag) => (
-                                        <li key={tag} className="tag-big">
+                                        <li key={tag} className="tag-big lowercase">
                                             <span>{tag}</span>
                                         </li>
                                     ))}

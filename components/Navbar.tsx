@@ -17,10 +17,12 @@ export default function Navbar() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const submenuItems = [
         { label: "Wireframing", href: "/services/wireframing" },
-        { label: "Wordpress websites", href: "/services/wordpress" },
         { label: "Custom websites", href: "/services/custom-web-development" },
+        { label: "Wordpress websites", href: "/services/wordpress" },
         { label: "Webshops", href: "/services/webshop" },
-        { label: "SEO", href: "/services/seo" },
+        { label: "Basic SEO", href: "/services/seo" },
+        { label: "App development", href: "/services/app-development" },
+        { label: "Maintenance & support", href: "/services/maintenance-support" },
       ];
 
     // Ensure theme is loaded before rendering

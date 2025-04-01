@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import services from "@/data/services";
 import GoogleReviews from "@/components/googleReviews";
 import USPS from "@/components/homepage/usps";
@@ -8,7 +7,7 @@ import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import ServiceHero from "@/components/services/ServiceHero";
 
-export default function ServicesPage() {
+export default function Wireframing() {
     const faqData = [
         {
           question: "What is your development process like?",
