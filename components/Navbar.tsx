@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,6 +13,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+    const toggleButtonRef = useRef<HTMLButtonElement>(null);
     const [isServicesHovered, setIsServicesHovered] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const submenuItems = [
@@ -39,6 +41,36 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Handle click outside of mobile menu to close it
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Node;
+          
+            if (
+                mobileMenuRef.current &&
+                !mobileMenuRef.current.contains(target) &&
+                toggleButtonRef.current &&
+                !toggleButtonRef.current.contains(target)
+            ) {
+                setIsOpen(false);
+            }
+        }
+    
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        if (!isOpen) {
+            setServicesOpen(false);
+        }
+    
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen]);      
 
     if (!mounted) return null;
 
@@ -130,72 +162,145 @@ export default function Navbar() {
                     <Link href="/about" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         About
                     </Link>
-                    <ThemeToggle />
+                    <div className="hidden md:block">
+                        <ThemeToggle />
+                    </div>
                     <Link href="/contact">
                         <div className="py-2 px-3 gradient-btn">Get in touch</div>
                     </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-black dark:text-white" onClick={() => setIsOpen(!isOpen)}>
-                    ☰
-                </button>
+                <div className="md:hidden flex items-center gap-4">
+                    <ThemeToggle />
+                    <button
+                        ref={toggleButtonRef}
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        aria-label="Toggle menu"
+                        className="relative w-6 h-5 flex flex-col justify-between items-center z-[100]"
+                    >
+                        {/* Top Bar */}
+                        <motion.span
+                            animate={isOpen ? { rotate: 45, y: 8.5 } : { rotate: 0, y: 0 }}
+                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            className="block h-[3px] w-full bg-slate-700 dark:bg-slate-200 rounded origin-center"
+                        />
+                        {/* Middle Bar */}
+                        <motion.span
+                            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                            transition={{ duration: 0.2 }}
+                            className="block h-[3px] w-full bg-slate-700 dark:bg-slate-200 rounded origin-center"
+                        />
+                        {/* Bottom Bar */}
+                        <motion.span
+                            animate={isOpen ? { rotate: -45, y: -8.5 } : { rotate: 0, y: 0 }}
+                            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            className="block h-[3px] w-full bg-slate-700 dark:bg-slate-200 rounded origin-center"
+                        />
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden mt-2 text-center bg-white dark:bg-slate-900 shadow-md py-4 space-y-2">
-                    <Link href="/" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
-                        Home
-                    </Link>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        ref={mobileMenuRef}
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                        className="fixed top-0 right-0 w-3/4 sm:w-1/2 h-screen z-50 bg-white dark:bg-slate-900 shadow-lg px-6 py-6 flex flex-col after:absolute after:top-0 after:-right-[20px] after:w-[22px] after:h-full after:bg-white dark:after:bg-slate-900"
+                    >
 
-                    {/* Services Dropdown for Mobile */}
-                    <div className="relative">
-                        <button
-                            className="flex justify-center items-center gap-1 w-full text-neutral-700 dark:text-neutral-300 hover:underline"
-                            onClick={() => setServicesOpen(!servicesOpen)}
+                    {/* Menu Items */}
+                    <nav className="flex flex-col gap-1 flex-grow">
+                        <Link
+                        href="/"
+                        className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                        onClick={() => setIsOpen(false)}
                         >
-                            Services
-                            <IoIosArrowDown className={`transition-transform duration-200 ${servicesOpen ? "rotate-180 text-primary" : ""}`} />
+                        Home
+                        </Link>
+
+                        {/* Services with submenu */}
+                        <div className="w-full">
+                        <button
+                            className="w-full flex justify-between items-center py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                            onClick={(e) => {
+                            e.stopPropagation();
+                            setServicesOpen(!servicesOpen);
+                            }}
+                        >
+                            <span>Services</span>
+                            <IoIosArrowDown
+                            className={`transition-transform duration-200 ${servicesOpen ? "rotate-180 text-primary" : "text-neutral-500"}`}
+                            />
                         </button>
-                        {servicesOpen && (
-                            <div className="mt-2 flex flex-col bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden w-full">
+
+                        <AnimatePresence>
+                            {servicesOpen && (
+                            <motion.div
+                                key="submenu"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden flex flex-col gap-1 pl-4 border-l border-gray-200 dark:border-slate-700 mt-1"
+                            >
                                 {submenuItems.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        className="px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-800"
-                                        onClick={() => {
-                                            setIsOpen(false);
-                                            setServicesOpen(false);
-                                        }}
-                                    >
-                                        {item.label}
-                                    </Link>
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="py-2 px-2 rounded text-neutral-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                                    onClick={() => {
+                                    setIsOpen(false);
+                                    setServicesOpen(false);
+                                    }}
+                                >
+                                    {item.label}
+                                </Link>
                                 ))}
-                            </div>
-                        )}
-                    </div>
+                            </motion.div>
+                            )}
+                        </AnimatePresence>
+                        </div>
 
-                    <Link href="/projects" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
+                        <Link
+                        href="/projects"
+                        className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                        onClick={() => setIsOpen(false)}
+                        >
                         Projects
-                    </Link>
-                    <Link href="/blogs" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
+                        </Link>
+
+                        <Link
+                        href="/blogs"
+                        className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                        onClick={() => setIsOpen(false)}
+                        >
                         Blogs
-                    </Link>
-                    <Link href="/about" className="block text-neutral-700 dark:text-neutral-300 hover:underline" onClick={() => setIsOpen(false)}>
+                        </Link>
+
+                        <Link
+                        href="/about"
+                        className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                        onClick={() => setIsOpen(false)}
+                        >
                         About
-                    </Link>
+                        </Link>
+                    </nav>
 
-                    <div className="flex justify-center">
-                        <ThemeToggle />
+                    {/* Contact Button */}
+                    <div className="mt-6">
+                        <Link href="/contact" onClick={() => setIsOpen(false)}>
+                        <div className="w-full py-3 text-center gradient-btn text-white rounded shadow">
+                            Get in touch
+                        </div>
+                        </Link>
                     </div>
-
-                    <Link href="/contact" onClick={() => setIsOpen(false)}>
-                        <div className="py-2 px-3 gradient-btn inline-block">Get in touch</div>
-                    </Link>
-                </div>
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }

@@ -16,12 +16,12 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
   const Icon = service.icon;
 
   return (
-    <main className="container mt-[100px] relative flex flex-row gap-12 py-8">
+    <main className="container mt-[100px] relative flex flex-col md:flex-row gap-12 py-8">
         <div className="w-full md:w1/2">
-            <div className="relative z-20 gradient-bg rounded-lg p-4 flex items-center justify-center w-16 h-16 shadow-md">
+            <div className="absolute top-0 l-0 z-20 gradient-bg rounded-lg p-4 flex items-center justify-center w-16 h-16 shadow-md">
                 <Icon className="w-10 h-10 text-white" />
             </div>
-            <div className="relative z-10 -top-12 left-4">
+            <div className="relative z-10 -mt-4 ml-4">
               {service.image && (
                   <img
                   src={service.image}
