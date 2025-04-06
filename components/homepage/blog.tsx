@@ -26,7 +26,7 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
 
     return (
         <section className="py-20 bg-background">
-            <div className="container mx-auto px-6">
+            <div className="container flex flex-col items-center">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Blog</span>
                     <h2 className="text-3xl md:text-4xl font-bold mt-2">Latest Articles</h2>
@@ -35,7 +35,7 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
                     {recentBlogs.map((blog, index) => (
                         <Link key={blog.slug} href={`/blog/${blog.slug}`} className="group">
                             <motion.article
@@ -73,6 +73,11 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                         </Link>
                     ))}
                 </div>
+                <Link href="/blogs">
+                    <div className="mt-8 py-3 px-6 primary-btn">   
+                        View all blogs
+                    </div>
+                </Link>
             </div>
         </section>
     );

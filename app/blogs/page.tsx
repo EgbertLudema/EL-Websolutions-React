@@ -1,6 +1,5 @@
 import { getAllBlogs, BlogPost } from "@/lib/server/getBlogs";
 import BlogTagFilter from "@/components/BlogTagFilter";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
 
@@ -24,7 +23,6 @@ export default async function BlogsPage() {
 
     return (
         <main className="container py-8 min-h-screen mt-[100px]">
-            <Breadcrumbs />
             <h1 className="text-3xl font-bold text-black dark:text-white">Blogs</h1>
 
             <section className="mt-8">

@@ -26,11 +26,11 @@
 
 @layer base {
     h1 {
-        @apply text-5xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-primary;
+        @apply md:text-5xl text-4xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-primary;
         -webkit-text-fill-color: transparent;
     }
     h2 {
-      @apply text-4xl font-semibold;
+      @apply md:text-4xl text-3xl font-semibold;
     }
     h3{
         @apply text-xl font-semibold;

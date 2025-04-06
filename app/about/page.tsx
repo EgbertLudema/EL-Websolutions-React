@@ -8,12 +8,11 @@ export default function AboutPage() {
     return (
         <div>
             <main className="container mt-[100px] relative flex flex-col justify-center items-center py-8">
-                <Breadcrumbs />
                 <h1 className="text-center">About me</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">Get to know the developer behind the code. Passionate about creating beautiful, functional digital experiences.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     {/* left column */}
-                    <div>
+                    <div className="order-2 md:order-1">
                         <div className='flex items-center gap-4 py-4'> 
                             <Draggable /> <h2 className="text-3xl font-bold text-black dark:text-white">Hi, I am Egbert Ludema</h2>
                         </div>
@@ -28,7 +27,7 @@ export default function AboutPage() {
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
                             Currently I'm focussed on creating headless Wordpress website with Next.js.
                         </p>
-                        <div className="flex flex-row gap-3 pt-8">
+                        <div className="flex flex-row flex-wrap gap-3 pt-8">
                             <span className="px-3 py-1 tag-selected">React</span>
                             <span className="px-3 py-1 tag-selected">Wordpress</span>
                             <span className="px-3 py-1 tag-selected">Jetpack Compose</span>
@@ -46,7 +45,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* right column */}
-                    <div className="flex justify-end">
+                    <div className="flex justify-end order-1 md:order-2">
                         <Image 
                             className="bg-slate-200 dark:bg-slate-800 transition-all duration-100 rounded-lg shadow-lg" 
                             src="/images/Portret_Egbert_NoBG.png" 
@@ -94,7 +93,7 @@ export default function AboutPage() {
             <section className="container mt-12">
                 <h2 className="text-center">My values</h2>
             </section>
-            <section className="container mt-12 rounded-lg overflow-clip">
+            <section className="xl:container mt-12 rounded-lg overflow-clip">
                 <CTA />
             </section>
         </div>

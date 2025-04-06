@@ -216,9 +216,9 @@ export default function Navbar() {
                     {/* Menu Items */}
                     <nav className="flex flex-col gap-1 flex-grow">
                         <Link
-                        href="/"
-                        className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
-                        onClick={() => setIsOpen(false)}
+                            href="/"
+                            className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+                            onClick={() => setIsOpen(false)}
                         >
                         Home
                         </Link>
@@ -232,7 +232,12 @@ export default function Navbar() {
                             setServicesOpen(!servicesOpen);
                             }}
                         >
-                            <span>Services</span>
+                            <Link
+                                href="/services"
+                                onClick={() => setIsOpen(false)}
+                            >
+                            Services
+                            </Link>
                             <IoIosArrowDown
                             className={`transition-transform duration-200 ${servicesOpen ? "rotate-180 text-primary" : "text-neutral-500"}`}
                             />

@@ -24,7 +24,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                 <p className="text-center sub-title mb-6">Portfolio</p>
                 <h2 className="text-center mb-12">Featured Projects</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center items-stretch">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
                     {recentProjects.map((project, index) => (   
                         <motion.div
                             key={project.slug}
@@ -72,7 +72,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                         </motion.div>
                     ))}
                 </div>
-                <Link href="/project">
+                <Link href="/projects">
                     <div className="mt-8 py-3 px-6 primary-btn">   
                         View all projects
                     </div>
