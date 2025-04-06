@@ -24,13 +24,15 @@ export default async function BlogPage({ params }: { params: { slug: string } })
     });
 
     return (
-        <div className="prose mx-auto p-6">
-            <Breadcrumbs />
-            <h1 className="text-3xl font-bold">{blog.data.title}</h1>
-            <p className="text-neutral-600">{blog.data.description}</p>
-            <small>{blog.data.date}</small>
+        <main>
+            <div className="container mt-[140px] py-12 flex flex-col items-start gap-4">
 
-            {content}
-        </div>
+                <Breadcrumbs />
+
+                <div className="flex flex-col gap-2">
+                    {content}
+                </div>
+            </div>
+        </main>
     );
 }

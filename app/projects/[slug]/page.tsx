@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     });
 
     return (
-        <main className="article">
+        <main>
             <div className="container mt-[140px] py-12 flex flex-col items-start gap-4">
 
                 <Breadcrumbs />

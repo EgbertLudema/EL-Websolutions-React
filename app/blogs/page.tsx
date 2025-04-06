@@ -29,7 +29,7 @@ export default async function BlogsPage() {
                 <h2 className="text-2xl font-semibold mb-4">Featured Articles</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {recentBlogs.map((blog) => (
-                        <Link key={blog.slug} href={`/blog/${blog.slug}`} className="group">
+                        <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group">
                             <article className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full">
                                 <div className="aspect-video overflow-hidden">
                                     <img

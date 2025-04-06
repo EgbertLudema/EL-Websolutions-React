@@ -6,6 +6,7 @@ import USPS from "@/components/homepage/usps";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import ServiceHero from "@/components/services/ServiceHero";
+import ServiceDetails from "@/components/services/ServiceDetails";
 
 export default function SEOPage() {
     const faqData = [
@@ -38,7 +39,10 @@ export default function SEOPage() {
 
     return (
         <>
-            <ServiceHero service={seo} />
+            <div className="bg-gradient-to-b from-primary/10 to-white dark:from-primary/10 dark:to-slate-900/10">
+                <ServiceHero service={seo} />
+                <ServiceDetails service={seo} />
+            </div>            
             <GoogleReviews />
             <USPS />
             <FAQ questions={faqData} />
