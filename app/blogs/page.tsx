@@ -33,7 +33,7 @@ export default async function BlogsPage() {
                             <article className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full">
                                 <div className="aspect-video overflow-hidden">
                                     <img
-                                        src={blog.thumbnail?.[0] || "/placeholder.jpg"}
+                                        src={blog.thumbnail || "/placeholder.jpg"}
                                         alt={blog.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     />

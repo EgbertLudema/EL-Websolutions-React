@@ -93,8 +93,8 @@ export default function AboutPage() {
 
     return (
         <div>
-            <main className="container mt-[100px] relative flex flex-col justify-center items-center py-20">
-                <h1 className="text-center">Let's Work Together</h1>
+            <main className="container mt-[100px] relative flex flex-col justify-center items-center py-12">
+                <h1 className="text-center leading-snug">Let's Work Together</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.</p>
                 <div className="max-w-[800px] w-full bg-background rounded-2xl shadow-lg overflow-hidden">
                     <div className="grid md:grid-cols-2">
@@ -171,8 +171,6 @@ export default function AboutPage() {
                                 <motion.button
                                     type="submit"
                                     className="w-full px-8 py-3 gradient-btn"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
                                 >
                                     Send Message
                                 </motion.button>

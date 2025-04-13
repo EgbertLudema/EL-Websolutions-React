@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
 import { BlogPost } from "@/lib/server/getBlogs";
+import BlogCard from "../Blogs/BlogCard";
 
 function formatDate(dateString?: string) {
     if (!dateString) return "In progress";
@@ -36,41 +37,11 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
-                    {recentBlogs.map((blog, index) => (
-                        <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group">
-                            <motion.article
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full"
-                            >
-                                <div className="aspect-video overflow-hidden">
-                                    <img
-                                        src={blog.thumbnail?.[0] || "/placeholder.jpg"}
-                                        alt={blog.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">
-                                        <span className="flex items-center">
-                                            <FaRegCalendarAlt className="w-4 h-4 mr-1" />
-                                            {formatDate(blog.date)}
-                                        </span>
-                                        <span className="flex items-center">
-                                            <FaRegUser className="w-4 h-4 mr-1" />
-                                            {blog.author || "Unknown"}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                                        {blog.title}
-                                    </h3>
-                                    <p className="text-slate-600 dark:text-slate-400 mb-4 flex-grow">
-                                        {blog.description}
-                                    </p>
-                                </div>
-                            </motion.article>
-                        </Link>
+                    {recentBlogs.map((blog) => (
+                        <BlogCard
+                            key={blog.slug}
+                            blog={blog}
+                        />
                     ))}
                 </div>
                 <Link href="/blogs">

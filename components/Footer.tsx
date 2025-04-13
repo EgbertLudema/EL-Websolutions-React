@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="bg-slate-100 dark:bg-slate-900">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 pt-12 pb-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 pt-12 pb-8">
                     <div className="flex flex-col justify-items-start space-y-4">
                         <h3 className="text-slate-800 dark:text-slate-300">About me:</h3>
                         <p className="text-slate-700 dark:text-slate-400">
@@ -84,6 +84,7 @@ export default function Footer() {
                                 <li><Link className="hover:text-primary transition-colors" href="/projects">Projects</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/blogs">Blogs</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/about">About</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/contact">Contact</Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -101,11 +102,15 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-slate-500 dark:text-slate-400 mt-6 py-4 text-center">
-                <p>Build with Next.js, Tailwind.css, Motion.dev</p>
-            </div>
-            <div className="text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-500 py-4 text-center">
-                <p>© {currentYear} - EL Websolutions</p>
+            <div className="container flex flex-row justify-between items-center border-t border-slate-200 dark:border-slate-500 py-4">
+                <div className="text-slate-500 dark:text-slate-400">
+                    <p>© {currentYear} - EL Websolutions</p>
+                </div>
+                <div className="text-slate-500 dark:text-slate-400">
+                    <ul className="flex flex-row gap-4 justify-end">
+                        <li><Link className="hover:text-primary transition-colors" href="/sitemap">Sitemap</Link></li>
+                    </ul>
+                </div>
             </div>
         </footer>
     );

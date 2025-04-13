@@ -128,7 +128,7 @@ export default function Contact() {
                             <div className="space-y-6">
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Name
+                                        Name *
                                     </label>
                                     <input
                                         type="text"
@@ -140,7 +140,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Email
+                                        Email *
                                     </label>
                                     <input
                                         type="email"
