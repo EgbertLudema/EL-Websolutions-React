@@ -3,10 +3,7 @@
 import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
 import { useState } from "react";
-import Link from "next/link";
 import { BlogPost } from "@/lib/server/getBlogs";
-import { FaCalendarAlt } from "react-icons/fa";
-import { FaRegUser } from "react-icons/fa6";
 import BlogCard from "./Blogs/BlogCard";
 
 export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[]; allTags: string[] }) {
@@ -81,7 +78,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                             exit={{ opacity: 0 }}
                             className="text-neutral-700 dark:text-neutral-400 col-span-full text-center mt-10"
                         >
-                            No blogs found matching the selected tags.
+                            Geen blogs gevonden met deze tags.
                         </motion.p>
                     )}
                 </AnimatePresence>

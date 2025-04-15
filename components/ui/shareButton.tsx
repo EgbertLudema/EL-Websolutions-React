@@ -31,7 +31,7 @@ export default function ShareButton({ title }: { title: string }) {
       className="flex items-center gap-2 text-sm px-4 py-2 border border-slate-300 dark:border-slate-600 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition"
     >
       <FaShare className="w-4 h-4" />
-      {copied ? "Link copied!" : "Share"}
+      {copied ? "Link gekopiëerd!" : "Delen"}
     </button>
   );
 }

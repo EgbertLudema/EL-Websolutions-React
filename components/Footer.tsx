@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import EmailLink from "./ui/emailLink";
 import Link from "next/link";
 
-export default function Footer() { 
+export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -10,9 +10,9 @@ export default function Footer() {
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-20 pt-12 pb-8">
                     <div className="flex flex-col justify-items-start space-y-4">
-                        <h3 className="text-slate-800 dark:text-slate-300">About me:</h3>
+                        <h3 className="text-slate-800 dark:text-slate-300">Over mij:</h3>
                         <p className="text-slate-700 dark:text-slate-400">
-                            Hi, I'm Egbert Ludema, a web developer from the Netherlands. I build websites and web applications with a focus on performance and user experience.
+                            Hoi, ik ben Egbert Ludema, een webdeveloper uit Nederland. Ik bouw websites en webapplicaties met de focus op performance en gebruiksvriendelijkheid.
                         </p>
 
                         {/* Social Links */}
@@ -76,14 +76,14 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col justify-items-start space-y-4">
-                        <h3 className="text-slate-800 dark:text-slate-300">Quick links</h3>
+                        <h3 className="text-slate-800 dark:text-slate-300">Links</h3>
                         <nav className="text-slate-700 dark:text-slate-400">
                             <ul className="flex flex-col space-y-1">
                                 <li><Link className="hover:text-primary transition-colors" href="/">Home</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/services">Services</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/projects">Projects</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/services">Diensten</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/projects">Projecten</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/blogs">Blogs</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/about">About</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/about">Over mij</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/contact">Contact</Link></li>
                             </ul>
                         </nav>
@@ -92,7 +92,6 @@ export default function Footer() {
                     <div className="flex flex-col justify-items-start space-y-4">
                         <h3>Contact</h3>
                         <div className="flex flex-col space-y-2">
-                            {/* Email Copy Feature */}
                             <EmailLink color="primary" />
                             <div className="flex items-center space-x-2 text-primary fill-primary">
                                 <FaLocationDot className="w-4 h-4 fill-current" />

@@ -7,8 +7,8 @@ export default function Services(){
     return(
         <section className="py-20 shadow-md">
             <div className="container">
-                <p className=" text-center sub-title mb-6">Services</p>
-                <h2 className="text-center mb-12">What I Offer</h2>
+                <p className=" text-center sub-title mb-6">Diensten</p>
+                <h2 className="text-center mb-12">Wat ik bied</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
@@ -34,9 +34,9 @@ export default function Services(){
                             <div className="mt-auto pt-4 border-t border-border">
                                 <Link
                                     href={service.link}
-                                    className="inline-flex items-center text-sm font-medium text-black dark:text-white hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
+                                    className="inline-flex items-center text-sm font-medium text-slate-900 dark:text-slate-100 hover:text-primary/80 dark:hover:text-primary/80 transition-colors"
                                 >
-                                    <div>Learn more</div>
+                                    <div>Bekijk dienst</div>
                                     <svg
                                         className="ml-2 w-4 h-4"
                                         fill="none"

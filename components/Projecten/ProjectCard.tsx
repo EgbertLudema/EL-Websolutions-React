@@ -16,7 +16,7 @@ export default function ProjectCard({ project, selectedTags = [] }: { project: P
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
       className="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
-      <Link href={`/projects/${project.slug}`}>
+      <Link href={`/projecten/${project.slug}`}>
         <div className="aspect-video overflow-hidden">
           <Image
             src={project.thumbnail || "/placeholder.jpg"}

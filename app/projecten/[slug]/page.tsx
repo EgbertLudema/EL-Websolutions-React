@@ -1,5 +1,5 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
-import FeaturedProjects from "@/components/Projects/FeaturedProjects";
+import FeaturedProjects from "@/components/Projecten/FeaturedProjects";
 import { getAllProjects, getProjectBySlug } from "@/lib/server/getProjects";
 import { compileMDX } from "next-mdx-remote/rsc";
 import Image from "next/image";
@@ -20,7 +20,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     const project = await getProjectBySlug(params.slug);
 
     if (!project) {
-        return <div className="text-center py-12 text-xl">Project Not Found</div>;
+        return <div className="text-center py-12 text-xl">Project niet gevonden!</div>;
     }
 
     // Compile MDX content
@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                         {project.data?.tags && project.data.tags.length > 0 && (
                             <div className="mt-4 flex flex-wrap gap-2">
                                 {project.data.tags.map((tag) => (
-                                    <Link key={tag} href={`/projects?tag=${encodeURIComponent(tag)}`}>
+                                    <Link key={tag} href={`/projecten?tag=${encodeURIComponent(tag)}`}>
                                         <span className="px-3 py-1 tag-selected hover:scale-105 transition">
                                             {tag}
                                         </span>

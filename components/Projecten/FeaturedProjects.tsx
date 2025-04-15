@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectCard from "@/components/Projects/ProjectCard";
+import ProjectCard from "@/components/Projecten/ProjectCard";
 import { ProjectPost } from "@/lib/server/getProjects";
 
 interface FeaturedProjectsProps {
@@ -31,7 +31,7 @@ export default function FeaturedProjects({
   return (
     <section className="bg-slate-200 dark:bg-slate-700 border-t border-slate-300 dark:border-slate-700 py-16">
       <div className="container mx-auto px-6">
-        <h2 className="text-2xl font-bold mb-10 text-center">Featured Projects</h2>
+        <h2 className="text-2xl font-bold mb-10 text-center">Uitgelichte projecten</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {featured.map((project) => (
             <ProjectCard

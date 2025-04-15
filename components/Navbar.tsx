@@ -18,13 +18,13 @@ export default function Navbar() {
     const [isServicesHovered, setIsServicesHovered] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const submenuItems = [
-        { label: "Wireframing", href: "/services/wireframing" },
-        { label: "Custom websites", href: "/services/custom-web-development" },
-        { label: "Wordpress websites", href: "/services/wordpress" },
-        { label: "Webshops", href: "/services/webshop" },
-        { label: "Basic SEO", href: "/services/seo" },
-        { label: "App development", href: "/services/app-development" },
-        { label: "Maintenance & support", href: "/services/maintenance-support" },
+        { label: "Wireframing", href: "/diensten/wireframing" },
+        { label: "Custom websites", href: "/diensten/custom-web-development" },
+        { label: "Wordpress websites", href: "/diensten/wordpress" },
+        { label: "Webshops", href: "/diensten/webshop" },
+        { label: "Basic SEO", href: "/diensten/seo" },
+        { label: "App development", href: "/diensten/app-development" },
+        { label: "Maintenance & support", href: "/diensten/maintenance-support" },
       ];
 
     // Ensure theme is loaded before rendering
@@ -98,10 +98,10 @@ export default function Navbar() {
                         }}
                     >
                         <Link
-                            href="/services"
+                            href="/diensten"
                             className="flex flex-row gap-2 items-center text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary"
                         >
-                            Services
+                            Diensten
                             <IoIosArrowDown className={`transition ${isServicesHovered ? "rotate-180 text-primary" : ""}`} />
                         </Link>
 
@@ -153,20 +153,20 @@ export default function Navbar() {
                         </AnimatePresence>
                     </div>
 
-                    <Link href="/projects" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
-                        Projects
+                    <Link href="/projecten" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
+                        Projecten
                     </Link>
                     <Link href="/blogs" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
                         Blogs
                     </Link>
-                    <Link href="/about" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
-                        About
+                    <Link href="/over-mij" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
+                        Over mij
                     </Link>
                     <div className="hidden md:block">
                         <ThemeToggle />
                     </div>
                     <Link href="/contact">
-                        <div className="py-2 px-3 gradient-btn">Get in touch</div>
+                        <div className="py-2 px-3 gradient-btn">Contact</div>
                     </Link>
                 </div>
 
@@ -233,10 +233,10 @@ export default function Navbar() {
                             }}
                         >
                             <Link
-                                href="/services"
+                                href="/diensten"
                                 onClick={() => setIsOpen(false)}
                             >
-                            Services
+                            Diensten
                             </Link>
                             <IoIosArrowDown
                             className={`transition-transform duration-200 ${servicesOpen ? "rotate-180 text-primary" : "text-neutral-500"}`}
@@ -271,11 +271,11 @@ export default function Navbar() {
                         </div>
 
                         <Link
-                        href="/projects"
+                        href="/projecten"
                         className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
                         onClick={() => setIsOpen(false)}
                         >
-                        Projects
+                        Projecten
                         </Link>
 
                         <Link
@@ -287,11 +287,11 @@ export default function Navbar() {
                         </Link>
 
                         <Link
-                        href="/about"
+                        href="/over-mij"
                         className="py-3 px-2 rounded text-neutral-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
                         onClick={() => setIsOpen(false)}
                         >
-                        About
+                        Over mij
                         </Link>
                     </nav>
 
@@ -299,7 +299,7 @@ export default function Navbar() {
                     <div className="mt-6">
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                         <div className="w-full py-3 text-center gradient-btn text-white rounded shadow">
-                            Get in touch
+                            Contact
                         </div>
                         </Link>
                     </div>

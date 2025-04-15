@@ -64,7 +64,7 @@
         @apply rounded-lg bg-transparent text-sm font-medium text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 shadow-sm border border-slate-400 dark:border-white/40 hover:opacity-80 transition;
     }
     .white-btn{
-        @apply text-white font-medium text-sm px-8 py-3 border border-white border-opacity-20 bg-white bg-opacity-10 rounded-md hover:scale-[102%] transition;
+        @apply text-white font-medium text-sm px-8 py-3 border border-white border-opacity-20 bg-white bg-opacity-10 rounded-md transition;
     }
     .gradient-bg{
         background: var(--primary-gradient);

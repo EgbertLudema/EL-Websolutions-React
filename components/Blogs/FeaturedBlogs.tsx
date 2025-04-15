@@ -22,7 +22,7 @@ export default function FeaturedBlogs({ currentSlug, currentTags = [], allBlogs 
     return (
         <section className="bg-slate-200 dark:bg-slate-700 border-t border-slate-300 dark:border-slate-700 py-16">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold mb-10 text-center text-slate-600 dark:text-slate-200">Featured Articles</h2>
+                <h2 className="text-3xl font-bold mb-10 text-center text-slate-600 dark:text-slate-200">Uitgelichte blogs</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {relatedBlogs.map((blog) => (
                         <BlogCard key={blog.slug} blog={blog} />

@@ -26,7 +26,7 @@ export default async function BlogsPage() {
             <h1 className="text-3xl font-bold text-black dark:text-white">Blogs</h1>
 
             <section className="mt-8">
-                <h2 className="text-2xl font-semibold mb-4">Featured Articles</h2>
+                <h2 className="text-2xl font-semibold mb-4">Uitgelichte blogs</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {recentBlogs.map((blog) => (
                         <Link key={blog.slug} href={`/blogs/${blog.slug}`} className="group">
@@ -72,9 +72,9 @@ export default async function BlogsPage() {
                 </div>
             </section>
 
-            <h2 className="text-2xl font-semibold mt-20 mb-4">All atricles:</h2>
+            <h2 className="text-2xl font-semibold mt-20 mb-4">Alle blogs:</h2>
             {/* Searchbar */}
-            <h3 className="mb-4 text-xl font-semibold">Filter by categorie</h3>
+            <h3 className="mb-4 text-xl font-semibold">Filter per categorie:</h3>
             <BlogTagFilter allBlogs={allBlogs} allTags={allTags} />
         </main>
     );

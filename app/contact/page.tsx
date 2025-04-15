@@ -94,8 +94,10 @@ export default function AboutPage() {
     return (
         <div>
             <main className="container mt-[100px] relative flex flex-col justify-center items-center py-12">
-                <h1 className="text-center leading-snug">Let's Work Together</h1>
-                <p className="text-center text-slate-600 dark:text-slate-400 pb-12">Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.</p>
+                <h1 className="text-center leading-snug">Laten we samen werken</h1>
+                <p className="text-center text-slate-600 dark:text-slate-400 pb-12">
+                    Heb je een idee of project in gedachten? Neem contact met mij op en laten we het bespreken!
+                </p>
                 <div className="max-w-[800px] w-full bg-background rounded-2xl shadow-lg overflow-hidden">
                     <div className="grid md:grid-cols-2">
                         {/* Contact Info */}
@@ -105,7 +107,7 @@ export default function AboutPage() {
                             transition={{ type: "spring", stiffness: 100, damping: 15 }}
                             className="p-8 bg-gradient-primary text-white"
                         >
-                            <h3 className="text-3xl font-semibold mb-6">Information</h3>
+                            <h3 className="text-3xl font-semibold mb-6">Informatie</h3>
                             <div className="space-y-6">
                                 <EmailLink color="white" />
                                 <div className="flex items-center space-x-2">
@@ -126,14 +128,14 @@ export default function AboutPage() {
                             <div className="space-y-6">
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Name
+                                        Naam
                                     </label>
                                     <input
                                         type="text"
                                         required
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <div>
@@ -148,7 +150,7 @@ export default function AboutPage() {
                                             setEmail(e.target.value);
                                             validateEmail(e.target.value);
                                         }}
-                                        className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
+                                        className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
                                             !emailValid ? "border-red-500" : ""
                                         }`}
                                     />
@@ -158,21 +160,21 @@ export default function AboutPage() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Message
+                                        Bericht
                                     </label>
                                     <textarea
                                         rows={4}
                                         required
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <motion.button
                                     type="submit"
                                     className="w-full px-8 py-3 gradient-btn"
                                 >
-                                    Send Message
+                                    Verzenden
                                 </motion.button>
                             </div>
                         </motion.form>

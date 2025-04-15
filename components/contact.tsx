@@ -27,9 +27,9 @@ export default function Contact() {
         script.src = `https://www.google.com/recaptcha/api.js?render=${GOOGLE_RECAPTCHA_KEY}`;
         script.async = true;
         script.defer = true;
-        script.onload = () => console.log("reCAPTCHA script loaded");
+        script.onload = () => console.log("reCAPTCHA script geladen");
         document.head.appendChild(script);
-    }, []);    
+    }, []);
 
     const validateEmail = (email: string) => {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,18 +46,17 @@ export default function Contact() {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-    
+
         if (!emailValid) {
-            triggerPopup("Ongeldig e-mailadres. Controleer uw invoer.");
+            triggerPopup("Ongeldig e-mailadres. Controleer je invoer.");
             return;
         }
-    
-        // Ensure grecaptcha is available
+
         if (typeof window !== "undefined" && window.grecaptcha) {
             window.grecaptcha.ready(async () => {
                 try {
                     const token = await window.grecaptcha.execute(GOOGLE_RECAPTCHA_KEY, { action: "submit" });
-    
+
                     const formData = new FormData();
                     formData.append("name", name);
                     formData.append("email", email);
@@ -66,12 +65,11 @@ export default function Contact() {
 
                     console.log("Versturen naar API:", { name, email, message, token });
 
-    
                     const response = await fetch("https://el-websolutions.com/api/sendmail.php", {
                         method: "POST",
                         body: formData,
                     });
-    
+
                     if (response.ok) {
                         triggerPopup("Bericht succesvol verzonden!");
                         setName("");
@@ -82,32 +80,32 @@ export default function Contact() {
                     }
                 } catch (error) {
                     console.error(error);
-                    triggerPopup("Fout bij het verzenden. Controleer uw verbinding.");
+                    triggerPopup("Fout bij het verzenden. Controleer je internetverbinding.");
                 }
             });
         } else {
-            console.error("reCAPTCHA is not loaded.");
-            triggerPopup("Fout bij laden van reCAPTCHA. Probeer het opnieuw.");
+            console.error("reCAPTCHA is niet geladen.");
+            triggerPopup("Fout bij het laden van reCAPTCHA. Probeer het opnieuw.");
         }
-    };    
+    };
 
     return (
         <section id="contact" className="py-20 bg-background">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Contact</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Get in Touch</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Neem contact op</h2>
                 </div>
                 <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden">
                     <div className="grid md:grid-cols-2">
-                        {/* Contact Info */}
-                        <motion.div 
+                        {/* Contactgegevens */}
+                        <motion.div
                             initial={{ opacity: 0, x: -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ type: "spring", stiffness: 100, damping: 15 }}
                             className="p-8 bg-gradient-primary text-white"
                         >
-                            <h3 className="text-3xl font-semibold mb-6">Contact Information</h3>
+                            <h3 className="text-3xl font-semibold mb-6">Contactgegevens</h3>
                             <div className="space-y-6">
                                 <EmailLink color="white" />
                                 <div className="flex items-center space-x-2">
@@ -117,8 +115,8 @@ export default function Contact() {
                             </div>
                         </motion.div>
 
-                        {/* Contact Form */}
-                        <motion.form 
+                        {/* Contactformulier */}
+                        <motion.form
                             initial={{ opacity: 0, x: 100 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ type: "spring", stiffness: 100, damping: 15 }}
@@ -128,19 +126,19 @@ export default function Contact() {
                             <div className="space-y-6">
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Name *
+                                        Naam *
                                     </label>
                                     <input
                                         type="text"
                                         required
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Email *
+                                        E-mail *
                                     </label>
                                     <input
                                         type="email"
@@ -150,7 +148,7 @@ export default function Contact() {
                                             setEmail(e.target.value);
                                             validateEmail(e.target.value);
                                         }}
-                                        className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
+                                        className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
                                             !emailValid ? "border-red-500" : ""
                                         }`}
                                     />
@@ -160,14 +158,14 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-foreground mb-2">
-                                        Message
+                                        Bericht
                                     </label>
                                     <textarea
                                         rows={4}
                                         required
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
-                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
+                                        className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <motion.button
@@ -176,7 +174,7 @@ export default function Contact() {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    Send Message
+                                    Verzenden
                                 </motion.button>
                             </div>
                         </motion.form>
@@ -184,7 +182,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            {/* Popup Notification */}
+            {/* Popup-melding */}
             {showPopup && (
                 <div className="fixed bottom-5 right-5 bg-primary text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
                     {popupMessage}

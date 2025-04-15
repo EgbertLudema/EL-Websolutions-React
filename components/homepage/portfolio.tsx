@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ProjectPost } from "@/lib/server/getProjects";
-import ProjectCard from "../Projects/ProjectCard";
+import ProjectCard from "../Projecten/ProjectCard";
 
 export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] }) {
     if (!allProjects || allProjects.length === 0) {
-        return <p className="text-center text-neutral-600 dark:text-neutral-300">No projects found.</p>;
+        return <p className="text-center text-neutral-600 dark:text-neutral-300">Geen projecten gevonden.</p>;
     }
 
     // Sort: Unfinished projects first, then by date (newest first)
@@ -21,7 +21,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
         <section className="py-20">
             <div className="container flex flex-col items-center">
                 <p className="text-center sub-title mb-6">Portfolio</p>
-                <h2 className="text-center mb-12">Featured Projects</h2>
+                <h2 className="text-center mb-12">Uitgelichte projecten</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
                     {recentProjects.map((project, index) => (   
@@ -31,9 +31,9 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                         />
                     ))}
                 </div>
-                <Link href="/projects">
+                <Link href="/projecten">
                     <div className="mt-8 py-3 px-6 primary-btn">   
-                        View all projects
+                        Bekijk alle projecten
                     </div>
                 </Link>
             </div>

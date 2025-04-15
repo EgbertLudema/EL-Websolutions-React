@@ -49,7 +49,7 @@ export default function CopyLinkButton() {
           )}
         </AnimatePresence>
       </span>
-      {copied ? "Link copied!" : "Copy link"}
+      {copied ? "Link gekopiëerd!" : "Kopiëer link"}
     </button>
   );
 }

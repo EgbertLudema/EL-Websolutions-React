@@ -34,7 +34,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
             <main className="flex-grow pt-24 pb-16">
                 <article>
                     {/* Header */}
-                    <div className="bg-slate-200 dark:bg-slate-800 py-12">
+                    <div className="bg-slate-100 dark:bg-slate-900 py-12">
                     <div className="container mx-auto px-6">
                         <div className="max-w-3xl mx-auto flex flex-col gap-2 pb-2">
 

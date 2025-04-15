@@ -4,10 +4,8 @@ import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { ProjectPost } from "@/lib/server/getProjects";
-import { FaRegCalendarAlt, FaWrench } from "react-icons/fa";
-import ProjectCard from "./Projects/ProjectCard";
+import ProjectCard from "./Projecten/ProjectCard";
 
 export default function TagFilter({ allProjects, allTags }: { allProjects: ProjectPost[]; allTags: string[] }) {
     const searchParams = useSearchParams();
@@ -68,7 +66,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
             >
                 <AnimatePresence>
                     {sortedProjects.length > 0 ? (
-                        sortedProjects.map((project, index) => (
+                        sortedProjects.map((project) => (
                             <ProjectCard key={project.slug} project={project} selectedTags={selectedTags} />
                         ))
                     ) : (
@@ -79,7 +77,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
                             exit={{ opacity: 0 }}
                             className="col-span-3 text-center text-slate-500 dark:text-slate-400 py-20"
                         >
-                            No projects found matching the selected tags.
+                            Geen projecten gevonden met deze tags.
                         </motion.p>
                     )}
                 </AnimatePresence>

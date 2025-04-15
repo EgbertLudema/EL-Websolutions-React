@@ -4,16 +4,16 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 type Service = {
-  icon: IconType;
-  title: string;
-  price: string;
-  description: string;
-  text: string;
-  image?: string;
+    icon: IconType;
+    title: string;
+    price: string;
+    description: string;
+    text: string;
+    image?: string;
 };
 
 type ServiceHeroProps = {
-  service: Service;
+    service: Service;
 };
 
 const ServiceHero = ({ service }: ServiceHeroProps) => {

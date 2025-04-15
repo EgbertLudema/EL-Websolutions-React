@@ -6,19 +6,19 @@ export default function CTA() {
         <section className="py-20 shadow-md gradient-bg dark:light-gradient-bg">
             <div className="container">
                 <div className="flex flex-col items-center justify-center gap-4">
-                    <h2 className="text-center text-white mb-6">Ready to get started?</h2>
-                    <p className="text-center text-white">
-                        I’m currently accepting new projects and would love to hear about yours.
+                    <h2 className="text-center text-slate-100 mb-6">Klaar wat nieuws te beginnen?</h2>
+                    <p className="text-center text-slate-100 mb-6">
+                        Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.
                     </p>
-                    <p className="text-center text-white mb-8">
-                        Please take a few minutes to tell me about it.
-                    </p>
-                    <Link href="/contact" className="white-btn dark:gradient-btn shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-none flex flex-row items-center gap-2">
-                        Get in touch
-                        <FaArrowRight/>
+                    <Link
+                        href="/contact"
+                        className="group white-btn dark:gradient-btn shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-none flex flex-row items-center gap-2"
+                    >
+                        Neem contact op
+                        <FaArrowRight className="group-hover:translate-x-1 transition" />
                     </Link>
                 </div>
             </div>
         </section>
-    )
+    );
 }

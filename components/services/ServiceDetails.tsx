@@ -40,7 +40,7 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
 
                         {service.process && service.process.length > 0 && (
                             <>
-                                <h3 className="text-xl font-semibold mb-4 mt-10">My {service.title} Process</h3>
+                                <h3 className="text-xl font-semibold mb-4 mt-10">Mijn {service.title} proces</h3>
                                 <ul className="space-y-4">
                                 {service.process.map((step, i) => (
                                     <li key={i} className="flex items-start">

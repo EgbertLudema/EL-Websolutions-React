@@ -30,9 +30,9 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
             <div className="container flex flex-col items-center">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Blog</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Latest Articles</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Laatste blogs</h2>
                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                        Insights, tutorials, and thoughts on web development, design, and digital trends.
+                        Inzichten, tutorials en gedachten over webontwikkeling, ontwerp en digitale trends.
                     </p>
                 </div>
 
@@ -46,7 +46,7 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                 </div>
                 <Link href="/blogs">
                     <div className="mt-8 py-3 px-6 primary-btn">   
-                        View all blogs
+                        Bekijk alle blogs
                     </div>
                 </Link>
             </div>

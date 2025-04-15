@@ -23,7 +23,7 @@ export default async function SitemapPage() {
       <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-2">Static Pages</h2>
+        <h2 className="text-xl font-semibold mb-2">Statische pagina's</h2>
         <ul className="list-disc pl-6">
           {staticPaths.map(({ title, href }) => (
             <li key={href}>
@@ -36,7 +36,7 @@ export default async function SitemapPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-2">Blog Posts</h2>
+        <h2 className="text-xl font-semibold mb-2">Blogs</h2>
         <ul className="list-disc pl-6">
           {blogs.map((blog) => (
             <li key={blog.slug}>
@@ -49,7 +49,7 @@ export default async function SitemapPage() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-2">Projects</h2>
+        <h2 className="text-xl font-semibold mb-2">Projecten</h2>
         <ul className="list-disc pl-6">
           {projects.map((project) => (
             <li key={project.slug}>
