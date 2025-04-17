@@ -9,6 +9,12 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import GoogleReviews from "@/components/googleReviews";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "EL-Websolutions",
+    description: "EL-Websolutions is een freelance webdeveloper die gespecialiseerd is in het bouwen van op maat gemaakte websites en webapplicaties. Met een focus op gebruiksvriendelijkheid en esthetiek, biedt EL-Websolutions oplossingen die aan jouw specifieke behoeften voldoen.",
+};
 
 export default async function HomePage() {
     const allProjects = await getAllProjects();

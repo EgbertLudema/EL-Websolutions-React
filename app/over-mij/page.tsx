@@ -1,8 +1,13 @@
-import Breadcrumbs from '@/components/Breadcrumbs';
 import CTA from '@/components/CTA';
 import Draggable from '@/components/Draggable';
 import Image from "next/image";
 import Link from 'next/link';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Over mij - EL-Websolutions",
+    description: "Wie is de man achter EL-Websolutions? Ontdek mijn achtergrond, visie en waarden als webdeveloper.",
+};
 
 export default function AboutPage() {
     return (

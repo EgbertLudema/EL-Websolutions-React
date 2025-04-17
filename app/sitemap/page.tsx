@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { getAllBlogs } from "@/lib/server/getBlogs";
 import { getAllProjects } from "@/lib/server/getProjects";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Sitemap - EL-Websolutions",
+    description: "De sitemap van de website van EL-Websolutions",
+};
 
 // This page is for displaying the sitemap of the website
 // It is not meant to be crawled by search engines

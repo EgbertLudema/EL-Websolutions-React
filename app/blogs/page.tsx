@@ -2,6 +2,12 @@ import { getAllBlogs, BlogPost } from "@/lib/server/getBlogs";
 import BlogTagFilter from "@/components/BlogTagFilter";
 import Link from "next/link";
 import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Blogs - EL-Websolutions",
+    description: "",
+};
 
 function formatDate(dateString?: string) {
     if (!dateString) return "In progress";

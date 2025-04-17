@@ -7,6 +7,27 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ShareButton from "@/components/ui/shareButton";
 import CopyLinkButton from "@/components/ui/CopyLinkButton";
 import FeaturedBlogs from "@/components/Blogs/FeaturedBlogs";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const blog = await getBlogBySlug(params.slug);
+  
+    if (!blog) return {};
+  
+    return {
+        title: "Blog - " + blog.data.title + " - EL Websolutions",
+        description: blog.data.description,
+        openGraph: {
+            title: blog.data.title,
+            description: blog.data.description,
+            images: [
+                {
+                    url: blog.data.thumbnail || "",
+                },
+            ],
+        },
+    };
+}
 
 export async function generateStaticParams() {
     const blogs = await getAllBlogs();

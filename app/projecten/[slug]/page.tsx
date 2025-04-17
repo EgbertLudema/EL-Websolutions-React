@@ -6,6 +6,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaWrench } from "react-icons/fa6";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const project = await getProjectBySlug(params.slug);
+  
+    if (!project) return {};
+  
+    return {
+        title: "Project - " + project.data.title + " - EL Websolutions",
+        description: project.data.description,
+        openGraph: {
+            title: project.data.title,
+            description: project.data.description,
+            images: [
+                {
+                    url: project.data.thumbnail || "",
+                },
+            ],
+        },
+    };
+}
 
 // Generate Static Paths for Each Project
 export async function generateStaticParams() {
