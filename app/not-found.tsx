@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link';
+import { useRef } from 'react';
 import type { Metadata } from 'next';
 import { useEffect, useState } from 'react';
 
@@ -66,6 +66,7 @@ const slide = (row: number[]) => {
 };
 
 export default function NotFound() {
+    const swipeAreaRef = useRef<HTMLDivElement>(null);
     const [grid, setGrid] = useState<number[][] | null>(null);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
@@ -140,6 +141,9 @@ export default function NotFound() {
     };    
 
     useEffect(() => {
+        const swipeArea = swipeAreaRef.current;
+        if (!swipeArea) return;
+    
         let startX = 0;
         let startY = 0;
         let endX = 0;
@@ -153,6 +157,7 @@ export default function NotFound() {
         const handleTouchMove = (e: TouchEvent) => {
             endX = e.touches[0].clientX;
             endY = e.touches[0].clientY;
+            e.preventDefault();
         };
     
         const handleTouchEnd = () => {
@@ -168,18 +173,17 @@ export default function NotFound() {
             }
         };
     
-        window.addEventListener('touchstart', handleTouchStart);
-        window.addEventListener('touchmove', handleTouchMove);
-        window.addEventListener('touchend', handleTouchEnd);
+        swipeArea.addEventListener('touchstart', handleTouchStart, { passive: false });
+        swipeArea.addEventListener('touchmove', handleTouchMove, { passive: false });
+        swipeArea.addEventListener('touchend', handleTouchEnd, { passive: false });
     
         return () => {
-            window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchmove', handleTouchMove);
-            window.removeEventListener('touchend', handleTouchEnd);
+            swipeArea.removeEventListener('touchstart', handleTouchStart);
+            swipeArea.removeEventListener('touchmove', handleTouchMove);
+            swipeArea.removeEventListener('touchend', handleTouchEnd);
         };
-    }, [grid, gameOver]);
+    }, [grid, gameOver]);    
     
-
     useEffect(() => {
         const newGrid = addRandomTile(addRandomTile(createEmptyGrid()));
         setGrid(newGrid);
@@ -206,7 +210,7 @@ export default function NotFound() {
     if (!grid) return null;
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center text-center p-6 gap-4">
+        <div className="mt-[100px] py-8 flex flex-col items-center justify-center text-center p-6 gap-4">
             <h1 className="text-4xl font-bold">404 – Pagina niet gevonden</h1>
             <p className="text-slate-600 dark:text-slate-400 mb-4">
                 Omdat je niet gevonden hebt wat je zocht, kun je je frustratie kwijt in een potje 2048!
@@ -220,7 +224,7 @@ export default function NotFound() {
                 )}
             </div>
 
-            <div className="grid grid-cols-4 gap-2 bg-slate-200 p-2 sm:p-4 rounded shadow-md">
+            <div ref={swipeAreaRef} className="grid grid-cols-4 gap-2 bg-slate-200 p-2 sm:p-4 rounded shadow-md">
                 {grid.flat().map((num, i) => (
                     <div
                         key={i}
@@ -234,7 +238,6 @@ export default function NotFound() {
                     </div>
                 ))}
             </div>
-
 
             <button
                 onClick={resetGame}
