@@ -55,7 +55,7 @@ export default async function HomePage() {
                     <p className="text-center md:text-lg mb-8 text-gray-700 dark:text-gray-400">
                         Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke digitale ervaringen
                     </p>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex justify-center flex-col sm:flex-row gap-4">
                         <Link href="/contact">
                             <div className="px-8 py-3 gradient-btn shadow-sm transition">Neem contact op</div>
                         </Link>

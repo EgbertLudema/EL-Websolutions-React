@@ -23,8 +23,8 @@ export default function Navbar() {
         { label: "Wordpress websites", href: "/diensten/wordpress" },
         { label: "Webshops", href: "/diensten/webshop" },
         { label: "Basic SEO", href: "/diensten/seo" },
-        { label: "App development", href: "/diensten/app-development" },
-        { label: "Maintenance & support", href: "/diensten/maintenance-support" },
+        // { label: "App development", href: "/diensten/app-development" },
+        { label: "Onderhoud & support", href: "/diensten/maintenance-support" },
       ];
 
     // Ensure theme is loaded before rendering
