@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Blogs - EL-Websolutions",
-    description: "",
+    description: "Bekijk al mijn blogs over webdevelopment, design en meer.",
 };
 
 function formatDate(dateString?: string) {

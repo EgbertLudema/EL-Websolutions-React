@@ -1,7 +1,6 @@
 import { LuPenTool, LuLaptop} from "react-icons/lu";
 import { FaCartShopping, FaWordpress, FaAndroid, FaWrench } from "react-icons/fa6";
 import { TbWorldSearch } from "react-icons/tb";
-import { desc } from "motion/react-client";
 
 const services = [
     {
@@ -12,7 +11,7 @@ const services = [
         text: "Wireframing is een cruciale stap in het ontwerpproces die je in staat stelt om de lay-out en functionaliteit van je website of applicatie te visualiseren voordat je aan de daadwerkelijke ontwikkeling begint. Het functioneerd als een blauwdruk, die je helpt om de gebruikerservaring en interface effectief te plannen. Door wireframes te maken, kun je potentiële problemen vroegtijdig identificeren, wat zorgt voor een soepelere ontwikkelingsproces en een gebruiksvriendelijker eindproduct.",
         price: "Vanaf €59",
         tags: ["design", "website structuur", "gebruikerservaring"],
-        image: "/images/services/wireframes_thumbnail_nl.jpg",
+        image: "/images/services/Wireframing_image.jpg",
         benefits: [
             "Eerst een visueel idee van de website",
             "Snel en goedkoop een idee krijgen van de website",
@@ -261,7 +260,7 @@ const services = [
         text: "Ik bied doorlopende onderhouds- en ondersteuningsdiensten om ervoor te zorgen dat je website soepel blijft draaien en up-to-date blijft. Of het nu gaat om het oplossen van bugs, het toevoegen van nieuwe functies of het bijwerken van inhoud, ik bied betrouwbare ondersteuning om je digitale aanwezigheid in topvorm te houden.",
         price: "Vanaf €19/maand",
         tags: ["onderhoud", "support", "updates", "custom plugins", "monitoring"],
-        image: "/images/services/mainenance&support_thumbnail(example).jpg",
+        image: "/images/services/Maintenancesupport_image.jpg",
         benefits: [
             "Doorlopende updates van je website",
             "Bugfixes en prestatiemonitoring",
