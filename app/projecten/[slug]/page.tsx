@@ -2,11 +2,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FeaturedProjects from "@/components/Projecten/FeaturedProjects";
 import { getAllProjects, getProjectBySlug } from "@/lib/server/getProjects";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Image from "next/image";
 import Link from "next/link";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaWrench } from "react-icons/fa6";
 import type { Metadata } from "next";
+import ProjectGallery from "../ProjectGallery";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const project = await getProjectBySlug(params.slug);
@@ -73,6 +73,10 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                             <span>{project.data.status}</span>
                         </div>
 
+                        {/* Description */}
+                        <p className="text-neutral-700 dark:text-neutral-300 mt-2 text-sm">
+                            {project.data?.description ?? ""}
+                        </p>
 
                         {/* Tags */}
                         {project.data?.tags && project.data.tags.length > 0 && (
@@ -91,49 +95,32 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     <hr className="mt-6 w-full border-neutral-500 dark:border-neutral-300" />
 
                     {/* MDX Content (Main Body) */}
-                    <article className="prose dark:prose-invert mt-6 flex flex-col gap-4">
+                    <article className="project-page prose dark:prose-invert mt-6 flex flex-col gap-4">
                         {content}
                     </article>
 
                     {/* Project Gallery */}
                     {project.data?.gallery && project.data.gallery.length > 0 && (
                         <div className="mt-10">
-                            <h2 className="text-2xl font-semibold mb-4">Gallery</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {project.data.gallery.map((image, index) => (
-                                    <div key={index} className="relative aspect-video overflow-hidden rounded-md shadow-md">
-                                        <Image
-                                            src={image.src ?? ""}
-                                            alt={image.alt ?? "Project image"}
-                                            width={800}
-                                            height={450}
-                                            className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                                        />
-                                        {image.caption && (
-                                            <p className="text-center text-sm text-neutral-500 mt-2">{image.caption}</p>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
+                            <h2 className="text-2xl font-semibold mb-4 text-slate-700 dark:text-slate-300">Gallery</h2>
+                            <ProjectGallery images={project.data.gallery} />
                         </div>
                     )}
 
                     {/* External Links */}
                     {project.data?.links && project.data.links.length > 0 && (
                         <div className="mt-6">
-                            <h2 className="text-2xl font-semibold mb-2">Project Links</h2>
-                            <ul className="list-disc pl-6">
+                            <h2 className="text-2xl font-semibold mb-4 text-slate-700 dark:text-slate-300">Project Links</h2>
+                            <ul>
                                 {project.data.links.map((link) => (
                                     <li key={link.url}>
                                         <a
                                             href={link.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-primary hover:underline"
+                                            className="primary-btn py-2 px-4 shadow-md hover:shadow-lg"
                                         >
-                                            <div>
-                                                {link.caption ?? "Visit Link"}
-                                            </div>
+                                            {link.caption ?? "Visit Link"}
                                         </a>
                                     </li>
                                 ))}

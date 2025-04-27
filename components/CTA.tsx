@@ -6,7 +6,7 @@ export default function CTA() {
         <section className="py-20 shadow-md gradient-bg dark:light-gradient-bg">
             <div className="container">
                 <div className="flex flex-col items-center justify-center gap-4">
-                    <h2 className="text-center text-slate-100 mb-6">Klaar wat nieuws te beginnen?</h2>
+                    <h2 className="text-center text-slate-100 mb-6">Klaar om wat nieuws te beginnen?</h2>
                     <p className="text-center text-slate-100 mb-6">
                         Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.
                     </p>

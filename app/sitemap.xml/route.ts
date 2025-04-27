@@ -1,5 +1,6 @@
 import { getAllBlogs } from "@/lib/server/getBlogs";
 import { getAllProjects } from "@/lib/server/getProjects";
+import { getAllServices } from "@/lib/server/getServices";
 import { NextResponse } from "next/server";
 
 // This is the route handler for generating the sitemap.xml file
@@ -9,6 +10,7 @@ export async function GET() {
 
     const blogs = await getAllBlogs();
     const projects = await getAllProjects();
+    const services = await getAllServices();
 
     const staticPaths = [
         "", // homepage
@@ -21,8 +23,9 @@ export async function GET() {
 
     const blogUrls = blogs.map((blog) => `blogs/${blog.slug}`);
     const projectUrls = projects.map((project) => `projects/${project.slug}`);
+    const serviceUrls = services.map((service) => `diensten/${service.slug}`);
 
-    const allPaths = [...staticPaths, ...blogUrls, ...projectUrls];
+    const allPaths = [...staticPaths, ...blogUrls, ...projectUrls, ...serviceUrls];
 
     const body = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

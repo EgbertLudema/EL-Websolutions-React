@@ -126,6 +126,16 @@ body {
     transform: scale(1.1);
 }
 /* Articles(blogs & projects) */
-.article article h2{
+article.project-page{
+    @apply text-slate-700 dark:text-slate-300
+}
+article.project-page h2{
     margin-top: .75em;
+    @apply text-3xl font-semibold;
+}
+article.project-page ul{
+    @apply list-disc pl-5;
+}
+article.project-page ul li{
+    @apply text-slate-700 dark:text-slate-300;
 }

@@ -52,8 +52,11 @@ export default async function HomePage() {
                     <h1 className="text-center mb-6 leading-tight md:leading-snug">
                         Digitale ervaringen op maat
                     </h1>
+                    <p className="text-center md:text-lg text-gray-700 dark:text-gray-400">
+                        Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke websites
+                    </p>
                     <p className="text-center md:text-lg mb-8 text-gray-700 dark:text-gray-400">
-                        Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke digitale ervaringen
+                        Op maat gemaakt. Afgestemd op de eisen van de klant en de doelgroep.
                     </p>
                     <div className="flex justify-center flex-col sm:flex-row gap-4">
                         <Link href="/contact">
