@@ -35,7 +35,7 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
     const sortedProjects = [...filteredProjects].sort((a, b) => {
         if (!a.date) return -1;
         if (!b.date) return 1;
-        return new Date(b.date).getTime() - new Date(b.date).getTime();
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
     return (

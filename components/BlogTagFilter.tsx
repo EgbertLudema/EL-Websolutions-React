@@ -29,7 +29,7 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     const sortedBlogs = [...filteredBlogs].sort((a, b) => {
         if (!a.date) return -1; // If 'a' has no date, it goes first
         if (!b.date) return 1; // If 'b' has no date, 'a' stays lower
-        return new Date(b.date).getTime() - new Date(a.date).getTime(); // Otherwise, sort by date (newest first)
+        return new Date(b.date).getTime() - new Date(a.date).getTime(); // Sort by date (newest first)
     });
 
     return (
