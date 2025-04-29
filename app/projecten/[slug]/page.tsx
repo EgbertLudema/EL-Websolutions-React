@@ -7,6 +7,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaWrench } from "react-icons/fa6";
 import type { Metadata } from "next";
 import ProjectGallery from "../ProjectGallery";
+import FeaturedBlogCTA from "@/components/FeaturedBlogCTA";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const project = await getProjectBySlug(params.slug);
@@ -133,6 +134,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 currentSlug={params.slug}
                 currentTags={project.data.tags}
                 allProjects={allProjects}
+            />
+            <FeaturedBlogCTA 
+                tagParam={project.data.tags ?? []} 
             />
         </>
     );
