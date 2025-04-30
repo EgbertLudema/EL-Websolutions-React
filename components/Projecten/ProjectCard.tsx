@@ -17,7 +17,7 @@ export default function ProjectCard({ project, selectedTags = [] }: { project: P
             className="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
         >
             <Link href={`/projecten/${project.slug}`} className="flex flex-col h-full">
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden shadow-md">
                     <Image
                         src={project.thumbnail || "/placeholder.jpg"}
                         alt={project.title}

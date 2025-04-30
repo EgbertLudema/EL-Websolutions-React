@@ -23,12 +23,17 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
                 <p className="text-center sub-title mb-6">Portfolio</p>
                 <h2 className="text-center mb-12">Uitgelichte projecten</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
-                    {recentProjects.map((project, index) => (   
-                        <ProjectCard 
-                            key={project.slug} 
-                            project={project}  
-                        />
+                {/* Show only 2 projects on small screens */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-8 place-items-center items-stretch">
+                    {recentProjects.slice(0, 2).map((project) => (
+                        <ProjectCard key={project.slug} project={project} />
+                    ))}
+                </div>
+
+                {/* Show all 3 projects on medium and larger screens */}
+                <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
+                    {recentProjects.map((project) => (
+                        <ProjectCard key={project.slug} project={project} />
                     ))}
                 </div>
                 <Link href="/projecten">

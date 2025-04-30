@@ -11,28 +11,32 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function MaintenanceSupportPage() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Wat valt er onder “onderhoud” van mijn website?",
+          answer: "Onderhoud omvat o.a. updates van plugins en thema’s, beveiligingspatches, back-ups, het monitoren van de prestaties en het oplossen van technische problemen."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Hoe snel kan ik rekenen op support bij een probleem?",
+          answer: "Bij urgente problemen reageer ik zo snel mogelijk — meestal binnen enkele uren. Voor minder dringende vragen kun je rekenen op een reactie binnen 1 werkdag."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Wat is inbegrepen in de maandelijkse supporturen?",
+          answer: "Binnen deze uren kunnen bugs worden opgelost, kleine aanpassingen worden gedaan of nieuwe functies worden toegevoegd — afhankelijk van jouw wensen en het gekozen pakket."
         },
         {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
+          question: "Kan ik tussentijds overstappen naar een groter of kleiner pakket?",
+          answer: "Ja, het is altijd mogelijk om het pakket op- of af te schalen, zolang dit vooraf wordt besproken."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
+          question: "Is deze dienst alleen voor websites die jij hebt gebouwd?",
+          answer: "Nee, ik bied ook onderhoud en support aan voor bestaande websites, mits ze technisch geschikt zijn en ik vooraf een korte analyse kan doen."
+        },
+        {
+          question: "Wat als ik geen wijzigingen heb in een maand?",
+          answer: "Ook als er geen aanpassingen nodig zijn, worden er updates en checks uitgevoerd om de site veilig en up-to-date te houden. Ongebruikte supporturen kunnen niet worden meegenomen naar de volgende maand."
         }
     ];
 
-    const maintenanceSupport = services.find(s => s.title === "Maintenance & Support");
+    const maintenanceSupport = services.find(s => s.title === "Onderhoud & support");
 
     if (!maintenanceSupport) return null;
 
@@ -44,7 +48,6 @@ export default function MaintenanceSupportPage() {
                 <ServiceDetails service={maintenanceSupport} />
             </div>
             <GoogleReviews />
-            <USPS />
             <FAQ questions={faqData} />
             <Contact />
         </>

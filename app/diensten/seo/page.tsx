@@ -11,25 +11,17 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function SEOPage() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Hoe wordt de prijs van een project bepaald?",
+          answer: "De prijs van een project is afhankelijk van de manier waarop de website gebouwd is(bijvoorbeeld Wordpress of custom), het aantal pagina's en de SEO status nu. Na een eerste gesprek kan ik een schatting geven van de kosten."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Hoe lang duurt het om alles te optimaliseren?",
+          answer: "Een simpele Wordpress website kan binnen 2 dagen geoptimaliseerd worden. Een custom website kan 1-2 weken duren, afhankelijk van de complexiteit. Voor een nauwkeurige inschatting is een eerste gesprek nodig."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Schrijf je ook content voor websites?",
+          answer: "Ja, ik schrijf ook content voor websites. Dit omvat SEO-geoptimaliseerde teksten die zijn afgestemd op jouw doelgroep. Dit laat ik doen in samenwerking met een gespecialiseerde SEO-copywriter."
         },
-        {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
-        },
-        {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
-        }
     ];
 
     const seo = services.find(s => s.title === "Basic SEO");
@@ -44,7 +36,6 @@ export default function SEOPage() {
                 <ServiceDetails service={seo} />
             </div>            
             <GoogleReviews />
-            <USPS />
             <FAQ questions={faqData} />
             <Contact />
         </>

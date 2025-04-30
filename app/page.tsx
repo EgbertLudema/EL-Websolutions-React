@@ -52,17 +52,17 @@ export default async function HomePage() {
                     <h1 className="text-center mb-6 leading-tight md:leading-snug">
                         Digitale ervaringen op maat
                     </h1>
-                    <p className="text-center md:text-lg text-gray-700 dark:text-gray-400">
+                    <p className="text-center mb-8 md:mb-0 md:text-lg text-gray-700 dark:text-gray-400">
                         Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke websites
                     </p>
-                    <p className="text-center md:text-lg mb-8 text-gray-700 dark:text-gray-400">
+                    <p className="text-center hidden md:block text-lg mb-8 text-gray-700 dark:text-gray-400">
                         Op maat gemaakt. Afgestemd op de eisen van de klant en de doelgroep.
                     </p>
                     <div className="flex justify-center flex-col sm:flex-row gap-4">
                         <Link href="/contact">
                             <div className="px-8 py-3 gradient-btn shadow-sm transition">Neem contact op</div>
                         </Link>
-                        <Link href="/projects">
+                        <Link href="/projecten">
                             <div className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:bg-white hover:bg-opacity-20 shadow-sm transition">Bekijk projecten</div>
                         </Link>
                     </div>

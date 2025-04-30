@@ -36,14 +36,20 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
-                    {recentBlogs.map((blog) => (
-                        <BlogCard
-                            key={blog.slug}
-                            blog={blog}
-                        />
+                {/* Alleen de eerste 2 blogs tonen op sm en kleiner */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-8 place-items-center items-stretch">
+                    {recentBlogs.slice(0, 2).map((blog) => (
+                        <BlogCard key={blog.slug} blog={blog} />
                     ))}
                 </div>
+
+                {/* Alle 3 blogs tonen vanaf md en groter */}
+                <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 place-items-center items-stretch">
+                    {recentBlogs.map((blog) => (
+                        <BlogCard key={blog.slug} blog={blog} />
+                    ))}
+                </div>
+
                 <Link href="/blogs">
                     <div className="mt-8 py-3 px-6 primary-btn">   
                         Bekijk alle blogs

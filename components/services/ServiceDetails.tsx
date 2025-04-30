@@ -35,18 +35,18 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         >
-                        <h2 className="text-3xl font-bold mb-6">{service.title} Details</h2>
-                        <p className="mb-6 text-slate-800 dark:text-slate-300">{service.text}</p>
+                        <h2 className="text-3xl text-slate-800 dark:text-slate-300 font-bold mb-6">{service.title} Details</h2>
+                        <p className="mb-6 text-slate-700 dark:text-slate-400">{service.text}</p>
 
                         {service.process && service.process.length > 0 && (
                             <>
-                                <h3 className="text-xl font-semibold mb-4 mt-10">Mijn {service.title} proces</h3>
+                                <h3 className="text-xl text-slate-800 dark:text-slate-300 font-semibold mb-4 mt-10">Mijn {service.title} proces</h3>
                                 <ul className="space-y-4">
                                 {service.process.map((step, i) => (
                                     <li key={i} className="flex items-start">
                                     <span className="text-primary mr-3 mt-1">{i + 1}.</span>
                                     <div>
-                                        <strong className="block text-foreground">{step.title}</strong>
+                                        <strong className="block text-slate-800 dark:text-slate-300 text-foreground">{step.title}</strong>
                                         <span className="text-slate-700 dark:text-slate-400">{step.description}</span>
                                     </div>
                                     </li>
@@ -79,13 +79,13 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="sticky top-20 rounded-xl p-6 shadow-lg dark:bg-slate-800"
                         >
-                            <h3 className="text-xl font-semibold mb-6">Service Benefits</h3>
+                            <h3 className="text-xl text-slate-800 dark:text-slate-300 font-semibold mb-6">Voordelen</h3>
                             {service.benefits && service.benefits.length > 0 && (
                                 <ul className="space-y-4">
                                     {service.benefits.map((benefit, i) => (
                                         <li key={i} className="flex items-start">
                                             <FaCheckCircle className="h-5 w-5 text-primary mr-2 shrink-0 mt-0.5" />
-                                            <span>{benefit}</span>
+                                            <span className="text-slate-700 dark:text-slate-400">{benefit}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -94,12 +94,12 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
 
                             {service.tags && (
                                 <>
-                                <h3 className="text-xl font-semibold mt-8 mb-6">Tags & Tools</h3>
+                                <h3 className="text-xl text-slate-800 dark:text-slate-300 font-semibold mt-8 mb-6">Tags & Tools</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {service.tags.map((tag, i) => (
                                     <span
                                         key={i}
-                                        className="px-3 py-1 text-sm bg-background border border-border rounded-full"
+                                        className="px-3 py-1 text-slate-700 dark:text-slate-400 text-sm bg-background border border-border rounded-full"
                                     >
                                         {tag}
                                     </span>
@@ -112,7 +112,7 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                                 {service.price && (
                                     <p className="text-2xl font-bold text-primary mb-6">{service.price}</p>
                                 )}
-                                <Link href="/contact" className="group gradient-btn py-3 w-full text-lg flex flex-row items-center justify-center gap-2">
+                                <Link href="/contact" className="group gradient-btn py-3 w-full text-lg flex flex-row items-center justify-center gap-2 max-w-[300px] lg:max-w-full">
                                     Get started
                                     <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition" />
                                 </Link>

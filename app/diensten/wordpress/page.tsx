@@ -11,24 +11,40 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function WordpressPage() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Wat is het voordeel van een WordPress-website met Oxygen Builder?",
+          answer: "Oxygen Builder maakt het mogelijk om volledig maatwerk te leveren, zonder beperkingen van standaardthema’s. Je website is daardoor uniek, snel en precies zoals jij het wilt."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Kan ik zelf mijn website beheren na oplevering?",
+          answer: "Ja! Je krijgt een duidelijke handleiding en een korte training, zodat je zelfstandig pagina’s, teksten en afbeeldingen kunt aanpassen."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Hoe lang duurt het bouwen van een WordPress-website?",
+          answer: "Gemiddeld duurt dit 2 tot 4 weken, afhankelijk van de complexiteit en het aantal pagina’s. Met wireframes en ontwerp kan dit korter zijn."
         },
         {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
+          question: "Moet ik de Oxygen builder aanschaffen?",
+          answer: "Zolang je een onderhoudscontract hebt, draait de website op mijn licentie. Dit betekent dat je geen extra kosten hebt voor de Oxygen Builder. Als je geen onderhoudscontract hebt, zul je de licentie na oplevering zelf moeten aanschaffen."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
+          question: "Is hosting inbegrepen in de prijs?",
+          answer: "Nee, hosting is niet standaard inbegrepen, je kunt de hosting door mij laten doe of zelf iets regelen."
+        },
+        {
+          question: "Is mijn website mobielvriendelijk?",
+          answer: "Ja, standaard zijn alle websites die ik maak responsive. Dit betekent dat ze goed functioneren op zowel desktop- als mobiele apparaten."
+        },
+        {
+          question: "Kan ik later nog nieuwe functies of pagina’s toevoegen?",
+          answer: "Zeker! WordPress is zeer uitbreidbaar. Je kunt eenvoudig nieuwe pagina’s, contactformulieren, integraties of zelfs een webshop toevoegen."
+        },
+        {
+          question: "Is SEO inbegrepen in het bouwproces?",
+          answer: "Standaard zorg ik ervoor dat de basis SEO goed is ingesteld. Dit omvat het optimaliseren van titels, meta-beschrijvingen en URL-structuur. Voor uitgebreide SEO-diensten bied ik aparte pakketten aan."
+        },
+        {
+          question: "Wat als ik na oplevering toch nog hulp nodig heb?",
+          answer: "Geen probleem! Je kunt kiezen voor een aanvullend onderhouds- en supportpakket, waarmee ik je blijf ondersteunen en de site veilig en up-to-date blijft. Of je kunt me gewoon een berichtje sturen."
         }
     ];
 

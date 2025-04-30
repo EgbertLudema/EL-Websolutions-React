@@ -37,7 +37,8 @@ export default function AboutPage() {
                         <div className="flex flex-row flex-wrap gap-3 pt-8">
                             <span className="px-3 py-1 tag-selected">Next.js</span>
                             <span className="px-3 py-1 tag-selected">Wordpress</span>
-                            <span className="px-3 py-1 tag-selected">Jetpack Compose</span>
+                            <span className="px-3 py-1 tag-selected">Oxygen builder</span>
+                            <span className="px-3 py-1 tag-selected">Woocommerce</span>
                             <span className="px-3 py-1 tag-selected">UI/UX Design</span>
                         </div>
                         <div className="flex flex-row gap-4 pt-8">
@@ -51,7 +52,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* rechter kolom */}
-                    <div className="flex justify-end order-1 md:order-2">
+                    <div className="flex justify-center md:justify-end order-1 md:order-2">
                         <Image 
                             className="bg-slate-200 dark:bg-slate-900 transition-all duration-100 rounded-lg shadow-lg" 
                             src="/images/Portret_Egbert_NoBG.png" 

@@ -11,24 +11,32 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function CustomWebsitePage() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Wat is jouw ontwikkelproces?",
+          answer: "Mijn ontwikkelproces begint met een grondig begrip van jouw wensen en doelen. Ik maak wireframes en prototypes ter goedkeuring voordat ik start met de ontwikkeling. Tijdens het hele traject geef ik regelmatig updates en is er ruimte voor feedback, zodat het eindproduct aan jouw verwachtingen voldoet."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Hoelang duurt het gemiddeld om een project af te ronden?",
+          answer: "Gemiddeld duurt het 3-4 weken om een eenvoudige website te ontwikkelen. Complexere websites kunnen 1-3 maanden duren. De exacte tijdlijn hangt af van de specificaties en functionaliteiten die je nodig hebt. Tijdens ons eerste gesprek kan ik een nauwkeuriger tijdsbestek geven op basis van jouw wensen."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Is hosting inbegrepen in de prijs?",
+          answer: "Nee, hosting is niet standaard inbegrepen. Voor het maken van een custom webshop, is het het gebruiksvriendelijk en het best om dit bij Vercel te hosten."
         },
         {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
+          question: "Bied je ook onderhoud en ondersteuning aan?",
+          answer: "Ja, ik bied verschillende onderhoudspakketten aan om je website veilig, up-to-date en soepel draaiend te houden. Veel van deze pakketten bevatten maandelijks onderhoud, contentupdates, en technische ondersteuning. Dit zorgt ervoor dat je website altijd optimaal presteert."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
+          question: "Hoe bouw je een custom website?",
+          answer: "Voor het bouwen van een custom website bouw ik een headless Wordpress website door de frontend te scheiden van de backend(Wordpress). Dit biedt de mogelijkheid om de frontend te bouwen met moderne technologieën zoals React, Next.js en Tailwind CSS. Dit zorgt voor een unieke en op maat gemaakte ervaring die is afgestemd op jouw specifieke behoeften."
+        },
+        {
+          question: "Wat houd headless in?",
+          answer: "Headless betekent dat de frontend van de backend is gescheiden. Dit biedt meer flexibiliteit en controle over het ontwerp en de functionaliteit van de website. Het stelt ons in staat om moderne technologieën te gebruiken voor de frontend, terwijl we profiteren van de contentbeheermogelijkheden van Wordpress aan de achterkant. Op deze manier blijft het mogelijk om de content eenvoudig te beheren, terwijl je wel een unieke op maat gemaakte website hebt."
+        },
+        {
+          question: "Wat betekend CMS?",
+          answer: "CMS staat voor Content Management System. Het stelt gebruikers in staat om eenvoudig inhoud toe te voegen, te bewerken en te publiceren op hun website. Een mooi voorbeeld hiervan is Wordpress."
         }
     ];
 

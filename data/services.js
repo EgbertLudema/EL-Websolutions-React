@@ -14,10 +14,10 @@ const services = [
         image: "/images/services/Wireframing_image.jpg",
         benefits: [
             "Eerst een visueel idee van de website",
+            "Bespaar tijd en geld in de ontwikkelingsfase",
             "Snel en goedkoop een idee krijgen van de website",
-            "Helpt bij het plannen van de gebruikerservaring",
             "Vroegtijdig problemen identificeren",
-            "Vermijd dure wijzigingen in latere fasen"
+            "Vermijd (dure) wijzigingen in latere fasen"
         ],                    
         gallery: [
             {
@@ -49,7 +49,7 @@ const services = [
             description: "Invetariseren wat er al is en wat er nog moet komen. Bespreken van je doelen, vereiste functies, integraties, budget en de tijdlijn."
             },
             {
-            title: "Wireframing",
+            title: "Wireframing(optioneel, maar aanbevolen)",
             description: "Ik maak desktop wireframes om de website en gebruikersstroom te structureren. Dit helpt bij het visualiseren van de lay-out en functionaliteit voordat de ontwikkeling begint."
             },
             {
@@ -67,7 +67,12 @@ const services = [
             {
             title: "Implementatie & Overdracht",
             description: "De website gaat live, waarna ik een korte training geef over het gebruik en het aanpassen van de content. Daarnaast lever ik een gratis handleiding mee."
+            },
+            {
+            title: "Support & onderhoud(optioneel)",
+            description: "Ik bied verschillende pakketten aan voor onderhoud en support."
             }
+
         ],        
         gallery: [
         ],
@@ -93,19 +98,23 @@ const services = [
         process: [
             {
             title: "Intake gesprek",
-            description: "Ik kom bij je langs om je wensen en doelen te bespreken. Dit kan ook online via een videogesprek."
+            description: "Ik kom bij je langs om je wensen en doelen te bespreken en om te invetariseren wat er al is en wat er nog moet komen. Dit kan ook online via een videogesprek."
             },
             {
             title: "Wireframes(optioneel)",
             description: "Ik maak een wireframe van de website om een idee te krijgen van de structuur en de functionaliteiten van de website."
             },
             {
-            title: "Ontwerp",
+            title: "Ontwerp(indien nog niet aanwezig)",
             description: "Ik maak een ontwerp van de website in Figma. Dit is een visueel ontwerp van de website."
             },
             {
+            title: "Platforminrichting",
+            description: "Installatie van Wordpress"
+            },
+            {
             title: "Ontwikkeling",
-            description: "Ik bouw de website in WordPress met de Oxygen builder."
+            description: "Ik bouw de website in WordPress d.m.v. de Oxygen builder."
             },
             {
             title: "Testen",
@@ -129,39 +138,43 @@ const services = [
         tags: ["e-commerce", "woocommerce" , "webshop", "Oxygen builder", "custom plugins", "CMS"],
         image: "/images/services/image_5.jpg",
         benefits: [
-            "Sell products online securely",
-            "WooCommerce or Shopify tailored setup",
-            "Optimized for mobile shopping",
-            "Smooth checkout and payment flow",
-            "Scalable for growth and inventory",
-            "Integrated analytics and reporting"
+            "Verkoop producten online op een veilige manier",
+            "Op maat gemaakte Woocommerce webshop",
+            "Geoptimaliseerd voor mobiel winkelen",
+            "Vlotte checkout en betalingsafhandeling",
+            "Custom plugins voor unieke functies",
+            "Geïntegreerde analyses en rapportages"
         ],
         process: [
             {
-            title: "Product & Structure Planning",
-            description: "Define your product types, categories, and shop structure"
+                title: "Intake gesprek",
+                description: ""
             },
             {
-            title: "Platform Setup",
-            description: "Install and configure WooCommerce or set up your Shopify store"
+                title: "Wireframes(optioneel)",
+                description: "Ik maak een wireframe van de website om een idee te krijgen van de structuur en de functionaliteiten van de website."
             },
             {
-            title: "Design & Branding",
-            description: "Design a storefront that fits your brand and maximizes conversions"
+                title: "Ontwerp(indien nog niet aanwezig)",
+                description: "Ik maak een ontwerp van de website in Figma. Dit is een visueel ontwerp van de website."
             },
             {
-            title: "Product Management",
-            description: "Add products, images, variants, and descriptions"
+                title: "Ontwikkeling",
+                description: "Ik bouw de website in WordPress d.m.v. de Oxygen builder."
             },
             {
-            title: "Checkout & Payment Integration",
-            description: "Set up secure payments, shipping, taxes, and customer flows"
+                title: "Testen",
+                description: "Ik zorg ervoor dat de website op alle apparaten en browsers werkt."
             },
             {
-            title: "Launch & Optimization",
-            description: "Test the store and launch, then monitor and improve performance"
+                title: "Implementatie & Overdracht",
+                description: "De website gaat live, waarna ik een korte training geef over het gebruik en het aanpassen van de content. Daarnaast lever ik een gratis handleiding mee."
+            },
+            {
+                title: "Lancering & Optimalisatie",
+                description: "Test de webshop en lanceer deze, daarna monitoren en prestaties verbeteren"
             }
-        ],           
+        ],        
         gallery: [
         ],
     },
@@ -254,7 +267,7 @@ const services = [
     // },
     {
         icon: FaWrench,
-        title: "Onderhoudt & support",
+        title: "Onderhoud & support",
         link: "/diensten/maintenance-support",
         description: "Ondersteuning en onderhoud voor je website",
         text: "Ik bied doorlopende onderhouds- en ondersteuningsdiensten om ervoor te zorgen dat je website soepel blijft draaien en up-to-date blijft. Of het nu gaat om het oplossen van bugs, het toevoegen van nieuwe functies of het bijwerken van inhoud, ik bied betrouwbare ondersteuning om je digitale aanwezigheid in topvorm te houden.",

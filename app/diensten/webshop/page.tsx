@@ -11,24 +11,28 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function WebshopPage() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Welke platformen bied je aan voor webshops?",
+          answer: "Ik werk voornamelijk met WooCommerce (WordPress), maar ook Shopify. Samen kiezen we het platform dat het beste past bij jouw wensen, producten en groeiplannen."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Bouw je de webshop helemaal op maat of gebruik je een thema?",
+          answer: "Beide opties zijn mogelijk. Ik bied zowel thema-gebaseerde oplossingen (snel en betaalbaar) als volledig custom webshops via de Oxygen Builder (meer vrijheid en maatwerk). Het hangt af van jouw wensen en budget."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Moet ik de Oxygen builder aanschaffen?",
+          answer: "Als de webshop met Oxygen wordt gebouwd draait de webshop op mijn licent zolang je een onderhoudscontract hebt. Dit betekent dat je geen extra kosten hebt voor de Oxygen Builder. Als je geen onderhoudscontract hebt, zul je de licentie na oplevering zelf moeten aanschaffen."
         },
         {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
+          question: "Is de webshop geschikt voor mobiel gebruik?",
+          answer: "Ja, elke webshop die ik bouw is volledig responsive, dus goed bruikbaar op smartphones en tablets."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
+          question: "Hoe lang duurt het om een webshop te bouwen?",
+          answer: "Dat hangt af van de complexiteit en het gekozen pakket. Een thema-gebaseerde webshop kan binnen 2-3 weken live zijn. Een volledig maatwerk oplossing duurt minimaal 4-6 weken."
+        },
+        {
+          question: "Bied je onderhoud & support aan na het opleveren?",
+          answer: "Ja, ik bied verschillende onderhoudspakketten aan. Dit omvat updates, back-ups en content updates. Zo blijft jouw webshop altijd veilig en up-to-date."
         }
     ];
 

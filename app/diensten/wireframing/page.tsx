@@ -11,24 +11,32 @@ import ServiceDetails from "@/components/services/ServiceDetails";
 export default function Wireframing() {
     const faqData = [
         {
-          question: "What is your development process like?",
-          answer: "My development process begins with a thorough understanding of your needs and goals. I create wireframes and prototypes for approval before moving to development. Throughout the process, I provide regular updates and opportunities for feedback to ensure the final product meets your expectations."
+          question: "Wat is een wireframe precies?",
+          answer: "Een wireframe is een schematische weergave van een website of app. Het toont de indeling, structuur en functionaliteit, zonder afleiding van kleuren, afbeeldingen of tekststijlen."
         },
         {
-          question: "How long does it take to complete a typical project?",
-          answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while complex web applications can take 2-3 months. During our initial consultation, I'll provide a more accurate timeline based on your specific requirements."
+          question: "Waarom is wireframing belangrijk?",
+          answer: "Wireframing helpt om de gebruikerservaring te plannen, potentiële problemen vroegtijdig op te sporen en zorgt voor een duidelijk plan voordat het echte ontwerp en de ontwikkeling starten. Dit bespaart tijd en kosten op de lange termijn."
         },
         {
-          question: "Do you provide ongoing maintenance and support?",
-          answer: "Yes, I offer various maintenance packages to keep your site secure, updated, and running smoothly. This includes regular backups, security updates, performance optimization, and content updates as needed."
+          question: "Is een wireframe hetzelfde als een ontwerp?",
+          answer: "Nee. Een wireframe is een functionele schets van je website of app, zonder grafische afwerking. Het is een stap vóór het visuele ontwerp."
         },
         {
-          question: "How do you handle revisions and feedback?",
-          answer: "Feedback is an essential part of the development process. I include two rounds of revisions in my standard packages. We'll have dedicated review periods where you can provide consolidated feedback, which I'll implement promptly."
+          question: "Wat krijg ik precies als eindresultaat?",
+          answer: "Je ontvangt één of meerdere low-fidelity wireframes in PDF of via een tool zoals Figma(wat jouw voorkeur is). Deze tonen de structuur van je pagina’s, inclusief indeling van knoppen, navigatie en contentblokken."
         },
         {
-          question: "What technologies do you specialize in?",
-          answer: "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various CSS frameworks like Tailwind CSS. For e-commerce, I work with platforms such as Shopify and WooCommerce."
+          question: "Kan ik wijzigingen laten aanbrengen in de wireframes?",
+          answer: "Ja, je kunt altijd feedback geven en 2 correctierondes zijn inbegrepen. Samen zorgen we dat het wireframe aansluit op jouw wensen en doelen."
+        },
+        {
+          question: "Hoe lang duurt het maken van een wireframe?",
+          answer: "Afhankelijk van de grootte van het project meestal 1 tot 2 werkdagen. De homepage kan na 1 werkdag al klaar zijn. Dit is natuurlijk afhankelijk van de complexiteit van de website en het aantal pagina's dat je wilt laten maken."
+        },
+        {
+          question: "Voor welke projecten is wireframing geschikt?",
+          answer: "Wireframing is nuttig voor alle soorten websites of applicaties — van eenvoudige landingspagina’s tot complexe platforms of webshops."
         }
     ];
 
@@ -44,7 +52,6 @@ export default function Wireframing() {
                 <ServiceDetails service={wireframing} />
             </div>
             <GoogleReviews />
-            <USPS />
             <FAQ questions={faqData} />
             <Contact />
         </>

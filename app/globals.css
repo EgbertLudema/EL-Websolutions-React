@@ -139,3 +139,7 @@ article.project-page ul{
 article.project-page ul li{
     @apply text-slate-700 dark:text-slate-300;
 }
+.keen-slider,
+.keen-slider__slide {
+    overflow: visible !important;
+}
