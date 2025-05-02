@@ -1,6 +1,7 @@
 import { getAllProjects, ProjectPost } from "@/lib/server/getProjects";
 import ProjectFilter from "@/components/ProjectTagFilter";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
     title: "Projecten - EL-Websolutions",
@@ -14,8 +15,9 @@ export default async function ProjectsPage() {
     return (
         <main className="container mt-[100px] py-8 mb-12 flex flex-col items-center justify-center">
             <h1 className="mb-8 leading-snug">Projecten</h1>
-            <ProjectFilter allProjects={allProjects} allTags={allTags} />
+            <Suspense fallback={<div>Filters laden...</div>}>
+                <ProjectFilter allProjects={allProjects} allTags={allTags} />
+            </Suspense>
         </main>
     );
 }
-  

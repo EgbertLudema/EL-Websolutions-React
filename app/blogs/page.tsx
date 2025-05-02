@@ -3,6 +3,7 @@ import BlogTagFilter from "@/components/BlogTagFilter";
 import Link from "next/link";
 import { FaRegUser, FaRegCalendarAlt } from "react-icons/fa";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
     title: "Blogs - EL-Websolutions",
@@ -47,10 +48,7 @@ export default async function BlogsPage() {
                                 <div className="p-6 flex flex-col flex-grow">
                                     <div className="flex flex-row gap-3 mb-4">
                                         {blog.tags?.map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="tag-secondair"
-                                            >
+                                            <span key={tag} className="tag-secondair">
                                                 {tag}
                                             </span>
                                         ))}
@@ -79,9 +77,11 @@ export default async function BlogsPage() {
             </section>
 
             <h2 className="text-2xl font-semibold mt-20 mb-4">Alle blogs:</h2>
-            {/* Searchbar */}
             <h3 className="mb-4 text-xl font-semibold">Filter per categorie:</h3>
-            <BlogTagFilter allBlogs={allBlogs} allTags={allTags} />
+
+            <Suspense fallback={<div>Filter laden...</div>}>
+                <BlogTagFilter allBlogs={allBlogs} allTags={allTags} />
+            </Suspense>
         </main>
     );
 }
