@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaStar, FaUser } from "react-icons/fa";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import Image from "next/image";
 
 const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 const GOOGLE_PLACE_ID = "ChIJ-2p_GgTEJ0wRHuJzuHFLjw0";
@@ -125,11 +126,14 @@ export default function GoogleReviews() {
                                     >
                                         <div className="flex items-center mb-4">
                                             {review.authorAttribution.photoUri ? (
-                                                <img
+                                                <Image
                                                     src={review.authorAttribution.photoUri}
                                                     alt={review.authorAttribution.displayName}
+                                                    width={48}
+                                                    height={48}
                                                     className="w-12 h-12 object-cover mr-4 rounded-full"
                                                 />
+                                            
                                             ) : (
                                                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                                                     <FaUser className="w-6 h-6 text-primary" />
