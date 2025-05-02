@@ -39,7 +39,7 @@ export default async function SitemapPage() {
                                 {title}
                             </Link>
 
-                            {/* Als het Diensten is, toon ook de subdiensten */}
+                            {/* Toon subdiensten als het om de Diensten-pagina gaat */}
                             {href === "/diensten" && services.length > 0 && (
                                 <ul className="list-disc pl-6 mt-2">
                                     {services.map((service) => (

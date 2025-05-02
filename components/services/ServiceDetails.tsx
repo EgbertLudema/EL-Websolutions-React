@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { FaArrowRight } from "react-icons/fa6";
+import Image from "next/image";
 
 type Service = {
     icon: IconType;
@@ -31,42 +32,42 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                     {/* Main Content */}
                     <div className="lg:col-span-2">
                         <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
                         >
-                        <h2 className="text-3xl text-slate-800 dark:text-slate-300 font-bold mb-6">{service.title} Details</h2>
-                        <p className="mb-6 text-slate-700 dark:text-slate-400">{service.text}</p>
+                            <h2 className="text-3xl text-slate-800 dark:text-slate-300 font-bold mb-6">{service.title} Details</h2>
+                            <p className="mb-6 text-slate-700 dark:text-slate-400">{service.text}</p>
 
-                        {service.process && service.process.length > 0 && (
-                            <>
-                                <h3 className="text-xl text-slate-800 dark:text-slate-300 font-semibold mb-4 mt-10">Mijn {service.title} proces</h3>
-                                <ul className="space-y-4">
-                                {service.process.map((step, i) => (
-                                    <li key={i} className="flex items-start">
-                                    <span className="text-primary mr-3 mt-1">{i + 1}.</span>
-                                    <div>
-                                        <strong className="block text-slate-800 dark:text-slate-300 text-foreground">{step.title}</strong>
-                                        <span className="text-slate-700 dark:text-slate-400">{step.description}</span>
-                                    </div>
-                                    </li>
-                                ))}
-                                </ul>
-                            </>
-                        )}
+                            {service.process && service.process.length > 0 && (
+                                <>
+                                    <h3 className="text-xl text-slate-800 dark:text-slate-300 font-semibold mb-4 mt-10">Mijn {service.title} proces</h3>
+                                    <ul className="space-y-4">
+                                    {service.process.map((step, i) => (
+                                        <li key={i} className="flex items-start">
+                                            <span className="text-primary mr-3 mt-1">{i + 1}.</span>
+                                            <div>
+                                                <strong className="block text-slate-800 dark:text-slate-300 text-foreground">{step.title}</strong>
+                                                <span className="text-slate-700 dark:text-slate-400">{step.description}</span>
+                                            </div>
+                                        </li>
+                                    ))}
+                                    </ul>
+                                </>
+                            )}
 
-                        {service.gallery && service.gallery.length > 0 && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                                {service.gallery.map((img, i) => (
-                                    <img
-                                        key={i}
-                                        src={img.src}
-                                        alt={img.alt}
-                                        className="rounded-xl"
-                                    />
-                                ))}
-                            </div>
-                        )}
+                            {service.gallery && service.gallery.length > 0 && (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                                    {service.gallery.map((img, i) => (
+                                        <Image
+                                            key={i}
+                                            src={img.src}
+                                            alt={img.alt}
+                                            className="rounded-xl"
+                                        />
+                                    ))}
+                                </div>
+                            )}
 
                         </motion.div>
                     </div>

@@ -1,4 +1,3 @@
-// TODO: Server side mail handler fixen!!!
 "use client";
 
 import { useState, useEffect } from "react";

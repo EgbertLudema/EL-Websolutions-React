@@ -4,12 +4,6 @@ import { useState, useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import EmailLink from "@/components/ui/emailLink";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Contact - EL-Websolutions",
-    description: "Een idee of project in gedachten? Neem contact op en laten we het werkelijkheid maken!",
-};
 
 declare global {
     interface Window {

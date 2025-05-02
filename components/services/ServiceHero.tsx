@@ -2,6 +2,7 @@ import { IconType } from "react-icons";
 import Breadcrumbs from "../Breadcrumbs";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import Image from "next/image";
 
 type Service = {
     icon: IconType;
@@ -29,7 +30,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                     </div>
                     <div className="relative z-10 mt-4 ml-4">
                     {service.image && (
-                        <img
+                        <Image
                             src={service.image}
                             alt={service.title}
                             className="rounded-lg shadow-md max-w-full h-auto"
