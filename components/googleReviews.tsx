@@ -32,7 +32,7 @@ export default function GoogleReviews() {
         },
         created(slider) {
             // Haal perView uit de actieve instellingen
-            setPerView(slider.options.slides?.perView || 1);
+            setPerView((slider.options.slides as { perView?: number })?.perView ?? 1);
         },
     });
     
