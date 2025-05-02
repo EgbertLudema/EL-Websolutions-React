@@ -31,7 +31,7 @@ export default async function SitemapPage() {
             <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
 
             <section className="mb-10">
-                <h2 className="text-xl font-semibold mb-2">Statische pagina's</h2>
+                <h2 className="text-xl font-semibold mb-2">Statische pagina&#39;s</h2>
                 <ul className="list-disc pl-6">
                     {staticPaths.map(({ title, href }) => (
                         <li key={href} className="mb-1">
