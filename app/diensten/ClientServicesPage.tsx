@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import services from "@/data/services";
 import GoogleReviews from "@/components/googleReviews";
 import USPS from "@/components/homepage/usps";
-import Contact from "@/components/Contact";
+import Contact from "@/components/ContactSection";
 import FAQ from "@/components/FAQ";
 
 export default function ClientServicesPage() {
