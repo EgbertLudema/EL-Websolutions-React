@@ -2,7 +2,6 @@
 
 import services from "@/data/services";
 import GoogleReviews from "@/components/googleReviews";
-import USPS from "@/components/homepage/usps";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import ServiceHero from "@/components/services/ServiceHero";
