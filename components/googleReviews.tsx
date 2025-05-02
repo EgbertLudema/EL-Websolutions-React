@@ -117,7 +117,7 @@ export default function GoogleReviews() {
                         </motion.div>
 
                         {/* Carousel met reviews */}
-                        <div className="w-full md:w-1/2 lg:w-2/3 overflow-hidden pb-0 md:pb-2">
+                        <div className={`w-full md:w-1/2 lg:w-2/3 overflow-hidden pb-0 ${hasDots ? "md:pb-2" : ""}`}>
                             <div ref={sliderRef} className="keen-slider overflow-visible">
                                 {googleData.reviews?.map((review: any, index: number) => (
                                     <div
@@ -185,7 +185,7 @@ export default function GoogleReviews() {
                             {/* Dots */}
                             {googleData.reviews?.length > perView && (
                                 <div className="flex justify-center mt-4 gap-2">
-                                    {googleData.reviews.map((_, idx) => (
+                                    {googleData.reviews.map((_: any, idx: number) => (
                                         <button
                                             key={idx}
                                             onClick={() => instanceRef.current?.moveToIdx(idx)}
