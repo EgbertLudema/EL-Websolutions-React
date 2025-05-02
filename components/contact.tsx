@@ -62,8 +62,6 @@ export default function Contact() {
                     formData.append("message", message);
                     formData.append("token", token);
 
-                    console.log("Versturen naar API:", { name, email, message, token });
-
                     const response = await fetch("/api/send-mail", {
                         method: "POST",
                         body: formData,

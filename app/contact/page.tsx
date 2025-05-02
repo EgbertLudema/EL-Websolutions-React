@@ -13,7 +13,7 @@ declare global {
 
 const GOOGLE_RECAPTCHA_KEY = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY;
 
-export default function AboutPage() {
+export default function ContactPage() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -26,9 +26,9 @@ export default function AboutPage() {
         script.src = `https://www.google.com/recaptcha/api.js?render=${GOOGLE_RECAPTCHA_KEY}`;
         script.async = true;
         script.defer = true;
-        script.onload = () => console.log("reCAPTCHA script loaded");
+        script.onload = () => console.log("reCAPTCHA script geladen");
         document.head.appendChild(script);
-    }, []);    
+    }, []);
 
     const validateEmail = (email: string) => {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,39 +38,33 @@ export default function AboutPage() {
     const triggerPopup = (message: string) => {
         setPopupMessage(message);
         setShowPopup(true);
-        setTimeout(() => {
-            setShowPopup(false);
-        }, 5000);
+        setTimeout(() => setShowPopup(false), 5000);
     };
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-    
+
         if (!emailValid) {
             triggerPopup("Ongeldig e-mailadres. Controleer uw invoer.");
             return;
         }
-    
-        // Ensure grecaptcha is available
+
         if (typeof window !== "undefined" && window.grecaptcha) {
             window.grecaptcha.ready(async () => {
                 try {
                     const token = await window.grecaptcha.execute(GOOGLE_RECAPTCHA_KEY, { action: "submit" });
-    
+
                     const formData = new FormData();
                     formData.append("name", name);
                     formData.append("email", email);
                     formData.append("message", message);
                     formData.append("token", token);
 
-                    console.log("Versturen naar API:", { name, email, message, token });
-
-    
-                    const response = await fetch("https://el-websolutions.com/api/sendmail.php", {
+                    const response = await fetch("/api/send-mail", {
                         method: "POST",
                         body: formData,
                     });
-    
+
                     if (response.ok) {
                         triggerPopup("Bericht succesvol verzonden!");
                         setName("");
@@ -85,11 +79,10 @@ export default function AboutPage() {
                 }
             });
         } else {
-            console.error("reCAPTCHA is not loaded.");
+            console.error("reCAPTCHA is niet geladen.");
             triggerPopup("Fout bij laden van reCAPTCHA. Probeer het opnieuw.");
         }
-    };  
-
+    };
 
     return (
         <div>
@@ -127,9 +120,7 @@ export default function AboutPage() {
                         >
                             <div className="space-y-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">
-                                        Naam
-                                    </label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">Naam</label>
                                     <input
                                         type="text"
                                         required
@@ -139,9 +130,7 @@ export default function AboutPage() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">
-                                        Email
-                                    </label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">E-mail</label>
                                     <input
                                         type="email"
                                         required
@@ -159,9 +148,7 @@ export default function AboutPage() {
                                     )}
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">
-                                        Bericht
-                                    </label>
+                                    <label className="block text-sm font-medium text-foreground mb-2">Bericht</label>
                                     <textarea
                                         rows={4}
                                         required
@@ -173,6 +160,8 @@ export default function AboutPage() {
                                 <motion.button
                                     type="submit"
                                     className="w-full px-8 py-3 gradient-btn"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     Verzenden
                                 </motion.button>
@@ -180,6 +169,13 @@ export default function AboutPage() {
                         </motion.form>
                     </div>
                 </div>
+
+                {/* Popup-melding */}
+                {showPopup && (
+                    <div className="fixed bottom-5 right-5 bg-primary text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                        {popupMessage}
+                    </div>
+                )}
             </main>
         </div>
     );
