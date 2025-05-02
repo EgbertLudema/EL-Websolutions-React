@@ -65,7 +65,7 @@ export default function Contact() {
 
                     console.log("Versturen naar API:", { name, email, message, token });
 
-                    const response = await fetch("https://el-websolutions.com/api/sendmail.php", {
+                    const response = await fetch("/api/send-mail", {
                         method: "POST",
                         body: formData,
                     });

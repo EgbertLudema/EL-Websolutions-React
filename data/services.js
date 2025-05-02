@@ -297,7 +297,7 @@ const services = [
             },
             {
             title: "Maandelijkse support uren",
-            description: "Afhankelijk van het pakket, 1-5 uur per maand om bugs op te lossen, nieuwe functies toe te voegen of andere aanpassingen te maken"
+            description: "Afhankelijk van het pakket, 1-5 uur per maand om bugs op te lossen, nieuwe functies toe te voegen, content updates of andere aanpassingen te maken"
             },
             {
             title: "Support",
