@@ -7,7 +7,7 @@ import Services from "@/components/homepage/services";
 import USPS from "@/components/homepage/usps";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
+import Contact from "@/components/ContactSection";
 import GoogleReviews from "@/components/googleReviews";
 import type { Metadata } from "next";
 
