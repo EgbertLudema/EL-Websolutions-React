@@ -8,7 +8,7 @@ export default function Services(){
         <section className="py-20 shadow-md">
             <div className="container">
                 <p className=" text-center sub-title mb-6">Diensten</p>
-                <h2 className="text-center mb-12">Wat ik bied</h2>
+                <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Wat ik bied</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
@@ -23,10 +23,10 @@ export default function Services(){
                                 <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                                     <service.icon size={24} />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2 transition-colors">
+                                <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-100">
                                     {service.title}
                                 </h3>
-                                <p className="text-muted-foreground mb-4">{service.description}</p>
+                                <p className="text-slate-700 dark:text-slate-200 mb-4">{service.description}</p>
                                 <span className="text-primary font-medium">{service.price}</span>
                             </div>
                         

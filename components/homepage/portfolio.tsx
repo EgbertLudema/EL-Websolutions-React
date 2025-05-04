@@ -21,7 +21,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
         <section className="py-20">
             <div className="container flex flex-col items-center">
                 <p className="text-center sub-title mb-6">Portfolio</p>
-                <h2 className="text-center mb-12">Uitgelichte projecten</h2>
+                <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Uitgelichte projecten</h2>
 
                 {/* Show only 2 projects on small screens */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-8 place-items-center items-stretch">

@@ -31,8 +31,8 @@ const FAQ = ({
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                 <span className="text-primary font-medium">Vragen</span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2">{title}</h2>
-                <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">{subtitle}</p>
+                <h2 className="text-3xl md:text-4xl text-slate-900 dark:text-slate-100 font-bold mt-2">{title}</h2>
+                <p className="text-slate-700 dark:text-slate-200 mt-4 max-w-2xl mx-auto">{subtitle}</p>
                 </div>
 
                 <div className="max-w-3xl mx-auto">

@@ -13,7 +13,7 @@ export default async function ProjectsPage() {
     const allTags = Array.from(new Set(allProjects.flatMap((project) => project.tags || [])));
 
     return (
-        <main className="container mt-[100px] py-8 mb-12 flex flex-col items-center justify-center">
+        <main className="container mt-[100px] py-8 mb-12">
             <h1 className="mb-8 leading-snug">Projecten</h1>
             <Suspense fallback={<div>Filters laden...</div>}>
                 <ProjectFilter allProjects={allProjects} allTags={allTags} />

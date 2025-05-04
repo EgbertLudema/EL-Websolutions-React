@@ -33,27 +33,21 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
     });
 
     return (
-        <div>
+        <>
             {/* Animated tag filter */}
             <motion.div layout className="mt-4 flex flex-wrap justify-start gap-4">
                 {allTags.map((tag) => (
-                    <motion.button
+                    <button
                         key={tag}
-                        layout
                         onClick={() => toggleTag(tag)}
                         className={`transition ${
                             selectedTags.includes(tag)
                                 ? "tag-big-selected"
                                 : "tag-big"
                         }`}
-                        transition={{
-                            type: "spring",
-                            stiffness: 300,
-                            damping: 20,
-                        }}
                     >
                         {tag}
-                    </motion.button>
+                    </button>
                 ))}
             </motion.div>
 
@@ -83,6 +77,6 @@ export default function TagFilter({ allBlogs, allTags }: { allBlogs: BlogPost[];
                     )}
                 </AnimatePresence>
             </motion.div>
-        </div>
+        </>
     );
 }

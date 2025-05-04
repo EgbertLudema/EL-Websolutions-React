@@ -19,13 +19,13 @@ export default function BlogCard({ blog }: { blog: BlogPost }) {
                 className="bg-slate-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg dark:bg-slate-800 transition-shadow flex flex-col h-full"
             >
                 <div className="aspect-video overflow-hidden">
-                <Image
-                    src={blog.thumbnail || "/placeholder.jpg"}
-                    alt={blog.title}
-                    width={400}
-                    height={225}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                    <Image
+                        src={blog.thumbnail || "/placeholder.jpg"}
+                        alt={blog.title}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-3 text-sm text-slate-600 dark:text-slate-400">

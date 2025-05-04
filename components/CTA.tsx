@@ -7,7 +7,7 @@ export default function CTA() {
             <div className="container">
                 <div className="flex flex-col items-center justify-center gap-4">
                     <h2 className="text-center text-slate-100 mb-6">Klaar om wat nieuws te beginnen?</h2>
-                    <p className="text-center text-slate-100 mb-6">
+                    <p className="text-center text-slate-200 mb-6">
                         Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.
                     </p>
                     <Link

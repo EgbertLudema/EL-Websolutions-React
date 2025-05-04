@@ -14,7 +14,7 @@ function formatDate(dateString?: string) {
 
 export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
     if (!allBlogs || allBlogs.length === 0) {
-        return <p className="text-center text-muted-foreground">No blogs found.</p>;
+        return <p className="text-center text-slate-900 dark:text-slate-100">No blogs found.</p>;
     }
 
     const sortedBlogs = [...allBlogs].sort((a, b) => {
@@ -30,8 +30,8 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
             <div className="container flex flex-col items-center">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Blog</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Laatste blogs</h2>
-                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl text-slate-900 dark:text-slate-100 font-bold mt-2">Laatste blogs</h2>
+                    <p className="text-slate-700 dark:text-slate-200 mt-4 max-w-2xl mx-auto">
                         Inzichten, tutorials en gedachten over webontwikkeling, ontwerp en digitale trends.
                     </p>
                 </div>

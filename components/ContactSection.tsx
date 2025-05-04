@@ -91,7 +91,7 @@ export default function Contact() {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Contact</span>
-                    <h2 className="text-3xl md:text-4xl font-bold mt-2">Neem contact op</h2>
+                    <h2 className="text-3xl md:text-4xl text-slate-900 dark:text-slate-100 font-bold mt-2">Neem contact op</h2>
                 </div>
                 <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-lg overflow-hidden">
                     <div className="grid md:grid-cols-2">

@@ -74,10 +74,10 @@ export default function GoogleReviews() {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <span className="text-primary font-medium">Testimonials</span>
-                    <h2 className="text-3xl text-slate-800 dark:text-slate-300 md:text-4xl font-bold mt-2">
+                    <h2 className="text-3xl text-slate-900 dark:text-slate-100 md:text-4xl font-bold mt-2">
                         Klantbeoordelingen
                     </h2>
-                    <p className="mt-4 max-w-2xl mx-auto">
+                    <p className="mt-4 max-w-2xl text-slate-700 dark:text-slate-200 mx-auto">
                         Geloof niet alleen mijn woord — ontdek wat klanten over mij zeggen.
                     </p>
                 </div>

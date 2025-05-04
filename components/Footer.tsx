@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20 pt-12 pb-8 px-2 md:px-0">
                     <div className="flex flex-col justify-items-start space-y-4">
-                        <h3 className="text-slate-800 dark:text-slate-300">Over mij:</h3>
+                        <h3 className="text-slate-800 dark:text-slate-200">Over mij:</h3>
                         <p className="text-slate-700 dark:text-slate-400">
                             Hoi, ik ben Egbert Ludema, een webdeveloper uit Nederland. Ik bouw websites en webapplicaties met de focus op performance en gebruiksvriendelijkheid.
                         </p>
@@ -76,7 +76,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col justify-items-start space-y-4">
-                        <h3 className="text-slate-800 dark:text-slate-300">Links</h3>
+                        <h3 className="text-slate-800 dark:text-slate-200">Links</h3>
                         <nav className="text-slate-700 dark:text-slate-400">
                             <ul className="flex flex-col space-y-1">
                                 <li><Link className="hover:text-primary transition-colors" href="/">Home</Link></li>
@@ -90,7 +90,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex flex-col justify-items-start space-y-4">
-                        <h3>Contact</h3>
+                        <h3 className="text-slate-800 dark:text-slate-200">Contact</h3>
                         <div className="flex flex-col space-y-2">
                             <EmailLink color="primary" />
                             <div className="flex items-center space-x-2 text-primary fill-primary">

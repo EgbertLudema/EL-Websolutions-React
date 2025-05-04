@@ -42,7 +42,7 @@ export default function USPS() {
         <section className="py-20 dark:border-b dark:border-slate-700">
             <div className="container">
                 <p className="text-center sub-title mb-6">Waarom EL-Websolutions</p>
-                <h2 className="text-center mb-12">Wat mij onderscheidt</h2>
+                <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Wat mij onderscheidt</h2>
             </div>
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
                 {reasons.map((reason, index) => (
@@ -57,11 +57,11 @@ export default function USPS() {
                     <div className="p-4 bg-white shadow-md dark:bg-slate-800 rounded-full">
                         <reason.icon className="text-2xl text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold">{reason.title}</h3>
+                    <h3 className="text-lg text-slate-700 dark:text-slate-200 font-semibold">{reason.title}</h3>
                     </div>
                     <p className="text-gray-700 dark:text-gray-400">{reason.description}</p>
                     {reason.steps && (
-                    <p className="mt-2 text-xs text-muted-foreground font-medium">
+                    <p className="mt-2 text-xs text-slate-800 dark:text-slate-200 font-medium">
                         {reason.steps.join(" > ")}
                     </p>
                     )}
