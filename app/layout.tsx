@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import fs from "fs";
 import path from "path";
 
@@ -40,21 +41,21 @@ const jsonLd = {
     }
 };
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-        </head>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} bg-white text-black dark:bg-slate-950 dark:text-white`}>
         <ThemeProviderWrapper>
           <Navbar />
           {children}
           <Footer />
+          <CookieBanner />
         </ThemeProviderWrapper>
       </body>
     </html>

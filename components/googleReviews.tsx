@@ -122,7 +122,7 @@ export default function GoogleReviews() {
                                 {googleData.reviews?.map((review: any, index: number) => (
                                     <div
                                         key={index}
-                                        className="keen-slider__slide overflow-visible min-w-0 bg-white p-6 rounded-xl shadow-md dark:bg-slate-800 flex flex-col"
+                                        className="keen-slider__slide overflow-visible min-w-0 bg-white p-6 rounded-xl dark:bg-slate-800 flex flex-col"
                                     >
                                         <div className="flex items-center mb-4">
                                             {review.authorAttribution.photoUri ? (
