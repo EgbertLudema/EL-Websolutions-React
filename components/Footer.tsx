@@ -80,10 +80,10 @@ export default function Footer() {
                         <nav className="text-slate-700 dark:text-slate-400">
                             <ul className="flex flex-col space-y-1">
                                 <li><Link className="hover:text-primary transition-colors" href="/">Home</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/services">Diensten</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/projects">Projecten</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/diensten">Diensten</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/projecten">Projecten</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/blogs">Blogs</Link></li>
-                                <li><Link className="hover:text-primary transition-colors" href="/about">Over mij</Link></li>
+                                <li><Link className="hover:text-primary transition-colors" href="/over-mij">Over mij</Link></li>
                                 <li><Link className="hover:text-primary transition-colors" href="/contact">Contact</Link></li>
                             </ul>
                         </nav>
