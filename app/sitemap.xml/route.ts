@@ -15,14 +15,14 @@ export async function GET() {
     const staticPaths = [
         "", // homepage
         "blogs",
-        "projects",
-        "services",
-        "about",
+        "projecten",
+        "diensten",
+        "over-mij",
         "contact",
     ];
 
     const blogUrls = blogs.map((blog) => `blogs/${blog.slug}`);
-    const projectUrls = projects.map((project) => `projects/${project.slug}`);
+    const projectUrls = projects.map((project) => `projecten/${project.slug}`);
     const serviceUrls = services.map((service) => `diensten/${service.slug}`);
 
     const allPaths = [...staticPaths, ...blogUrls, ...projectUrls, ...serviceUrls];
