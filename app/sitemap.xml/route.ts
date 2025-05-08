@@ -6,7 +6,13 @@ import { NextResponse } from "next/server";
 // This is the route handler for generating the sitemap.xml file
 // Use this link for bots in google search console: https://el-websoltutions.com/sitemap.xml
 export async function GET() {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+    const url = new URL(baseUrl);
+    if (!url.hostname.startsWith("www.")) {
+        url.hostname = "www." + url.hostname;
+    }
+    baseUrl = url.toString().replace(/\/$/, "");
 
     const blogs = await getAllBlogs();
     const projects = await getAllProjects();
