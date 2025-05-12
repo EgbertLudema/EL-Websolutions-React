@@ -28,11 +28,11 @@ export default function AboutPage() {
                             Ik specialiseer mij in het maken van mooie, functionele en gebruiksvriendelijke websites.
                         </p> 
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
-                            Mijn expertise omvat verschillende technologieën, waaronder Next.js, Svelte, Kotlin, Laravel en MySQL. 
-                            Altijd op zoek naar nieuwe uitdagingen, blijf ik leren en groeien als developer.
+                            Mijn expertise omvat verschillende programmeer talen en frameworks, waaronder Next.js, PHP, JavaScript en SCSS. 
+                            Hier iets over dat ik van de details ben en je dat terug zien in mijn werk.
                         </p>
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
-                            Op dit moment richt ik mij op het bouwen van headless Wordpress-websites met Next.js.
+                            Op dit moment richt ik mij op het bouwen van headless Wordpress-websites met Next.js en het bouwen van Wordpress websites d.m.v. de Oxygen builder.
                         </p>
                         <div className="flex flex-row flex-wrap gap-3 pt-8">
                             <span className="px-3 py-1 tag-selected">Next.js</span>
@@ -71,13 +71,15 @@ export default function AboutPage() {
                     <div>
                         <h3 className='text-slate-700 dark:text-slate-300'>Hoe het begon</h3>
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
-                            Mijn reis in webontwikkeling begon toen ik de opleiding Applicatie- en Mediaontwikkeling MBO4 volgde aan ROC Friese Poort. 
-                            Hier leerde ik de basis van webdevelopment, maar miste ik de designvaardigheden om echt mooie websites te maken.
+                            Vanaf jongs af aan ben ik altijda al geïnteresseerd geweest in de werking van computers, technologie en het internet. 
+                            Ik wist dus al snel dat ik de opleiding Applicatie- en Mediaontwikkeling MBO4 wilde volgen. 
+                            Maar, hier leerde ik alleen de basis van webdevelopment en een deel back-end. 
+                            Ik vond het leuk om websites te maken, maar ik miste de designvaardigheden en programmeer kennis om echt mooie websites te maken.
                         </p>
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
-                            Na het afronden van mijn opleiding besloot ik mij meer te richten op het designen van websites. En mij dus ook meer richten op het front-end gedeelte.
+                            Na het afronden van mijn MBO 4 opleiding besloot ik mij meer te richten op het designen van websites en het gebruiken van frameworks. En mij dus ook meer richten op het front-end gedeelte.
                             Hiervoor ben ik de opleiding Communicatie en Multimedia Design gaan volgen aan de NHL Stenden Hogeschool.
-                            Tijdens deze opleiding heb ik veel geleerd over designprincipes en wat een website niet alleen mooi maakt, maar vooral goed maakt.
+                            Tijdens deze opleiding heb ik veel geleerd over designprincipes en wat een website niet alleen mooi maakt, maar vooral functioneel goed maakt.
                         </p>
                     </div>
 
@@ -86,11 +88,12 @@ export default function AboutPage() {
                         <h3 className='text-slate-700 dark:text-slate-300'>Mijn visie</h3>
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
                             Ik geloof dat een website er niet alleen goed uit moet zien, maar ook functioneel en gebruiksvriendelijk moet zijn. 
-                            Daarom richt ik mij op het maken van websites die niet alleen visueel aantrekkelijk zijn, maar ook eenvoudig te gebruiken.
+                            Daarom richt ik mij op het maken van websites die niet alleen visueel aantrekkelijk zijn, maar ook eenvoudig te gebruiken zijn.
                         </p>
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
                             Ik geloof sterk in de kracht van technologie om de wereld een stukje beter te maken. 
                             Daarom ben ik gepassioneerd over het creëren van digitale ervaringen die mensen helpen om te verbinden en samen plezier te hebben.
+                            Dit kun je terug zien in mijn eigen projecten, neem eens een kijkje op mijn persoonlijke portfolio website: <Link className='text-primary hover:opacity-80 transition-opacity' href="https://egbertludema.com" target="_blank">egbertludema.com</Link>.
                         </p>
                     </div>
                 </div>
@@ -108,13 +111,13 @@ export default function AboutPage() {
                     <div className='flex flex-col gap-4 justify-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900'>
                         <h3 className='text-slate-800 dark:text-slate-200'>Meedenkend</h3>
                         <p className='text-slate-600 dark:text-slate-400'>
-                            Ik geloof in samenwerking en communicatie. Ik werk nauw samen met mijn klanten om hun wensen en doelen te begrijpen en streef ernaar om oplossingen te creëren die hierop aansluiten.
+                            Bij elke vraag van een klant, denk ik mee over de beste oplossing, of het wel nodig is en of er een betere manier is.
                         </p>
                     </div>
                     <div className='flex flex-col gap-4 justify-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900'>
                         <h3 className='text-slate-800 dark:text-slate-200'>Altijd blijven leren</h3>
                         <p className='text-slate-600 dark:text-slate-400'>
-                            Ik ben altijd op zoek naar manieren om mijn vaardigheden en kennis te verbeteren. Ik geloof dat de enige manier om voorop te blijven in deze snel veranderende industrie is om te blijven leren en groeien.
+                            Ik ben altijd op zoek naar manieren om websites te verbeteren en mijn vaardigheden uit te breiden d.m.v. nieuwe technologieën.
                         </p>
                     </div>
                 </div>

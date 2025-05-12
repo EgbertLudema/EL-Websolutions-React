@@ -23,6 +23,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-link"
+                                    aria-label="LinkedIn profiel van Egbert Ludema"
                                 >
                                     <svg 
                                         xmlns="http://www.w3.org/2000/svg" 
@@ -40,6 +41,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-link"
+                                    aria-label="Instagram profiel van EL Websolutions"
                                 >
                                     <svg 
                                         xmlns="http://www.w3.org/2000/svg" 
@@ -61,6 +63,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-link"
+                                    aria-label="Github pagina van Egbert Ludema"
                                 >
                                     <svg 
                                         xmlns="http://www.w3.org/2000/svg" 

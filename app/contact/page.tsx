@@ -120,18 +120,23 @@ export default function ContactPage() {
                         >
                             <div className="space-y-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">Naam</label>
+                                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Naam</label>
                                     <input
+                                        id="name"
+                                        name="name"
                                         type="text"
                                         required
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        aria-required="true"
                                         className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">E-mail</label>
+                                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">E-mail</label>
                                     <input
+                                        id="email"
+                                        name="email"
                                         type="email"
                                         required
                                         value={email}
@@ -139,27 +144,35 @@ export default function ContactPage() {
                                             setEmail(e.target.value);
                                             validateEmail(e.target.value);
                                         }}
+                                        aria-invalid={!emailValid}
+                                        aria-errormessage="email-error"
+                                        aria-describedby="email-error"
+                                        aria-required="true"
                                         className={`w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300 ${
                                             !emailValid ? "border-red-500" : ""
                                         }`}
                                     />
                                     {!emailValid && (
-                                        <p className="text-red-500 text-sm mt-1">Ongeldig e-mailadres.</p>
+                                        <p id="email-error" className="text-red-500 text-sm mt-1">Ongeldig e-mailadres.</p>
                                     )}
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-foreground mb-2">Bericht</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">Bericht *</label>
                                     <textarea
+                                        id="message"
+                                        name="message"
                                         rows={4}
                                         required
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
+                                        aria-required="true"
                                         className="w-full px-4 py-2 border border-border dark:border-slate-700 bg-background dark:bg-slate-950 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent focus-visible:outline-0 transition-all duration-300"
                                     />
                                 </div>
                                 <motion.button
                                     type="submit"
                                     className="w-full px-8 py-3 gradient-btn"
+                                    aria-label="Verzend contactformulier"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -172,7 +185,11 @@ export default function ContactPage() {
 
                 {/* Popup-melding */}
                 {showPopup && (
-                    <div className="fixed bottom-5 right-5 bg-primary text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+                    <div
+                        className="fixed bottom-5 right-5 bg-primary text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2"
+                        role="alert"
+                        aria-live="assertive"
+                    >
                         {popupMessage}
                     </div>
                 )}

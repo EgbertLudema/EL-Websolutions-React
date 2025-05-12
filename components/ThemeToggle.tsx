@@ -25,6 +25,7 @@ export default function ThemeToggle() {
                 justifyContent: isDarkMode ? "flex-start" : "flex-end",
             }}
             onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+            aria-label={`Activate ${isDarkMode ? "light" : "dark"} mode`}
         >
             <motion.div
                 className="toggle-handle bg-white dark:bg-slate-300"
