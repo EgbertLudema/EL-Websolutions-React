@@ -1,11 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function CTA() {
     return (
         <section className="py-20 shadow-md gradient-bg dark:light-gradient-bg">
             <div className="container">
-                <div className="flex flex-col items-center justify-center gap-4">
+                <motion.div
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 80, damping: 20 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="flex flex-col items-center justify-center gap-4"
+                >
                     <h2 className="text-center text-slate-100 mb-6">Klaar om wat nieuws te beginnen?</h2>
                     <p className="text-center text-slate-200 mb-6">
                         Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.
@@ -17,7 +26,7 @@ export default function CTA() {
                         Neem contact op
                         <FaArrowRight className="group-hover:translate-x-1 transition" />
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
