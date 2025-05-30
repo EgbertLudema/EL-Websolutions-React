@@ -110,9 +110,9 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                     </div>
 
                     {/* Blog Content */}
-                    <div className="container mx-auto px-6 py-12">
+                    <div className="blog container mx-auto px-6 py-12">
                         <div className="max-w-3xl mx-auto">
-                            <div className="prose prose-lg dark:prose-invert max-w-none flex flex-col gap-6 text-slate-700 dark:text-slate-300">
+                            <div className="prose prose-lg dark:prose-invert max-w-none flex flex-col text-slate-700 dark:text-slate-300">
                             {content}
                             </div>
 
