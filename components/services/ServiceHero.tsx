@@ -30,11 +30,14 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                     </div>
                     <div className="relative z-10 mt-4 ml-4">
                     {service.image && (
-                        <Image
-                            src={service.image}
-                            alt={service.title}
-                            className="rounded-lg shadow-md max-w-full h-auto"
-                        />
+                        <div className="relative aspect-video w-full">
+                            <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="rounded-lg shadow-md object-cover"
+                            />
+                        </div>
                     )}
                     </div>
                 </div>
@@ -49,7 +52,7 @@ const ServiceHero = ({ service }: ServiceHeroProps) => {
                     </p>
 
                     <Link href="/contact" className="group gradient-btn py-2 px-4 flex flex-row items-center gap-2">
-                        Get started
+                        Neem contact op
                         <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition" />
                     </Link>
                 </div>

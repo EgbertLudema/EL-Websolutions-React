@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "EL-Websolutions",
-    description: "EL-Websolutions is een freelance webdeveloper die gespecialiseerd is in het bouwen van op maat gemaakte websites en webapplicaties. Met een focus op gebruiksvriendelijkheid en esthetiek, biedt EL-Websolutions oplossingen die aan jouw specifieke behoeften voldoen.",
+    description: "Ik ben een freelance webdeveloper die gespecialiseerd is in het bouwen van op maat gemaakte websites. Met een focus op gebruiksvriendelijkheid en design, biedt ik oplossingen die aan jouw specifieke behoeften voldoen.",
 };
 
 export default async function HomePage() {

@@ -1,5 +1,5 @@
 import { LuPenTool, LuLaptop} from "react-icons/lu";
-import { FaCartShopping, FaWordpress, FaAndroid, FaWrench } from "react-icons/fa6";
+import { FaCartShopping, FaWordpress, FaWrench } from "react-icons/fa6";
 import { TbWorldSearch } from "react-icons/tb";
 
 const services = [
@@ -8,7 +8,7 @@ const services = [
         title: "Wireframing",
         link: "/diensten/wireframing",
         description: "Een blauwdruk voor je website om een visueel idee te krijgen van de structuur en functionaliteit",
-        text: "Wireframing is een cruciale stap in het ontwerpproces die je in staat stelt om de lay-out en functionaliteit van je website of applicatie te visualiseren voordat je aan de daadwerkelijke ontwikkeling begint. Het functioneerd als een blauwdruk, die je helpt om de gebruikerservaring en interface effectief te plannen. Door wireframes te maken, kun je potentiële problemen vroegtijdig identificeren, wat zorgt voor een soepelere ontwikkelingsproces en een gebruiksvriendelijker eindproduct.",
+        text: "Wireframing is een stap in het ontwerpproces die je in staat stelt om de lay-out en functionaliteit van je website of applicatie te visualiseren voordat je aan de daadwerkelijke ontwikkeling begint. Het functioneerd als een blauwdruk, die je helpt om de gebruikerservaring en interface effectief te plannen. Door wireframes te maken, kun je potentiële problemen vroegtijdig identificeren, wat zorgt voor een soepelere ontwikkelingsproces en een gebruiksvriendelijker eindproduct.",
         price: "Vanaf €59",
         tags: ["design", "website structuur", "gebruikerservaring"],
         image: "/images/services/Wireframing_image.jpg",
@@ -16,9 +16,36 @@ const services = [
             "Eerst een visueel idee van de website",
             "Bespaar tijd en geld in de ontwikkelingsfase",
             "Snel en goedkoop een idee krijgen van de website",
+            "Gebruikers ervaring eerst",
             "Vroegtijdig problemen identificeren",
             "Vermijd (dure) wijzigingen in latere fasen"
-        ],                    
+        ], 
+        process: [
+            {
+            title: "Invetariseren",
+            description: "Bespreken van je doelen, wensen, vereiste functies en integraties."
+            },
+            {
+            title: "Wireframing",
+            description: "Ik maak desktop wireframes om de website en gebruikersstroom te structureren. Dit helpt bij het visualiseren van de lay-out en functionaliteit voordat de ontwikkeling begint."
+            },
+            {
+            title: "Tussenpresentatie",
+            description: "Wij gaan samen zitten om te kijken of de website structuur naar wens is."
+            },
+            {
+            title: "Indien nodig, aanpassingen(tot 2 rivisies)",
+            description: "Ik pas de gemaakte wireframes aan naar wens waarbij ik rekening houdt met de gebruiker."
+            },
+            {
+            title: "Oplevering",
+            description: "Ik lever de wireframes op."
+            },
+            {
+            title: "Vervolg stap(optioneel)",
+            description: "Indien gewenst, maak ik, op basis van de wireframe structuur, een ontwerp van de website."
+            },
+        ],                     
         gallery: [
             {
                 src: "/images/services/wireframes_thumbnail_nl.jpg",
@@ -72,7 +99,6 @@ const services = [
             title: "Support & onderhoud(optioneel)",
             description: "Ik bied verschillende pakketten aan voor onderhoud en support."
             }
-
         ],        
         gallery: [
         ],
@@ -82,7 +108,7 @@ const services = [
         title: "Wordpress website",
         link: "/diensten/wordpress",
         description: "Ik maak op maat gemaakte Wordpress websites d.m.v. de Oxygen builder",
-        text: "WordPress is een krachtig en flexibel contentmanagementsysteem(CMS) waarmee bedrijven hun online aanwezigheid efficiënt kunnen beheren. Ik bouw op maat gemaakte WordPress-websites, dit doe ik d.m.v. de Oxygen builder. Op deze manier kan ik een website maken die volledig is afgestemd op jouw wensen. Er zullen dus ook geen andere websites zijn die op die van jou lijken!",
+        text: "WordPress is een krachtig en flexibel contentmanagementsysteem(CMS) waarmee bedrijven hun online aanwezigheid efficiënt kunnen beheren. Ik bouw op maat gemaakte WordPress-websites, dit doe ik d.m.v. de Oxygen builder. Op deze manier kan ik een website maken die volledig is afgestemd op jouw wensen. Daarnaast gebruikt de Oxygenbuilder alleen de benodigde code, in tegenstelling tot standaard Wordpress thema's, waardoor de website snel en licht is.",
         price: "Vanaf €649",
         tags: ["WordPress", "CMS", "Oxygen builder", "custom plugins"],
         image: "/images/services/wordpress_thumbnail.jpg",
@@ -133,7 +159,7 @@ const services = [
         title: "Webshop",
         link: "/diensten/webshop",
         description: "Custom webshops gebouwd met Woocommerce d.m.v. de Oxygen builder of thema gebaseerd",
-        text: "E-commerce is de ruggengraat van moderne bedrijven, en ik ben gespecialiseerd in het creëren van webshops met WooCommerce. Of het nu gaat om een volledig op maat gemaakte oplossing of een thema-gebaseerde oplossing, ik zorg voor een naadloze gebruikerservaring, veilige transacties en optimale prestaties,",
+        text: "Een webshop is een essentieel onderdeel van een winkel. Het stelt bedrijven in staat om producten online te verkopen en een breder publiek te bereiken. Ik bouw op maat gemaakte WooCommerce-webshops, die zijn geoptimaliseerd voor conversie en gebruiksvriendelijkheid. Ik maak op maat gemaakte webshops d.m.v. de Oxygen builder en zorg ervoor dat je webshop veilig, snel en eenvoudig te beheren is.",
         price: "Vanaf €1299",
         tags: ["e-commerce", "woocommerce" , "webshop", "Oxygen builder", "custom plugins", "CMS"],
         image: "/images/services/image_5.jpg",
@@ -141,6 +167,8 @@ const services = [
             "Verkoop producten online op een veilige manier",
             "Op maat gemaakte Woocommerce webshop",
             "Geoptimaliseerd voor mobiel winkelen",
+            "Eenvoudig te beheren met WordPress",
+            "Conversie gericht",
             "Vlotte checkout en betalingsafhandeling",
             "Custom plugins voor unieke functies",
             "Geïntegreerde analyses en rapportages"
@@ -148,27 +176,31 @@ const services = [
         process: [
             {
                 title: "Intake gesprek",
-                description: ""
+                description: "In het eerste gesprek bespreken we je wensen en doelen. Daarna inventariseren we wat er al is en wat er nog moet komen. Vervolgens bespreken we een budget en een tijdlijn waarna ik een offerte maak. Dit gesprek kan ook online gevoerd worden."
             },
             {
                 title: "Wireframes(optioneel)",
-                description: "Ik maak een wireframe van de website om een idee te krijgen van de structuur en de functionaliteiten van de website."
+                description: "Ik maak een wireframe van de webshop om een idee te krijgen van de structuur en de functionaliteiten van de webshop."
             },
             {
                 title: "Ontwerp(indien nog niet aanwezig)",
-                description: "Ik maak een ontwerp van de website in Figma. Dit is een visueel ontwerp van de website."
+                description: "Ik maak een ontwerp van de webshop."
             },
             {
                 title: "Ontwikkeling",
-                description: "Ik bouw de website in WordPress d.m.v. de Oxygen builder."
+                description: "Ik bouw de webshop in WordPress met Woocommerce d.m.v. de Oxygen builder."
             },
             {
                 title: "Testen",
-                description: "Ik zorg ervoor dat de website op alle apparaten en browsers werkt."
+                description: "Ik zorg ervoor dat de webshop op alle apparaten en browsers werkt."
+            },
+            {
+                title: "SEO(optioneel)",
+                description: "Ik optimaliseer de webshop voor zoekmachines, zodat je beter vindbaar bent. Daarnaast is het mogelijk dat ik Google Search Console en Analytics voor je instel voor prestatiemonitoring."
             },
             {
                 title: "Implementatie & Overdracht",
-                description: "De website gaat live, waarna ik een korte training geef over het gebruik en het aanpassen van de content. Daarnaast lever ik een gratis handleiding mee."
+                description: "De webshop gaat live, waarna ik een korte training geef over het gebruik en het aanpassen van de content. Daarnaast lever ik een gratis handleiding mee."
             },
             {
                 title: "Lancering & Optimalisatie",
@@ -183,21 +215,25 @@ const services = [
         title: "Basic SEO",
         link: "/diensten/seo",
         description: "SEO om je website hoger te ranken in zoekmachines",
-        text: "Zoekmachineoptimalisatie (SEO) verbetert de zichtbaarheid van je website in zoekmachines. Mijn SEO-diensten omvatten het optimaliseren van zoekwoorden, het verbeteren van de snelheid van de site, mobielvriendelijkheid en metadata-verbeteringen om je website hoger te laten ranken en meer organisch verkeer aan te trekken.",
+        text: "Zoekmachineoptimalisatie (SEO) verbetert de zichtbaarheid van je website in zoekmachines. Mijn SEO-diensten omvatten het optimaliseren van elke pagina op meta-data, zoekwoorden, snelheid, mobielvriendelijkheid en ik help bij het instellen en monitoren van Google search console en analytics.",
         price: "Prijs: Afhankelijk van het project",
-        tags: ["SEO", "visibility", "optimization"],
+        tags: ["SEO", "Google Search Console", "Analytics"],
         image: "/images/services/seo_image.jpg",
         benefits: [
             "Verbeter je zichtbaarheid in zoekmachines",
             "Optimaliseer technische en inhoudelijke elementen",
+            "Optimaliseer je website voor snelheid en mobiel",
             "Verhoog organisch verkeer in de loop van de tijd",
-            "Versterk geloofwaardigheid en merkautoriteit",
-            "Betere laadsnelheden en gebruiksvriendelijkheid",
+            "Inzicht in prestaties met Google Search Console en Analytics",
         ], 
         process: [
             {
             title: "SEO Audit",
             description: "Beoordeel de structuur, snelheid, zoekwoorden en inhoud van je website"
+            },
+            {
+            title: "Offerte",
+            description: "Maak op basis van de beoordeling een offerte voor de benodigde werkzaamheden"
             },
             {
             title: "Zoekwoordenonderzoek",
@@ -270,7 +306,7 @@ const services = [
         title: "Onderhoud & support",
         link: "/diensten/maintenance-support",
         description: "Ondersteuning en onderhoud voor je website",
-        text: "Ik bied doorlopende onderhouds- en ondersteuningsdiensten om ervoor te zorgen dat je website soepel blijft draaien en up-to-date blijft. Of het nu gaat om het oplossen van bugs, het toevoegen van nieuwe functies of het bijwerken van inhoud, ik bied betrouwbare ondersteuning om je digitale aanwezigheid in topvorm te houden.",
+        text: "Ik bied doorlopende onderhouds- en ondersteuningsdiensten om ervoor te zorgen dat je website soepel blijft draaien en up-to-date blijft. Of het nu gaat om het oplossen van bugs, het toevoegen van nieuwe functies of het bijwerken van inhoud, ik bied ondersteuning om je digitale aanwezigheid in topvorm te houden.",
         price: "Vanaf €19/maand",
         tags: ["onderhoud", "support", "updates", "custom plugins", "monitoring"],
         image: "/images/services/Maintenancesupport_image.jpg",
@@ -280,7 +316,6 @@ const services = [
             "Beveiligingspatches en back-ups",
             "Nieuwe functies toevoegen wanneer nodig",
             "Snelle reactie op urgente problemen",
-            "Professionele ondersteuning"
         ],
         process: [
             {
@@ -288,7 +323,7 @@ const services = [
             description: "Wensen en doelen bespreken, website inventariseren, pakket bepalen"
             },
             {
-            title: "1 malige setup",
+            title: "1 malige setup(€49)",
             description: "Installatie van onderhouds plugins, eigen plugins en monitoring tools, alles updaten naar de laatste versie"
             },
             {
@@ -297,7 +332,7 @@ const services = [
             },
             {
             title: "Maandelijkse support uren",
-            description: "Afhankelijk van het pakket, 1-5 uur per maand om bugs op te lossen, nieuwe functies toe te voegen, content updates of andere aanpassingen te maken"
+            description: "Afhankelijk van het pakket, de support uren per maand om bugs op te lossen, nieuwe functies toe te voegen, content updates of andere aanpassingen te maken"
             },
             {
             title: "Support",
