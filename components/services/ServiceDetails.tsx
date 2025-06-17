@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
+import Lightbox from "../Lightbox";
 
 type Service = {
     icon: IconType;
@@ -25,6 +27,9 @@ type ServiceDetailsProps = {
 };
 
 const ServiceDetails = ({ service }: ServiceDetailsProps) => {
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     return (
         <section className="py-20">
             <div className="container mx-auto px-6">
@@ -59,12 +64,21 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                             {service.gallery && service.gallery.length > 0 && (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                                     {service.gallery.map((img, i) => (
-                                        <Image
+                                        <button
                                             key={i}
-                                            src={img.src}
-                                            alt={img.alt}
-                                            className="rounded-xl"
-                                        />
+                                            onClick={() => {
+                                                setCurrentIndex(i);
+                                                setLightboxOpen(true);
+                                            }}
+                                            className="relative w-full aspect-video overflow-hidden rounded-xl group"
+                                        >
+                                            <Image
+                                                src={img.src}
+                                                alt={img.alt}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform"
+                                            />
+                                        </button>
                                     ))}
                                 </div>
                             )}
@@ -114,7 +128,7 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                                     <p className="text-2xl font-bold text-primary mb-6">{service.price}</p>
                                 )}
                                 <Link href="/contact" className="group gradient-btn py-3 w-full text-lg flex flex-row items-center justify-center gap-2 max-w-[300px] lg:max-w-full">
-                                    Get started
+                                    Neem contact op
                                     <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition" />
                                 </Link>
                             </div>
@@ -122,6 +136,18 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
                     </div>
                 </div>
             </div>
+
+            {/* Lightbox */}
+            {lightboxOpen && service.gallery && (
+                <Lightbox
+                    images={service.gallery}
+                    currentIndex={currentIndex}
+                    onClose={() => setLightboxOpen(false)}
+                    onNext={() => setCurrentIndex((prev) => (prev + 1) % service.gallery!.length)}
+                    onPrev={() => setCurrentIndex((prev) => (prev - 1 + service.gallery!.length) % service.gallery!.length)}
+                />
+            )}
+
         </section>
     );
 };
