@@ -158,14 +158,14 @@ const services = [
         icon: FaCartShopping,
         title: "Webshop",
         link: "/diensten/webshop",
-        description: "Custom webshops gebouwd met Woocommerce d.m.v. de Oxygen builder of thema gebaseerd",
-        text: "Een webshop is een essentieel onderdeel van een winkel. Het stelt bedrijven in staat om producten online te verkopen en een breder publiek te bereiken. Ik bouw op maat gemaakte WooCommerce-webshops, die zijn geoptimaliseerd voor conversie en gebruiksvriendelijkheid. Ik maak op maat gemaakte webshops d.m.v. de Oxygen builder en zorg ervoor dat je webshop veilig, snel en eenvoudig te beheren is.",
-        price: "Vanaf €1299",
-        tags: ["e-commerce", "woocommerce" , "webshop", "Oxygen builder", "custom plugins", "CMS"],
+        description: "Custom webshops d.m.v. Woocommerce met de Oxygen builder of Shopify",
+        text: "Een webshop is een essentieel onderdeel van een winkel. Het stelt bedrijven in staat om producten online te verkopen en een breder publiek te bereiken. Ik bouw op maat gemaakte WooCommerce en shopify webshops, die zijn geoptimaliseerd voor conversie en gebruiksvriendelijkheid. Na het opleveren van een webshop, geef ik een korte training over het gebruik en aanpassen van de content waarna de webshop geheel zelfstandig te beheren is.",
+        price: "Vanaf €1499",
+        tags: ["e-commerce", "shopify", "woocommerce" , "webshop", "custom plugins", "CMS"],
         image: "/images/services/image_5.jpg",
         benefits: [
             "Verkoop producten online op een veilige manier",
-            "Op maat gemaakte Woocommerce webshop",
+            "Op maat gemaakte Woocommerce of Shopify webshop",
             "Geoptimaliseerd voor mobiel winkelen",
             "Eenvoudig te beheren met WordPress",
             "Conversie gericht",
@@ -307,14 +307,15 @@ const services = [
         link: "/diensten/maintenance-support",
         description: "Ondersteuning en onderhoud voor je website",
         text: "Ik bied doorlopende onderhouds- en ondersteuningsdiensten om ervoor te zorgen dat je website soepel blijft draaien en up-to-date blijft. Of het nu gaat om het oplossen van bugs, het toevoegen van nieuwe functies of het bijwerken van inhoud, ik bied ondersteuning om je digitale aanwezigheid in topvorm te houden.",
-        price: "Vanaf €19/maand",
+        price: "Vanaf €14/maand",
         tags: ["onderhoud", "support", "updates", "custom plugins", "monitoring"],
         image: "/images/services/Maintenancesupport_image.jpg",
         benefits: [
             "Doorlopende updates van je website",
-            "Bugfixes en prestatiemonitoring",
+            "Bugfixes(uren afhankelijk van het pakket)",
             "Beveiligingspatches en back-ups",
-            "Nieuwe functies toevoegen wanneer nodig",
+            "Nieuwe functies toevoegen wanneer nodig(uren afhankelijk van het pakket)",
+            "Maandelijkse SEO updates(optioneel)",
             "Snelle reactie op urgente problemen",
         ],
         process: [
@@ -324,11 +325,11 @@ const services = [
             },
             {
             title: "1 malige setup(€49)",
-            description: "Installatie van onderhouds plugins, eigen plugins en monitoring tools, alles updaten naar de laatste versie"
+            description: "Installatie van onderhouds plugins, eigen plugins en monitoring tools"
             },
             {
             title: "Maandelijkse updates",
-            description: "Maandelijks automatische updates van plugins en thema's, en handmatige updates van Wordpress(indien er een nieuwe versie is) na het maken van een back-up"
+            description: "Maandelijks automatische updates van plugins en thema's, en handmatige updates van Wordpress(indien er een nieuwe versie is) na het maken van een back-up, database monitoring en indien binnen pakket: SEO updates"
             },
             {
             title: "Maandelijkse support uren",
