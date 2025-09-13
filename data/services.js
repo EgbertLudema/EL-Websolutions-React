@@ -7,7 +7,7 @@ const services = [
         icon: LuPenTool,
         title: "Wireframing",
         link: "/diensten/wireframing",
-        description: "Een blauwdruk voor je website om een visueel idee te krijgen van de structuur en functionaliteit",
+        description: "Een blauwdruk van je website idee te krijgen van de structuur en functionaliteit",
         text: "Wireframing is een stap in het ontwerpproces die je in staat stelt om de lay-out en functionaliteit van je website of applicatie te visualiseren voordat je aan de daadwerkelijke ontwikkeling begint. Het functioneerd als een blauwdruk, die je helpt om de gebruikerservaring en interface effectief te plannen. Door wireframes te maken, kun je potentiële problemen vroegtijdig identificeren, wat zorgt voor een soepelere ontwikkelingsproces en een gebruiksvriendelijker eindproduct.",
         price: "Vanaf €59",
         tags: ["design", "website structuur", "gebruikerservaring"],
