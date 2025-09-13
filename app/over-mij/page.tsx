@@ -82,7 +82,7 @@ export default function AboutPage() {
                         <p className='text-slate-600 dark:text-slate-400 my-4'>
                             Tijdens deze opleiding heb ik veel geleerd over designprincipes en wat een website niet alleen mooi maakt, maar vooral functioneel goed maakt.
                             Hier kreeg ik de passie om unieke, mooie en functionele website te maken.
-                            Zo ben ik vanaf nu van plan om al mijn websites zelf te ontwerpen op een zo'n uniek mogelijke, maar vooral functionele manier.
+                            Zo ben ik vanaf nu van plan om al mijn websites zelf te ontwerpen op een zo&apos;n uniek mogelijke, maar vooral functionele manier.
                             Dit doe ik door gebruik te maken van de nieuwste technologieën en frameworks, zoals Next.js, Payload CMS en TypeScript.
                         </p>
                     </div>
