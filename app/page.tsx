@@ -10,6 +10,7 @@ import CTA from "@/components/CTA";
 import Contact from "@/components/ContactSection";
 import GoogleReviews from "@/components/googleReviews";
 import type { Metadata } from "next";
+import MyValues from "@/components/MyValues";
 
 export const metadata: Metadata = {
     title: "EL-Websolutions",
@@ -34,11 +35,11 @@ export default async function HomePage() {
         },
         {
             question: "Hoe ga je om met revisies en feedback?",
-            answer: "Feedback is een essentieel onderdeel van het ontwikkelproces. In mijn standaardpakketten zijn twee revisierondes inbegrepen. We plannen momenten in waarop je jouw feedback kunt delen, en ik verwerk deze zo snel mogelijk."
+            answer: "Feedback is een essentieel onderdeel van het ontwikkelproces. In mijn standaardpakketten zijn twee revisierondes voor op de designs inbegrepen. We plannen momenten in waarop je jouw feedback kunt delen zodat ik deze kan verwerken in het design."
         },
         {
             question: "In welke technologieën ben je gespecialiseerd?",
-            answer: "Ik werk met moderne webtechnologieën zoals React, Next.js, TypeScript, Node.js en diverse CSS-frameworks zoals Tailwind CSS. Voor e-commerce werk ik met platformen als Shopify en WooCommerce."
+            answer: "Ik werk met moderne webtechnologieën zoals Next.js en Payload CMS. Voor e-commerce werk ik met platformen als Shopify en WooCommerce."
         }
     ];
 
@@ -53,7 +54,7 @@ export default async function HomePage() {
                         Digitale ervaringen op maat
                     </h1>
                     <p className="text-center mb-8 md:mb-0 md:text-lg text-gray-700 dark:text-gray-400">
-                        Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke websites
+                        Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke websites.
                     </p>
                     <p className="text-center hidden md:block text-lg mb-8 text-gray-700 dark:text-gray-400">
                         Op maat gemaakt. Afgestemd op de eisen van de klant en de doelgroep.
@@ -77,6 +78,7 @@ export default async function HomePage() {
             <Portfolio allProjects={allProjects} />  
             <USPS />
             <GoogleReviews />
+            <MyValues />
             <CTA />
             <Blog allBlogs={allBlogs} />
             <FAQ questions={faqData} />
