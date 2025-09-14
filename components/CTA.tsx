@@ -4,7 +4,15 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-export default function CTA() {
+type CTAProps = {
+    title?: string;
+    text?: string;
+};
+
+export default function CTA({
+    title = "Klaar om wat nieuws te beginnen?",
+    text = "Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.",
+}: CTAProps) {
     return (
         <section className="py-20 shadow-md gradient-bg dark:light-gradient-bg">
             <div className="container">
@@ -15,10 +23,8 @@ export default function CTA() {
                     viewport={{ once: true, amount: 0.3 }}
                     className="flex flex-col items-center justify-center gap-4"
                 >
-                    <h2 className="text-center text-slate-100 mb-6">Klaar om wat nieuws te beginnen?</h2>
-                    <p className="text-center text-slate-200 mb-6">
-                        Ik sta open voor nieuwe projecten en hoor graag meer over jouw idee.
-                    </p>
+                    <h2 className="text-center text-slate-100 mb-6">{title}</h2>
+                    <p className="text-center text-slate-200 mb-6">{text}</p>
                     <Link
                         href="/contact"
                         className="group white-btn dark:gradient-btn shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-none flex flex-row items-center gap-2"
