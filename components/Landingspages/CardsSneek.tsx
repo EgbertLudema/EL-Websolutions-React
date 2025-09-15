@@ -31,12 +31,15 @@ export default function CardsSneek() {
                 viewport={{ once: false, amount: 0.4 }}
                 className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
             >
-                <IoPeople size={32} /> 
-                <h3 className="m-0">
+                
+                <h3 className="flex flex-row gap-4 items-center m-0">
+                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
+                        <IoPeople size={32} /> 
+                    </div>
                     Persoonlijk contact
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                    Korte lijnen en iemand die uit de regio komt.
+                    Korte lijnen en iemand die meedenkt met jouw bedrijf.
                 </p>
             </motion.div>
 
@@ -48,12 +51,14 @@ export default function CardsSneek() {
                 viewport={{ once: false, amount: 0.4 }}
                 className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
             >
-                <IoSearch size={32} />
-                <h3 className="m-0">
-                     SEO
+                <h3 className="flex flex-row gap-4 items-center m-0">
+                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
+                        <IoSearch size={32} />
+                    </div>
+                    SEO
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400">
-                    Websites die lokaal én landelijk goed vindbaar zijn.
+                    Standaard geoptimaliseerd voor zoekmachines zoals Google.
                 </p>
             </motion.div>
 
@@ -65,8 +70,10 @@ export default function CardsSneek() {
                 viewport={{ once: false, amount: 0.4 }}
                 className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
             >
-                <IoBrush size={32} />
-                <h3 className="m-0">
+                <h3 className="flex flex-row gap-4 items-center m-0">
+                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
+                        <IoBrush size={32} />
+                    </div>
                     Maatwerk
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400">
@@ -82,8 +89,10 @@ export default function CardsSneek() {
                 viewport={{ once: false, amount: 0.4 }}
                 className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
             >
-                <LuBrain size={32} />
-                <h3 className="m-0">
+                <h3 className="flex flex-row gap-4 items-center m-0">
+                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
+                        <LuBrain size={32} />
+                    </div>
                     Innovatief
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400">
