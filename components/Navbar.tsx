@@ -210,7 +210,7 @@ export default function Navbar() {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                        className="fixed top-0 right-0 w-3/4 sm:w-1/2 h-screen z-50 bg-white dark:bg-slate-900 shadow-lg px-6 py-6 flex flex-col after:absolute after:top-0 after:-right-[20px] after:w-[22px] after:h-full after:bg-white dark:after:bg-slate-900"
+                        className="fixed top-0 right-0 w-3/4 sm:w-1/2 min-h-[100dvh] z-50 bg-white dark:bg-slate-900 shadow-lg px-6 py-6 flex flex-col after:absolute after:top-0 after:-right-[20px] after:w-[22px] after:h-full after:bg-white dark:after:bg-slate-900"
                     >
 
                     {/* Menu Items */}

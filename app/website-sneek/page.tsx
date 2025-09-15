@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from 'next/link';
 import type { Metadata } from "next";
 import MyValues from '@/components/MyValues';
+import CardsSneek from '@/components/Landingspages/CardsSneek';
 
 export const metadata: Metadata = {
     title: "Website laten maken in Sneek | EL-Websolutions",
@@ -13,50 +14,47 @@ export default function AboutPage() {
     return (
         <div>
             <main className="container mt-[100px] relative flex flex-col justify-center py-8 ">
-                <section className="mb-12 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8">
-                    <div className='w-full lg:w-3/5'>
-                        <h1 className='mb-4'>Website laten maken in Sneek</h1>
-                        <p className="text-slate-600 dark:text-slate-400 mt-2 pb-6">
-                            Wil je als ondernemer in Sneek meer klanten bereiken met een professionele website? 
-                            Bij <strong>EL-Websolutions</strong> help ik bedrijven en zzp’ers uit de regio Sneek aan een moderne, 
-                            snelle en gebruiksvriendelijke website die écht resultaat oplevert.
-                        </p>
-                    </div>
-                    <div className='w-full lg:w-2/5'>
-                        <Image 
-                            className="bg-slate-200 dark:bg-slate-900 transition-all duration-100 rounded-lg shadow-lg" 
-                            src="/images/services/wordpress_thumbnail.jpg" 
-                            width={1200} 
-                            height={600} 
-                            alt="Website laten maken in Sneek" 
-                        />
-                    </div>
+                <section className='flex flex-col mb-12'>
+                    <h1 className='text-center mb-4'>Website laten maken in Sneek</h1>
+                    <p className="text-center text-slate-600 dark:text-slate-400 mt-2 pb-6">
+                        Wil je als ondernemer in Sneek meer klanten bereiken met een professionele website? 
+                        Bij <strong>EL-Websolutions</strong> help ik bedrijven en zzp’ers uit de regio Sneek aan een moderne, 
+                        snelle en gebruiksvriendelijke website die écht resultaat oplevert.
+                    </p>
+                    <CardsSneek />
                 </section>
 
-                <section className='flex flex-col gap-2'>
-                    <h2 className='text-slate-700 dark:text-slate-300'>Webdesign & Websites in Sneek</h2>
-                    <p className='text-slate-600 dark:text-slate-400'>
-                        Een website is vaak het eerste contactpunt met jouw klant. Daarom maak ik websites 
-                        die niet alleen mooi ogen, maar ook gebruiksvriendelijk en functioneel zijn en goed scoren in Google.
-                    </p>
+                <section className='flex flex-col gap-8 my-8'>
+                    <div className='flex flex-col gap-2'>
+                        <h2 className='text-center text-slate-700 dark:text-slate-300'>Webdesign & Websites in Sneek</h2>
+                        <p className='text-center text-slate-600 dark:text-slate-400'>
+                            Een website is vaak het eerste contactpunt met jouw klant. Daarom maak ik websites 
+                            die niet alleen mooi ogen, maar ook gebruiksvriendelijk en functioneel zijn en goed scoren in Google.
+                        </p>
+                    </div>
+                    
+                    <div className='flex flex-col lg:flex-row gap-4'>
+                        <div className="w-full lg:w-3/5 flex flex-col gap-4 ">
+                            <h3 className=' text-slate-700 dark:text-slate-300'>Diensten die ik aanbied</h3>
+                            <ul className='text-slate-600 dark:text-slate-400'>
+                                <li><strong>WordPress websites</strong> – betrouwbaar en eenvoudig zelf te beheren.</li>
+                                <li><strong>WooCommerce & Shopify webshops</strong> – start jouw online winkel met gemak.</li>
+                                <li><strong>Maatwerk websites met Next.js + Payload CMS</strong> – razendsnel, flexibel en volledig afgestemd op jouw wensen.</li>
+                                <li><strong>Webdesign</strong> – uniek, modern ontwerp passend bij jouw bedrijf.</li>
+                            </ul>
+                        </div>
+                        <div className='w-full lg:w-2/5'>
+                            <Image 
+                                className="bg-slate-200 dark:bg-slate-900 transition-all duration-100 rounded-lg shadow-lg" 
+                                src="/images/services/wordpress_thumbnail.jpg" 
+                                width={1200} 
+                                height={600} 
+                                alt="Website laten maken in Sneek" 
+                            />
+                        </div>
+                    </div>
 
-                    <h3 className='text-slate-700 dark:text-slate-300'>Diensten die ik aanbied</h3>
-                    <ul className='text-slate-600 dark:text-slate-400 mb-4'>
-                        <li><strong>WordPress websites</strong> – betrouwbaar en eenvoudig zelf te beheren.</li>
-                        <li><strong>WooCommerce & Shopify webshops</strong> – start jouw online winkel met gemak.</li>
-                        <li><strong>Maatwerk websites met Next.js + Payload CMS</strong> – razendsnel, flexibel en volledig afgestemd op jouw wensen.</li>
-                        <li><strong>Webdesign</strong> – uniek, modern ontwerp passend bij jouw bedrijf.</li>
-                    </ul>
-
-                    <h2 className='text-slate-700 dark:text-slate-300'>Waarom kiezen voor een lokale webdesigner in Sneek?</h2>
-                    <ul className='text-slate-600 dark:text-slate-400'>
-                        <li>Persoonlijk contact, korte lijnen en iemand die de regio kent.</li>
-                        <li>Websites die lokaal én landelijk goed vindbaar zijn.</li>
-                        <li>Mobielvriendelijk design dat overal goed werkt.</li>
-                        <li>Transparante prijzen en duidelijke communicatie.</li>
-                    </ul>
-
-                    <MyValues />
+                    {/* <MyValues /> */}
 
                     <h2 className='text-slate-700 dark:text-slate-300'>Voor wie bouw ik websites in Sneek?</h2>
                     <p className='text-slate-600 dark:text-slate-400'>
