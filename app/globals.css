@@ -73,7 +73,7 @@
         @apply rounded-lg text-white primary-gradient hover:opacity-80 transition;
     }
     .primary-btn{
-        @apply rounded-lg bg-primary text-sm font-medium text-white hover:bg-white hover:text-primary shadow-sm hover:opacity-80 transition;
+        @apply rounded-lg bg-primary text-sm font-medium text-white shadow-sm hover:bg-white hover:text-primary hover:shadow-lg hover:opacity-80 transition;
     }
     .secondair-btn{
         @apply rounded-lg bg-transparent text-sm font-medium text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 shadow-sm border border-slate-400 dark:border-white/40 hover:opacity-80 transition;

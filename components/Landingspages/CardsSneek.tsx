@@ -22,84 +22,77 @@ const cardVariants = {
 
 export default function CardsSneek() {
 	return (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            <motion.div
-                custom={0}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.4 }}
-                className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
-            >
-                
-                <h3 className="flex flex-row gap-4 items-center m-0">
-                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
-                        <IoPeople size={32} /> 
-                    </div>
-                    Persoonlijk contact
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                    Korte lijnen en iemand die meedenkt met jouw bedrijf.
-                </p>
-            </motion.div>
+		<div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+			<motion.div
+				custom={0}
+				variants={cardVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: false, amount: 0.4 }}
+				className="flex flex-col gap-4 justify-start items-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
+			>
+				<div className="p-4 bg-primary/20 rounded-md">
+					<IoPeople className="text-primary" size={32} />
+				</div>
+				<h3 className="text-center m-0">Persoonlijk contact</h3>
+				<p className="text-center text-slate-600 dark:text-slate-400">
+					Ik geloof in korte lijnen en duidelijke communicatie. Al het contact is direct met mij. 
+                    Zo ontstaan er geen onduidelijkheden en kunnen wij veel sneller schakelen.
+				</p>
+			</motion.div>
 
-            <motion.div
-                custom={1}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.4 }}
-                className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
-            >
-                <h3 className="flex flex-row gap-4 items-center m-0">
-                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
-                        <IoSearch size={32} />
-                    </div>
-                    SEO
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                    Standaard geoptimaliseerd voor zoekmachines zoals Google.
-                </p>
-            </motion.div>
+			<motion.div
+				custom={1}
+				variants={cardVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: false, amount: 0.4 }}
+				className="flex flex-col gap-4 justify-start items-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
+			>
+				<div className="p-4 bg-primary/20 rounded-md">
+					<IoSearch className="text-primary" size={32} />
+				</div>
+				<h3 className="text-center m-0">SEO</h3>
+				<p className="text-center text-slate-600 dark:text-slate-400">
+					Elke website die ik oplever is standaard geoptimaliseerd voor zoekmachines zoals Google. 
+					Zo zorg ik ervoor dat jouw bedrijf beter vindbaar is, waardoor je meer bezoekers krijgt.
+				</p>
+			</motion.div>
 
-            <motion.div
-                custom={2}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.4 }}
-                className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
-            >
-                <h3 className="flex flex-row gap-4 items-center m-0">
-                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
-                        <IoBrush size={32} />
-                    </div>
-                    Maatwerk
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                    Alles wat ik maak is volledig afgestemd op de wensen van jou en jouw doelgroep.
-                </p>
-            </motion.div>
+			<motion.div
+				custom={2}
+				variants={cardVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: false, amount: 0.4 }}
+				className="flex flex-col gap-4 justify-start items-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
+			>
+				<div className="p-4 bg-primary/20 rounded-md">
+					<IoBrush className="text-primary" size={32} />
+				</div>
+				<h3 className="text-center m-0">Maatwerk</h3>
+				<p className="text-center text-slate-600 dark:text-slate-400">
+					Geen standaard templates, maar een ontwerp en ontwikkeling die volledig zijn afgestemd op 
+					jouw wensen en die van je doelgroep. Zo krijg je een unieke oplossing die echt bij je merk past.
+				</p>
+			</motion.div>
 
-            <motion.div
-                custom={3}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.4 }}
-                className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
-            >
-                <h3 className="flex flex-row gap-4 items-center m-0">
-                    <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-md">
-                        <LuBrain size={32} />
-                    </div>
-                    Innovatief
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                    Ik blijf mij ontwikkelen en toepassen van de nieuwste tools en technologieën.
-                </p>
-            </motion.div>
-
-        </div>
+			<motion.div
+				custom={3}
+				variants={cardVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: false, amount: 0.4 }}
+				className="flex flex-col gap-4 justify-start items-center p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
+			>
+				<div className="p-4 bg-primary/20 rounded-md">
+					<LuBrain className="text-primary" size={32} />
+				</div>
+				<h3 className="text-center m-0">Meedenkend</h3>
+				<p className="text-center text-slate-600 dark:text-slate-400">
+					In plaats van simpelweg jouw wensen uit te voeren, kijk ik verder. Zo kijk ik verder dan alleen jouw wensen, maar naar wat echt werkt voor jouw doelgroep.
+				</p>
+			</motion.div>
+		</div>
 	);
 }
