@@ -105,8 +105,12 @@ export default function Footer() {
                 </div>
             </div>
             <div className="container flex flex-row justify-between items-center border-t border-slate-200 dark:border-slate-500 py-4">
-                <div className="text-slate-500 dark:text-slate-400">
+                <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-2 md:gap-6 text-slate-500 dark:text-slate-400">
                     <p>© {currentYear} - EL Websolutions</p>
+                    <div className="flex flex-row justify-center items-center gap-2 text-sm">
+                        <p><strong>KVK:</strong> 92995446</p>
+                        <p><strong>BTW:</strong> NL004991014B95</p>
+                    </div>
                 </div>
                 <div className="text-slate-500 dark:text-slate-400">
                     <ul className="flex flex-row gap-4 justify-end">

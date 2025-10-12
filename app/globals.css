@@ -120,6 +120,10 @@ body {
     background: var(--primary-gradient);
 }
 
+.hide-recaptcha .grecaptcha-badge{
+    right: -260px !important;;
+}
+
 /* Text */
 .sub-title{
     color: var(--primary-color);
