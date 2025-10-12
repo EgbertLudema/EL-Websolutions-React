@@ -19,7 +19,7 @@ export default function AboutPage() {
                 <section className='bg-sky-100'>
                     <div className='container min-h-[80vh] flex flex-col items-center justify-center gap-8 py-32'>
                         <h1 className='text-center text-6xl'>Website laten maken in Sneek</h1>
-                        <p className="text-center text-xl text-slate-600 dark:text-slate-400">
+                        <p className="text-center text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
                             Wil je als ondernemer in Sneek meer klanten bereiken met een professionele website? 
                             Bij <strong>EL-Websolutions</strong> help ik bedrijven en zzp&rsquo;ers uit de regio Sneek aan een moderne, 
                             snelle en gebruiksvriendelijke website die écht resultaat oplevert.
@@ -88,11 +88,11 @@ export default function AboutPage() {
                 </section>
 
                 <section className="bg-gradient-to-b from-slate-100 to-transparent dark:from-slate-900 dark:to-slate-950">
-                    <div className="container flex flex-col gap-4 my-20">
+                    <div className="container flex flex-col gap-8 my-20">
                         <h2 className="text-center text-slate-700 dark:text-slate-300">
                             Voor wie bouw ik websites in Sneek?
                         </h2>
-                        <p className="text-center text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <p className="text-center text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
                             Of je nu een <strong>lokale ondernemer</strong> bent in het centrum van Sneek, 
                             zoals een winkel, kapper of horecaonderneming, of een <strong>zzp&rsquo;er</strong> die zijn diensten professioneel online wil presenteren – ik denk graag met je mee. 
                             Ook <strong>bedrijven op de industrieterreinen</strong> die hun uitstraling willen versterken, 
@@ -107,7 +107,7 @@ export default function AboutPage() {
             
             <section className="xl:container rounded-lg overflow-clip mb-12">
                 <CTA
-                    title="Klaar om jouw website in Friesland te laten maken?"
+                    title="Klaar om jouw website in Sneek te laten maken?"
                     text="Neem vandaag nog contact op en ontdek hoe ik jouw bedrijf online sterker kan maken."
                 />
             </section>
