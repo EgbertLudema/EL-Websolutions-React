@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import EmailLink from "./ui/emailLink";
+import { useHideRecaptchaOnFooter } from "@/hooks/useHideRecaptchaOnFooter";
 
 declare global {
     interface Window {
@@ -14,6 +15,7 @@ declare global {
 const GOOGLE_RECAPTCHA_KEY = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY;
 
 export default function Contact() {
+    useHideRecaptchaOnFooter("#site-footer");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
