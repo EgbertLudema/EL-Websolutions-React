@@ -6,9 +6,9 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-slate-100 dark:bg-slate-900">
+        <footer id="site-footer" className="bg-slate-100 dark:bg-slate-900">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-20 pt-12 pb-8 px-2 md:px-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pt-12 pb-8 px-2 md:px-0">
                     <div className="flex flex-col justify-items-start space-y-4">
                         <h3 className="text-slate-800 dark:text-slate-200">Over mij:</h3>
                         <p className="text-slate-700 dark:text-slate-400">
@@ -102,15 +102,20 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="flex flex-col justify-items-start space-y-4">
+                        <h3 className="text-slate-800 dark:text-slate-200">Info</h3>
+                        <div className="flex flex-col space-y-2 text-slate-700 dark:text-slate-400">
+                            <p><strong>KVK:</strong> 92995446</p>
+                            <p><strong>BTW:</strong> NL004991014B95</p>
+                            <p className="text-sm">Deze site wordt beschermd door reCAPTCHA en de Google <a target="_blank" className="font-medium text-slate-900 dark:text-slate-100 hover:text-primary/80 dark:hover:text-primary/80 transition-colors" href="https://policies.google.com/privacy">Privacy Policy</a> en <a target="_blank" className="font-medium text-slate-900 dark:text-slate-100 hover:text-primary/80 dark:hover:text-primary/80 transition-colors" href="https://policies.google.com/terms">Terms of Service</a> zijn van toepassing.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="container flex flex-row justify-between items-center border-t border-slate-200 dark:border-slate-500 py-4">
-                <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-2 md:gap-6 text-slate-500 dark:text-slate-400">
+                <div className="text-slate-500 dark:text-slate-400">
                     <p>© {currentYear} - EL Websolutions</p>
-                    <div className="flex flex-row justify-center items-center gap-2 text-sm">
-                        <p><strong>KVK:</strong> 92995446</p>
-                        <p><strong>BTW:</strong> NL004991014B95</p>
-                    </div>
                 </div>
                 <div className="text-slate-500 dark:text-slate-400">
                     <ul className="flex flex-row gap-4 justify-end">
