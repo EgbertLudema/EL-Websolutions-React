@@ -108,7 +108,7 @@ const services = [
         title: "Wordpress website",
         link: "/diensten/wordpress",
         description: "Ik maak op maat gemaakte Wordpress websites d.m.v. de Oxygen builder",
-        text: "WordPress is een krachtig en flexibel contentmanagementsysteem(CMS) waarmee bedrijven hun online aanwezigheid efficiënt kunnen beheren. Ik bouw op maat gemaakte WordPress-websites, dit doe ik d.m.v. de Oxygen builder. Op deze manier kan ik een website maken die volledig is afgestemd op jouw wensen. Daarnaast gebruikt de Oxygenbuilder alleen de benodigde code, in tegenstelling tot standaard Wordpress thema's, waardoor de website snel en licht is.",
+        text: "WordPress is een krachtig en flexibel contentmanagementsysteem(CMS) waarmee bedrijven hun online aanwezigheid efficiënt kunnen beheren. Ik bouw op maat gemaakte WordPress-websites, dit doe ik d.m.v. de Oxygen builder. Op deze manier kan ik een op maat gemaakte website maken die volledig is afgestemd op jouw wensen. Daarnaast gebruikt de Oxygenbuilder alleen de benodigde code, in tegenstelling tot standaard Wordpress thema's, waardoor de website snel en licht is.",
         price: "Vanaf €649",
         tags: ["WordPress", "CMS", "Oxygen builder", "custom plugins"],
         image: "/images/services/wordpress_thumbnail.jpg",
