@@ -26,6 +26,7 @@ export async function GET() {
         "over-mij",
         "contact",
         "website-sneek",
+        "website-bolsward",
     ];
 
     const blogUrls = blogs.map((blog) => `blogs/${blog.slug}`);

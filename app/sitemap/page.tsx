@@ -25,6 +25,7 @@ export default async function SitemapPage() {
         { title: "Over mij", href: "/over-mij" },
         { title: "Contact", href: "/contact" },
         { title: "Website Sneek", href: "/website-sneek" },
+        { title: "Website Bolsward", href: "/website-bolsward" },
     ];
 
     return (
