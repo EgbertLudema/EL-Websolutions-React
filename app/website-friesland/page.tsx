@@ -19,7 +19,7 @@ export default function FrieslandPage() {
         {
         question: 'Wat kost een website in Friesland?',
         answer:
-            'De prijs hangt af van ontwerp, aantal pagina&rsquo;s en functies (zoals webshop of meertaligheid). Je krijgt vooraf een heldere prijsinschatting en planning.',
+            'De prijs hangt af van ontwerp, aantal pagina’s en functies (zoals webshop of meertaligheid). Je krijgt vooraf een heldere prijsinschatting en planning.',
         },
         {
         question: 'Hoe snel kan mijn website live?',

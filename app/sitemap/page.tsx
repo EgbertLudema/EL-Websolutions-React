@@ -26,6 +26,7 @@ export default async function SitemapPage() {
         { title: "Contact", href: "/contact" },
         { title: "Website Sneek", href: "/website-sneek" },
         { title: "Website Bolsward", href: "/website-bolsward" },
+        { title: "Website Friesland", href: "/website-friesland" },
     ];
 
     return (
