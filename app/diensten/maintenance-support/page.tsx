@@ -35,6 +35,19 @@ export default function MaintenanceSupportPage() {
         }
     ];
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     const maintenanceSupport = services.find(s => s.title === "Onderhoud & support");
 
     if (!maintenanceSupport) return null;
@@ -48,6 +61,10 @@ export default function MaintenanceSupportPage() {
             </div>
             <GoogleReviews />
             <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Contact />
         </>
     );

@@ -48,6 +48,19 @@ export default function WordpressPage() {
         }
     ];
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     const wordpress = services.find(s => s.title === "Wordpress website");
 
     if (!wordpress) return null;
@@ -62,6 +75,10 @@ export default function WordpressPage() {
             <GoogleReviews />
             <USPS />
             <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Contact />
         </>
     );

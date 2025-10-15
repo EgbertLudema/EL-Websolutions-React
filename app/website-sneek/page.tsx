@@ -6,6 +6,7 @@ import CardsSneek from '@/components/Landingspages/CardsSneek';
 import { FaArrowRight, FaCartShopping, FaWordpress, FaWrench } from 'react-icons/fa6';
 import { LuPenTool, LuLaptop} from "react-icons/lu";
 import { TbWorldSearch } from "react-icons/tb";
+import FAQ from '@/components/FAQ';
 
 export const metadata: Metadata = {
     title: "Website laten maken in Sneek | EL-Websolutions",
@@ -13,10 +14,56 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+    const faqData = [
+        {
+            question: "Wat kost een website laten maken in Sneek?",
+            answer:
+            "De prijs hangt af van het ontwerp, aantal pagina’s en functies zoals een webshop of reserveringssysteem. Voor ondernemers in Sneek bied ik transparante pakketten met een vaste prijsindicatie vooraf.",
+        },
+        {
+            question: "Hoe lang duurt het om mijn website te bouwen?",
+            answer:
+            "Een kleine website is vaak binnen twee tot vier weken klaar. Bij grotere projecten werk ik in korte sprints zodat je snel voortgang ziet en tussentijds kunt bijsturen.",
+        },
+        {
+            question: "Kan ik mijn website zelf beheren?",
+            answer:
+            "Ja, elke website die ik bouw is eenvoudig zelf te onderhouden. Met WordPress kun je teksten en afbeeldingen aanpassen zonder technische kennis. Daarnaast lever ik bij elke website een gratis handleiding voor het beheren van je content.",
+        },
+        {
+            question: "Zorg je ook dat mijn website goed vindbaar is in Google?",
+            answer:
+            "Zeker. Ik optimaliseer de website technisch en structureel voor zoekmachines en geef advies over lokale SEO in Sneek en omgeving.",
+        },
+        {
+            question: "Bied je ook onderhoud en ondersteuning na oplevering?",
+            answer:
+            "Ja. Ik bied doorlopend onderhoud, updates en technische ondersteuning zodat jouw website veilig, snel en actueel blijft.",
+        },
+        {
+            question: "Werk je alleen in Sneek of ook daarbuiten?",
+            answer:
+            "Ik werk vooral voor bedrijven en zzp'ers in Sneek en de regio Súdwest-Fryslân, maar lever ook websites voor klanten in heel Friesland.",
+        },
+    ];
+
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     return (
         <div>
             <main className="mt-[87px] relative flex flex-col justify-center">
-                <section className='bg-sky-100'>
+                <section className="bg-sky-100 dark:bg-sky-100/10">
                     <div className='container min-h-[80vh] flex flex-col items-center justify-center gap-8 py-32'>
                         <h1 className='text-center text-6xl'>Website laten maken in Sneek</h1>
                         <p className="text-center text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
@@ -111,6 +158,12 @@ export default function AboutPage() {
                     text="Neem vandaag nog contact op en ontdek hoe ik jouw bedrijf online sterker kan maken."
                 />
             </section>
+
+            <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
         </div>
     );
 }

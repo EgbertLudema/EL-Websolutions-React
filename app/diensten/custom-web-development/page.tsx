@@ -40,6 +40,19 @@ export default function CustomWebsitePage() {
         }
     ];
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     const customWebsite = services.find(s => s.title === "Custom web development");
 
     if (!customWebsite) return null;
@@ -54,6 +67,10 @@ export default function CustomWebsitePage() {
             <GoogleReviews />
             <USPS />
             <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Contact />
         </>
     );

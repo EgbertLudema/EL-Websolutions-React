@@ -1,3 +1,4 @@
+// components/FAQ.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -47,6 +48,9 @@ const FAQ = ({
                         <button
                             onClick={() => toggleQuestion(index)}
                             className="flex justify-between items-center w-full text-left p-5 bg-white dark:bg-slate-900 rounded-lg shadow-sm hover:shadow-md transition-all"
+                            aria-expanded={activeIndex === index}
+                            aria-controls={`faq-panel-${index}`}
+                            id={`faq-button-${index}`}
                         >
                             <div className="flex items-center">
                                 <BiHelpCircle className="w-5 h-5 text-primary mr-3" />
@@ -62,12 +66,12 @@ const FAQ = ({
                         </button>
 
                         <motion.div
+                            id={`faq-panel-${index}`}
+                            role="region"
+                            aria-labelledby={`faq-button-${index}`}
                             initial="collapsed"
                             animate={activeIndex === index ? "open" : "collapsed"}
-                            variants={{
-                                open: { opacity: 1, height: "auto", y: 0 },
-                                collapsed: { opacity: 0, height: 0, y: -10 },
-                            }}
+                            variants={{ open: { opacity: 1, height: "auto", y: 0 }, collapsed: { opacity: 0, height: 0, y: -10 } }}
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                         >

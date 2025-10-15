@@ -23,6 +23,19 @@ export default function SEOPage() {
         },
     ];
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     const seo = services.find(s => s.title === "Basic SEO");
 
     if (!seo) return null;
@@ -36,6 +49,10 @@ export default function SEOPage() {
             </div>            
             <GoogleReviews />
             <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Contact />
         </>
     );

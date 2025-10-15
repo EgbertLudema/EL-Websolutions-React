@@ -43,6 +43,19 @@ export default async function HomePage() {
         }
     ];
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: (faqData ?? []).filter(i => i.question && i.answer).map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer, 
+            },
+        })),
+    };
+
     return (
         <>
             <main className="shadow-md light-gradient-bg">
@@ -82,6 +95,10 @@ export default async function HomePage() {
             <CTA />
             <Blog allBlogs={allBlogs} />
             <FAQ questions={faqData} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+            />
             <Contact />
         </>
     );
