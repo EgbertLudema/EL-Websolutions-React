@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import EmailLink from "@/components/ui/emailLink";
+import { useHideRecaptchaOnFooter } from "@/hooks/useHideRecaptchaOnFooter";
 
 declare global {
     interface Window {
@@ -14,6 +15,7 @@ declare global {
 const GOOGLE_RECAPTCHA_KEY = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY;
 
 export default function ContactPage() {
+    useHideRecaptchaOnFooter("#site-footer");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -28,6 +30,15 @@ export default function ContactPage() {
         script.defer = true;
         script.onload = () => console.log("reCAPTCHA script geladen");
         document.head.appendChild(script);
+
+        // 👇 Focus the name field after 1s
+        const focusTimer = setTimeout(() => {
+            const nameInput = document.getElementById("name") as HTMLInputElement | null;
+            nameInput?.focus();
+        }, 1000);
+
+        // cleanup on unmount
+        return () => clearTimeout(focusTimer);
     }, []);
 
     const validateEmail = (email: string) => {
