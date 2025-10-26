@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import EmailLink from "@/components/ui/emailLink";
@@ -26,13 +26,25 @@ const DOMAINS: ForSaleDomain[] = [
     {
         name: "postblog.ai",
         price: "Make offer",
-        note: "Brandable AI content/blogging domain.",
+        note: "Brandable AI for a SAAS domain.",
         tags: ["AI", "SAAS"],
     },
 ];
 
+/**
+ * Wrapper puts the client content behind Suspense so useSearchParams() is allowed.
+ */
 export default function DomainForSalePage() {
+    return (
+        <Suspense fallback={null}>
+            <DomainForSaleClient />
+        </Suspense>
+    );
+}
+
+function DomainForSaleClient() {
     useHideRecaptchaOnFooter("#site-footer");
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [domain, setDomain] = useState("");
@@ -55,7 +67,7 @@ export default function DomainForSalePage() {
             document.head.appendChild(script);
         }
 
-        // Check for "from" param to prefill domain and focus form
+        // Prefill from ?from=
         const fromParam = searchParams.get("from");
         if (fromParam) {
             setDomain(fromParam);
@@ -73,13 +85,11 @@ export default function DomainForSalePage() {
                 // Focus name input after scroll
                 setTimeout(() => nameInput?.focus(), 600);
             }, 400);
-
         } else if (typeof window !== "undefined" && window.location?.hostname) {
             setDomain(window.location.hostname);
         }
-    }, [searchParams]);
-
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchParams]); // re-run if query params change
 
     const validateEmail = (email: string) => {
         const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -125,7 +135,7 @@ export default function DomainForSalePage() {
                         setEmail("");
                         setMessage("");
                         setOffer("");
-                        // Keep the detected domain after submit
+                        // Keep detected domain
                     } else {
                         triggerPopup("Something went wrong. Please try again.");
                     }
