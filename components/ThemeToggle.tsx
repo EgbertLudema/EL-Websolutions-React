@@ -32,12 +32,14 @@ export default function ThemeToggle() {
                 style={{
                     ...handle
                 }}
-                layout
+                layout="position"
                 transition={{
                     type: "spring",
                     visualDuration: 0.2,
                     bounce: 0.4,
                 }}
+                initial={{ y: 0 }}
+	            animate={{ y: 0 }}
             >
                 {isDarkMode ? (
                     <svg className="size-4/6 fill-neutral-700" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 23.99 24.01">
