@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import fs from "fs";
 import path from "path";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.className} bg-white text-black dark:bg-slate-950 dark:text-white`}>
+        <Analytics />
         <ThemeProviderWrapper>
           <Navbar />
           {children}

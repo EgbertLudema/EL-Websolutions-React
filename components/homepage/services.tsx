@@ -1,47 +1,60 @@
 import * as motion from "motion/react-client";
 import Link from "next/link";
 
-import services from "@/data/services"
+import services from "@/data/services";
 
-export default function Services(){
-    return(
+export default function Services() {
+    return (
         <section className="py-20 shadow-md">
             <div className="container">
-                <p className=" text-center sub-title mb-6">Diensten</p>
+                <p className="text-center sub-title mb-6">Diensten</p>
                 <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Wat ik bied</h2>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={(service as any).id ?? service.link ?? service.title}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={false}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{
                                 once: true,
-                                amount: 0.25,
+                                amount: 0.3,
                                 margin: "0px 0px -10% 0px",
                             }}
-                            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                            // iOS/WebKit flicker fixes
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.08,
+                                ease: "easeOut",
+                            }}
                             style={{
                                 willChange: "transform, opacity",
                                 backfaceVisibility: "hidden",
                                 transform: "translateZ(0)",
                             }}
-                            className="group bg-slate-50 dark:bg-slate-800 shadow-md p-6 rounded-xl hover:shadow-lg transition-all duration-300 flex flex-col gap-4 h-full"
+                            className="
+                                group bg-slate-50 dark:bg-slate-800 shadow-md p-6 rounded-xl
+                                hover:shadow-lg transition-shadow duration-300
+                                flex flex-col gap-4 h-full
+                                opacity-0 translate-y-5
+                                [transform:translateZ(0)] [backface-visibility:hidden]
+                            "
                         >
-                            {/* Top Content */}
                             <div>
                                 <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                                     <service.icon size={24} />
                                 </div>
+
                                 <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-100">
                                     {service.title}
                                 </h3>
-                                <p className="text-slate-700 dark:text-slate-200 mb-4">{service.description}</p>
+
+                                <p className="text-slate-700 dark:text-slate-200 mb-4">
+                                    {service.description}
+                                </p>
+
                                 <span className="text-primary font-medium">{service.price}</span>
                             </div>
-                        
-                            {/* Bottom Content pinned to bottom */}
+
                             <div className="mt-auto pt-4 border-t border-border">
                                 <Link
                                     href={service.link}
@@ -64,10 +77,10 @@ export default function Services(){
                                     </svg>
                                 </Link>
                             </div>
-                        </motion.div>                      
+                        </motion.div>
                     ))}
                 </div>
             </div>
         </section>
-    )
+    );
 }
