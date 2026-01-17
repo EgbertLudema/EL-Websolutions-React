@@ -1,7 +1,17 @@
 import * as motion from "motion/react-client";
 import Link from "next/link";
-
 import services from "@/data/services";
+
+const cardVariants = {
+    hidden: {
+        opacity: 0,
+        y: 16,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+    },
+};
 
 export default function Services() {
     return (
@@ -14,31 +24,37 @@ export default function Services() {
                     {services.map((service, index) => (
                         <motion.div
                             key={(service as any).id ?? service.link ?? service.title}
-                            initial={false}
-                            whileInView={{ opacity: 1, y: 0 }}
+
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="show"
+
                             viewport={{
                                 once: true,
                                 amount: 0.3,
                                 margin: "0px 0px -10% 0px",
                             }}
+
                             transition={{
-                                duration: 0.5,
+                                duration: 0.45,
                                 delay: index * 0.08,
                                 ease: "easeOut",
                             }}
+
                             style={{
                                 willChange: "transform, opacity",
                                 backfaceVisibility: "hidden",
                                 transform: "translateZ(0)",
                             }}
+
                             className="
                                 group bg-slate-50 dark:bg-slate-800 shadow-md p-6 rounded-xl
                                 hover:shadow-lg transition-shadow duration-300
                                 flex flex-col gap-4 h-full
-                                opacity-0 translate-y-5
                                 [transform:translateZ(0)] [backface-visibility:hidden]
                             "
                         >
+                            {/* Top Content */}
                             <div>
                                 <div className="w-12 h-12 mb-4 rounded-lg bg-gradient-primary flex items-center justify-center text-white">
                                     <service.icon size={24} />
@@ -55,6 +71,7 @@ export default function Services() {
                                 <span className="text-primary font-medium">{service.price}</span>
                             </div>
 
+                            {/* Bottom Content pinned to bottom */}
                             <div className="mt-auto pt-4 border-t border-border">
                                 <Link
                                     href={service.link}
