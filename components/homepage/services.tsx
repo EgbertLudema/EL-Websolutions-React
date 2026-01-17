@@ -12,10 +12,21 @@ export default function Services(){
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
-                            key={index}
+                            key={(service as any).id ?? service.link ?? service.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{
+                                once: true,
+                                amount: 0.25,
+                                margin: "0px 0px -10% 0px",
+                            }}
+                            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                            // iOS/WebKit flicker fixes
+                            style={{
+                                willChange: "transform, opacity",
+                                backfaceVisibility: "hidden",
+                                transform: "translateZ(0)",
+                            }}
                             className="group bg-slate-50 dark:bg-slate-800 shadow-md p-6 rounded-xl hover:shadow-lg transition-all duration-300 flex flex-col gap-4 h-full"
                         >
                             {/* Top Content */}
