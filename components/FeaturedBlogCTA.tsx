@@ -50,7 +50,7 @@ export default async function FeaturedBlog({ tagParam }: Props) {
                     />
                     <h3 className="text-2xl text-slate-700 dark:text-slate-300 font-bold">{selectedBlog.title}</h3>
                     <p className="text-slate-600 dark:text-slate-400">{selectedBlog.description}</p>
-                    <Link href={`/blog/${selectedBlog.slug}`} className="text-primary font-medium hover:underline hover:opacity-80 transition-opacity">
+                    <Link href={`/blogs/${selectedBlog.slug}`} className="text-primary font-medium hover:underline hover:opacity-80 transition-opacity">
                         Lees verder
                     </Link>
                 </article>
