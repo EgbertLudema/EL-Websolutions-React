@@ -18,14 +18,12 @@ export default function Navbar() {
     const [isServicesHovered, setIsServicesHovered] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const submenuItems = [
-        { label: "Wireframing", href: "/diensten/wireframing" },
-        { label: "Custom websites", href: "/diensten/custom-web-development" },
-        { label: "Wordpress websites", href: "/diensten/wordpress" },
-        { label: "Webshops", href: "/diensten/webshop" },
-        { label: "Basic SEO", href: "/diensten/seo" },
-        // { label: "App development", href: "/diensten/app-development" },
-        { label: "Onderhoud & support", href: "/diensten/maintenance-support" },
-      ];
+        { label: "Freelance voor Agencies", href: "/diensten/freelance-developer-agencies" },
+        { label: "Freelance voor Bedrijven", href: "/diensten/freelance-developer-bedrijven" },
+        { label: "Websites op maat", href: "/diensten/websites-op-maat" },
+        { label: "Shopify Development", href: "/diensten/shopify-development" },
+        { label: "Onderhoud en Doorontwikkeling", href: "/diensten/onderhoud-doorontwikkeling" },
+    ];
 
     // Ensure theme is loaded before rendering
     useEffect(() => {
