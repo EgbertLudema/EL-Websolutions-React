@@ -171,7 +171,7 @@ const services = [
         link: "/diensten/onderhoud-doorontwikkeling",
         description: "Voor websites en webshops die technisch bijgehouden en stap voor stap verder uitgebouwd moeten worden.",
         text: "Een website of webshop is zelden echt af. Daarom help ik ook met onderhoud en doorontwikkeling voor bestaande projecten. Denk aan updates, bugfixes, technische verbeteringen, performance-optimalisaties en nieuwe functionaliteiten. Ideaal voor bedrijven, agencies of ondernemers die een betrouwbare developer zoeken om op terug te vallen na de livegang.",
-        price: "Vanaf EUR 95 per maand",
+        price: "Vanaf €95,- per maand",
         tags: ["onderhoud", "doorontwikkeling", "support", "updates", "performance", "bugfixes"],
         image: "/images/services/Maintenancesupport_image.jpg",
         benefits: [
