@@ -8,7 +8,7 @@ const services = [
         description: "Betrouwbare freelance development support voor agencies die extra uitvoeringskracht nodig hebben.",
         text: "Werk je als agency aan meerdere klantprojecten tegelijk en zoek je een developer die snel kan aansluiten? Ik help bureaus als freelance developer met het bouwen, doorontwikkelen en technisch afronden van websites, landingspagina's en Shopify-aanpassingen. Ik kan white-label meewerken, aansluiten op bestaande designs en developmentflows volgen alsof ik tijdelijk onderdeel ben van je team.",
         price: "Projectbasis of retainer",
-        tags: ["freelance", "agencies", "white-label", "React", "Next.js", "Shopify"],
+        tags: ["freelance", "agencies", "white-label", "full-stack", "Shopify"],
         image: "/images/services/custom_web_thumbnail.jpg",
         benefits: [
             "Snel inzetbaar bij piekdrukte of lopende klantprojecten",
@@ -49,7 +49,7 @@ const services = [
         description: "Tijdelijke of contractmatige developmentcapaciteit voor bedrijven die een developer in huis willen halen.",
         text: "Soms heb je als bedrijf wel developmentwerk liggen, maar niet direct behoefte aan een fulltime hire. In dat geval kan ik op projectbasis of contractbasis aansluiten als freelance developer. Ik help bij het bouwen van nieuwe features, het verbeteren van bestaande websites of webshops en het technisch uitvoeren van digitale plannen zonder dat je meteen een vaste developer hoeft aan te nemen.",
         price: "Contractbasis of projectbasis",
-        tags: ["freelance", "bedrijven", "frontend", "doorontwikkeling", "contractbasis", "support"],
+        tags: ["freelance", "bedrijven", "full-stack", "doorontwikkeling", "contractbasis", "support"],
         image: "/images/services/Maintenancesupport_image.jpg",
         benefits: [
             "Extra technische capaciteit zonder vaste aanstelling",
