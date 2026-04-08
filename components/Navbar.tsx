@@ -6,9 +6,11 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
@@ -24,6 +26,22 @@ export default function Navbar() {
         { label: "Shopify Development", href: "/diensten/shopify-development" },
         { label: "Onderhoud en Doorontwikkeling", href: "/diensten/onderhoud-doorontwikkeling" },
     ];
+
+    const isActivePath = (href: string) => {
+        if (href === "/") {
+            return pathname === "/";
+        }
+
+        return pathname === href || pathname.startsWith(`${href}/`);
+    };
+
+    const desktopLinkClass = (href: string) =>
+        `transition ${isActivePath(href)
+            ? "text-primary dark:text-primary"
+            : "text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary"
+        }`;
+
+    const isServicesActive = isActivePath("/diensten");
 
     // Ensure theme is loaded before rendering
     useEffect(() => {
@@ -82,9 +100,11 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-6 justify-center items-center">
-                    <Link href="/" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
-                        Home
-                    </Link>
+                    {pathname !== "/" && (
+                        <Link href="/" className={desktopLinkClass("/")}>
+                            Home
+                        </Link>
+                    )}
 
                     {/* Services Menu with Submenu */}
                     <div
@@ -97,10 +117,13 @@ export default function Navbar() {
                     >
                         <Link
                             href="/diensten"
-                            className="flex flex-row gap-2 items-center text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary"
+                            className={`flex flex-row gap-2 items-center transition ${isServicesActive
+                                ? "text-primary dark:text-primary"
+                                : "text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary"
+                            }`}
                         >
                             Diensten
-                            <IoIosArrowDown className={`transition ${isServicesHovered ? "rotate-180 text-primary" : ""}`} />
+                            <IoIosArrowDown className={`transition ${isServicesHovered ? "rotate-180" : ""} ${isServicesActive ? "text-primary" : isServicesHovered ? "text-primary" : ""}`} />
                         </Link>
 
                         {/* Submenu */}
@@ -140,7 +163,10 @@ export default function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         onMouseEnter={() => setHoveredIndex(index)}
-                                        className="relative z-10 p-2 whitespace-nowrap text-neutral-700 dark:text-neutral-300 transition"
+                                        className={`relative z-10 p-2 whitespace-nowrap transition ${isActivePath(item.href)
+                                            ? "text-primary dark:text-primary"
+                                            : "text-neutral-700 dark:text-neutral-300"
+                                        }`}
                                     >
                                         {item.label}
                                     </Link>
@@ -151,20 +177,20 @@ export default function Navbar() {
                         </AnimatePresence>
                     </div>
 
-                    <Link href="/projecten" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
+                    <Link href="/projecten" className={desktopLinkClass("/projecten")}>
                         Projecten
                     </Link>
-                    <Link href="/blogs" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
+                    <Link href="/blogs" className={desktopLinkClass("/blogs")}>
                         Blogs
                     </Link>
-                    <Link href="/over-mij" className="text-neutral-600 dark:text-neutral-300 transition hover:text-primary dark:hover:text-primary">
+                    <Link href="/over-mij" className={desktopLinkClass("/over-mij")}>
                         Over mij
                     </Link>
                     <div className="hidden md:block">
                         <ThemeToggle />
                     </div>
                     <Link href="/contact">
-                        <div className="py-2 px-3 gradient-btn">Contact</div>
+                        <div className={`py-2 px-3 ${isActivePath("/contact") ? "bg-primary text-white rounded-md" : "gradient-btn"}`}>Contact</div>
                     </Link>
                 </div>
 
