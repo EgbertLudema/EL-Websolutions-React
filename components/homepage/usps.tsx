@@ -88,10 +88,10 @@ export default function USPS() {
                         "
                     >
                         <div className="flex items-center gap-4">
-                            <div className="p-4 bg-white shadow-md dark:bg-slate-800 rounded-full">
+                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white shadow-md dark:bg-slate-800">
                                 <reason.icon className="text-2xl text-primary" />
                             </div>
-                            <h3 className="text-lg text-slate-700 dark:text-slate-200 font-semibold">
+                            <h3 className="m-0 text-lg font-semibold leading-tight text-slate-700 dark:text-slate-200">
                                 {reason.title}
                             </h3>
                         </div>
