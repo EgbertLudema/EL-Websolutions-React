@@ -15,9 +15,21 @@ export default async function ProjectsPage() {
     return (
         <main className="container mt-[100px] py-8 mb-12">
             <h1 className="mb-8 leading-snug">Projecten</h1>
-            <Suspense fallback={<div>Filters laden...</div>}>
-                <ProjectFilter allProjects={allProjects} allTags={allTags} />
-            </Suspense>
+            <section className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+                <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <p className="sub-title mb-3">Overzicht</p>
+                        <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">Alle projecten</h2>
+                    </div>
+                    <p className="max-w-xl text-sm text-slate-600 dark:text-slate-400">
+                        Bekijk eerder werk en filter op type project, platform of aanpak om sneller relevante cases te vinden.
+                    </p>
+                </div>
+
+                <Suspense fallback={<div>Filters laden...</div>}>
+                    <ProjectFilter allProjects={allProjects} allTags={allTags} />
+                </Suspense>
+            </section>
         </main>
     );
 }

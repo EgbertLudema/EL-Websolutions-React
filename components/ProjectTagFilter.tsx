@@ -31,16 +31,37 @@ export default function TagFilter({ allProjects, allTags }: { allProjects: Proje
 
     return (
         <>
-            <motion.div layout className="mt-4 flex flex-wrap justify-start gap-4">
-                {allTags.map((tag) => (
-                    <button
-                        key={tag}
-                        onClick={() => toggleTag(tag)}
-                        className={`transition ${selectedTags.includes(tag) ? "tag-big-selected" : "tag-big"}`}
-                    >
-                        {tag}
-                    </button>
-                ))}
+            <motion.div layout className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div>
+                        <p className="mb-2 text-sm font-semibold text-slate-900 dark:text-slate-100">Filter op type project</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                            {selectedTags.length > 0
+                                ? `${sortedProjects.length} project${sortedProjects.length === 1 ? "" : "en"} gevonden`
+                                : `${allProjects.length} projecten beschikbaar`}
+                        </p>
+                    </div>
+                    {selectedTags.length > 0 && (
+                        <button
+                            onClick={() => setSelectedTags([])}
+                            className="inline-flex items-center justify-center rounded-full border border-primary/20 px-4 py-2 text-sm font-medium text-primary transition hover:bg-primary/5"
+                        >
+                            Reset filters
+                        </button>
+                    )}
+                </div>
+
+                <motion.div layout className="mt-4 flex flex-wrap justify-start gap-3">
+                    {allTags.map((tag) => (
+                        <button
+                            key={tag}
+                            onClick={() => toggleTag(tag)}
+                            className={`transition ${selectedTags.includes(tag) ? "tag-big-selected" : "tag-big"}`}
+                        >
+                            {tag}
+                        </button>
+                    ))}
+                </motion.div>
             </motion.div>
 
             <motion.div

@@ -15,7 +15,7 @@ const cardVariants = {
 
 export default function Services() {
     return (
-        <section className="py-20 shadow-md">
+        <section id="services" className="py-20 shadow-md scroll-mt-24">
             <div className="container">
                 <p className="text-center sub-title mb-6">Diensten</p>
                 <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Wat ik bied</h2>

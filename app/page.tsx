@@ -20,6 +20,23 @@ export const metadata: Metadata = {
 export default async function HomePage() {
     const allProjects = await getAllProjects();
     const allBlogs = await getAllBlogs();
+    const now = new Date();
+    const dateParts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Europe/Amsterdam",
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+    }).formatToParts(now);
+    const getPart = (type: "year" | "month" | "day") =>
+        Number(dateParts.find((part) => part.type === type)?.value);
+    const localYear = getPart("year");
+    const localMonth = getPart("month");
+    const localDay = getPart("day");
+    const availableMonthDate = new Date(Date.UTC(localYear, localMonth - 1 + (localDay >= 21 ? 1 : 0), 1));
+    const availableMonth = new Intl.DateTimeFormat("nl-NL", {
+        month: "long",
+        timeZone: "UTC",
+    }).format(availableMonthDate);
     const faqData = [
         {
             question: "Hoe ziet jouw ontwikkelproces eruit?",
@@ -59,32 +76,41 @@ export default async function HomePage() {
     return (
         <>
             <main className="shadow-md light-gradient-bg">
-                <div className="container relative flex flex-col justify-center items-center pt-12 min-h-screen hero">
-                    <p className="text-center sub-title px-4 py-1.5 mb-6 text-sm font-medium bg-white/10 dark:bg-slate-100/10 backdrop-blur-md rounded-full text-primary animate-fade-in">
-                        Beschikbaar voor projecten
+                <div className="container relative flex flex-col gap-3 justify-center items-center pt-12 min-h-screen hero">
+                    <p className="inline-flex items-center gap-2.5 px-4 py-1.5 text-sm font-medium text-primary bg-white/10 dark:bg-slate-100/10 backdrop-blur-md rounded-full animate-fade-in">
+                        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/15">
+                            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.45)] animate-pulse"></span>
+                        </span>
+                        <span>Beschikbaar voor {availableMonth}</span>
                     </p>
-                    <h1 className="text-center mb-6 leading-tight md:leading-snug">
-                        Digitale ervaringen op maat
+                    <h1 className="max-w-4xl text-center mb-6 leading-tight md:leading-snug">
+                        Freelance developer voor websites, Shopify en doorontwikkeling
                     </h1>
                     <p className="text-center mb-8 md:mb-0 md:text-lg text-gray-700 dark:text-gray-400">
-                        Full-stack developer gespecialiseerd in het bouwen van mooie, functionele en gebruiksvriendelijke websites.
+                        Ik help bedrijven en agencies met maatwerk websites, Shopify development en betrouwbare technische ondersteuning.
                     </p>
                     <p className="text-center hidden md:block text-lg mb-8 text-gray-700 dark:text-gray-400">
-                        Op maat gemaakt. Afgestemd op de eisen van de klant en de doelgroep.
+                        Van nieuwe builds tot onderhoud en tijdelijke developmentcapaciteit.
                     </p>
                     <div className="flex justify-center flex-col sm:flex-row gap-4">
                         <Link href="/contact">
                             <div className="px-8 py-3 gradient-btn shadow-sm transition">Neem contact op</div>
                         </Link>
                         <Link href="/projecten">
-                            <div className="py-3 px-8 rounded-lg bg-violet-100 bg-opacity-10 hover:bg-white hover:bg-opacity-20 shadow-sm transition">Bekijk projecten</div>
+                            <div className="py-3 px-8 rounded-lg border border-primary/25 bg-white/40 text-slate-900 hover:bg-white hover:border-primary/40 shadow-sm backdrop-blur-sm transition dark:bg-slate-900/50 dark:text-slate-100 dark:hover:bg-slate-900">
+                                Bekijk projecten
+                            </div>
                         </Link>
                     </div>
-                    <div></div>
-                    <svg className="animate-bounce mt-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                        <path d="M12 5v14"></path>
-                        <path d="m19 12-7 7-7-7"></path>
-                    </svg>
+                    <Link
+                        href="#services"
+                        aria-label="Scroll naar de volgende sectie"
+                        className="absolute bottom-8 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-primary/15 bg-white/70 text-primary shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-slate-900 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40 dark:bg-slate-900/65 dark:text-slate-100 dark:hover:bg-slate-900 animate-[bounce_2.4s_ease-in-out_infinite]"
+                    >
+                        <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </Link>
                 </div>
             </main>
             <Services />

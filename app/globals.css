@@ -116,6 +116,10 @@ body {
     font-size: 16px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .bg-gradient-primary {
     background: var(--primary-gradient);
 }

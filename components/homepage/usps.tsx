@@ -1,39 +1,39 @@
 import * as motion from "motion/react-client";
-import { FaClock, FaMobileAlt, FaChartLine, FaHeadset } from "react-icons/fa";
-import { IoMdPricetag } from "react-icons/io";
+import { FaHeadset, FaMobileAlt } from "react-icons/fa";
 import { BsDiagram3 } from "react-icons/bs";
+import { FaCode, FaHandshake, FaShopify } from "react-icons/fa6";
 
 const reasons = [
     {
-        icon: FaClock,
-        title: "Snelle & Efficiënte Ontwikkeling",
-        description: "Snelle oplevering dankzij een gestroomlijnd ontwikkelproces.",
+        icon: FaHandshake,
+        title: "Flexibel inzetbaar",
+        description: "Ik sluit snel aan op bestaande teams, planningen en projectflows zonder onnodige overhead.",
     },
     {
-        icon: IoMdPricetag,
-        title: "Betaalbare Prijzen",
-        description: "Hoogwaardige websites voor een concurrerende prijs.",
+        icon: FaCode,
+        title: "Maatwerk websites",
+        description: "Websites die passen bij je merk en doelen, met aandacht voor snelheid, structuur en schaalbaarheid.",
+    },
+    {
+        icon: FaShopify,
+        title: "Shopify maatwerk",
+        description: "Custom secties, templates en uitbreidingen die beter aansluiten op branding, content en conversie.",
     },
     {
         icon: BsDiagram3,
-        title: "Stapsgewijs Proces",
-        description: "Ik doorloop meerdere fases voordat het ontwerp definitief is.",
-        steps: ["Kennismaking", "Wireframing", "Design", "Ontwikkeling"],
+        title: "Heldere aanpak",
+        description: "Je weet waar je aan toe bent dankzij duidelijke scope, korte lijnen en gestructureerde oplevering.",
+        steps: ["Intake", "Scope", "Ontwikkeling", "Oplevering"],
     },
     {
         icon: FaMobileAlt,
-        title: "Gebruiksvriendelijk & Mobiel Geoptimaliseerd",
-        description: "Websites voor alle apparaten, met een soepele gebruikerservaring.",
-    },
-    {
-        icon: FaChartLine,
-        title: "SEO & Prestatiegericht",
-        description: "Geoptimaliseerd voor zoekmachines en snelle laadtijden.",
+        title: "Oog voor detail",
+        description: "Ik houd rekening met UX, UI, inhoud en interactie, zodat het totaal klopt en prettig werkt op ieder scherm.",
     },
     {
         icon: FaHeadset,
-        title: "Betrouwbare Support & Onderhoud",
-        description: "Doorlopende ondersteuning om je site veilig en up-to-date te houden.",
+        title: "Onderhoud en doorontwikkeling",
+        description: "Ook na oplevering kun je rekenen op support, optimalisaties en technische doorbouw.",
     },
 ];
 
@@ -52,37 +52,34 @@ export default function USPS() {
     return (
         <section className="py-20 dark:border-b dark:border-slate-700">
             <div className="container">
-                <p className="text-center sub-title mb-6">Waarom EL-Websolutions</p>
-                <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Wat mij onderscheidt</h2>
+                <p className="text-center sub-title mb-6">Waarom samenwerken</p>
+                <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">
+                    Development die aansluit op je project en manier van werken
+                </h2>
             </div>
 
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
                 {reasons.map((reason, index) => (
                     <motion.div
                         key={`${reason.title}-${reason.steps ? reason.steps.join("-") : "no-steps"}`}
-
                         variants={cardVariants}
                         initial="hidden"
                         whileInView="show"
-
                         viewport={{
                             once: true,
                             amount: 0.3,
                             margin: "0px 0px -10% 0px",
                         }}
-
                         transition={{
                             duration: 0.45,
                             delay: index * 0.08,
                             ease: "easeOut",
                         }}
-
                         style={{
                             willChange: "transform, opacity",
                             backfaceVisibility: "hidden",
                             transform: "translateZ(0)",
                         }}
-
                         className="
                             group bg-slate-50 dark:bg-slate-900 shadow-md p-6 rounded-xl
                             hover:shadow-lg flex flex-col gap-4

@@ -52,7 +52,7 @@ export default function ClientServicesPage() {
     return (
         <>
             <main className="container mt-[100px] relative flex flex-col justify-center items-center py-8">
-                <h1 className="text-center">Websites op maat en freelance development</h1>
+                <h1 className="text-center mb-2">Websites op maat en freelance development</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 pb-12">
                     Ik bouw websites op maat en sluit aan als freelance developer voor agencies en bedrijven die extra technische capaciteit nodig hebben.
                 </p>

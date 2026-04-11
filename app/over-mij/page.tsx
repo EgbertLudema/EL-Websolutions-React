@@ -14,7 +14,7 @@ export default function AboutPage() {
     return (
         <div>
             <main className="container mt-[100px] relative flex flex-col justify-center items-center py-8">
-                <h1 className="text-center">Over mij</h1>
+                <h1 className="text-center leading-snug">Over mij</h1>
                 <p className="text-center text-slate-600 dark:text-slate-400 mt-2 pb-12">
                     Leer de ontwikkelaar achter de code kennen.
                 </p>
