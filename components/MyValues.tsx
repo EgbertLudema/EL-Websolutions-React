@@ -22,7 +22,7 @@ const cardVariants = {
 
 export default function MyValues() {
 	return (
-		<section className="container my-12">
+		<section className="container py-20">
 			<h2 className="text-center text-slate-700 dark:text-slate-300">Mijn waarden</h2>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 				<motion.div
