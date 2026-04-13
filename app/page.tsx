@@ -83,7 +83,7 @@ export default async function HomePage() {
                         </span>
                         <span>Beschikbaar voor {availableMonth}</span>
                     </p>
-                    <h1 className="max-w-4xl text-center mb-6 leading-tight md:leading-snug">
+                    <h1 className="max-w-4xl text-center mb-6 !leading-tight md:leading-snug md:text-4xl lg:text-5xl">
                         Freelance developer voor websites, Shopify en doorontwikkeling
                     </h1>
                     <p className="text-center mb-8 md:mb-0 md:text-lg text-gray-700 dark:text-gray-400">
@@ -105,7 +105,7 @@ export default async function HomePage() {
                     <Link
                         href="#services"
                         aria-label="Scroll naar de volgende sectie"
-                        className="absolute bottom-8 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-primary/15 bg-white/70 text-primary shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-slate-900 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40 dark:bg-slate-900/65 dark:text-slate-100 dark:hover:bg-slate-900 animate-[bounce_2.4s_ease-in-out_infinite]"
+                        className="absolute inset-x-0 bottom-8 mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-white/70 text-primary shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-slate-900 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40 dark:bg-slate-900/65 dark:text-slate-100 dark:hover:bg-slate-900 animate-[bounce_2.4s_ease-in-out_infinite]"
                     >
                         <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="m6 9 6 6 6-6"></path>
