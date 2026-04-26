@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     description: "Ik ben een freelance webdeveloper die gespecialiseerd is in het bouwen van op maat gemaakte websites. Met een focus op gebruiksvriendelijkheid en design, biedt ik oplossingen die aan jouw specifieke behoeften voldoen.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
     const allProjects = await getAllProjects();
     const allBlogs = await getAllBlogs();
