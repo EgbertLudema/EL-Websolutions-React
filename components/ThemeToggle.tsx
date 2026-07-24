@@ -13,9 +13,10 @@ export default function ThemeToggle() {
         setMounted(true);
     }, []);
 
-    if (!mounted) return null; // Prevent mismatch between server and client
-
-    const isDarkMode = theme === "dark";
+    // Defaults to light on the server and on the first client render (matching
+    // defaultTheme="light"), then reflects the real theme once mounted. This avoids
+    // a hydration mismatch without unmounting the button and shifting nav layout.
+    const isDarkMode = mounted && theme === "dark";
 
     return (
         <button

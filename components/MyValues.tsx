@@ -23,15 +23,16 @@ const cardVariants = {
 export default function MyValues() {
 	return (
 		<section className="container py-20">
-			<h2 className="text-center text-slate-700 dark:text-slate-300">Mijn waarden</h2>
+			<p className="text-center sub-title mb-6">Waarden</p>
+			<h2 className="text-center text-slate-900 dark:text-slate-100">Mijn waarden</h2>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 				<motion.div
 					custom={0}
 					variants={cardVariants}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: false, amount: 0.4 }}
-					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900"
+					viewport={{ once: true, amount: 0.4 }}
+					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-md bg-slate-100 dark:bg-slate-900"
 				>
 					<h3 className="flex flex-row gap-2 items-center m-0 text-slate-800 dark:text-slate-200">
 						<PiNumberSquareOneBold /> Kwaliteit eerst
@@ -49,8 +50,8 @@ export default function MyValues() {
 					variants={cardVariants}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: false, amount: 0.4 }}
-					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900"
+					viewport={{ once: true, amount: 0.4 }}
+					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-md bg-slate-100 dark:bg-slate-900"
 				>
 					<h3 className="flex flex-row gap-2 items-center m-0 text-slate-800 dark:text-slate-200">
 						<PiUserBold /> Meedenkend
@@ -68,8 +69,8 @@ export default function MyValues() {
 					variants={cardVariants}
 					initial="hidden"
 					whileInView="visible"
-					viewport={{ once: false, amount: 0.4 }}
-					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-lg bg-slate-100 dark:bg-slate-900"
+					viewport={{ once: true, amount: 0.4 }}
+					className="flex flex-col gap-4 justify-start p-8 rounded-lg shadow-md bg-slate-100 dark:bg-slate-900"
 				>
 					<h3 className="flex flex-row gap-2 items-center m-0 text-slate-800 dark:text-slate-200">
 						<LuBrain /> Altijd blijven leren

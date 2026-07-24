@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const pathname = usePathname();
-    const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
@@ -42,11 +41,6 @@ export default function Navbar() {
         }`;
 
     const isServicesActive = isActivePath("/diensten");
-
-    // Ensure theme is loaded before rendering
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     // Handle scroll event to toggle sticky class
     useEffect(() => {
@@ -86,9 +80,7 @@ export default function Navbar() {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]);      
-
-    if (!mounted) return null;
+    }, [isOpen]);
 
     return (
         <nav className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b ${isSticky ? "bg-white/70 dark:bg-slate-950/80 border-slate-300 dark:border-slate-700 shadow-lg py-2 backdrop-blur-md" : "bg-transparent border-transparent py-4"}`}>
@@ -114,16 +106,25 @@ export default function Navbar() {
                             setIsServicesHovered(false);
                             setHoveredIndex(null);
                         }}
+                        onFocus={() => setIsServicesHovered(true)}
+                        onBlur={(e) => {
+                            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                                setIsServicesHovered(false);
+                                setHoveredIndex(null);
+                            }
+                        }}
                     >
                         <Link
                             href="/diensten"
+                            aria-haspopup="true"
+                            aria-expanded={isServicesHovered}
                             className={`flex flex-row gap-2 items-center transition ${isServicesActive
                                 ? "text-primary dark:text-primary"
                                 : "text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary"
                             }`}
                         >
                             Diensten
-                            <IoIosArrowDown className={`transition ${isServicesHovered ? "rotate-180" : ""} ${isServicesActive ? "text-primary" : isServicesHovered ? "text-primary" : ""}`} />
+                            <IoIosArrowDown aria-hidden="true" className={`transition ${isServicesHovered ? "rotate-180" : ""} ${isServicesActive ? "text-primary" : isServicesHovered ? "text-primary" : ""}`} />
                         </Link>
 
                         {/* Submenu */}
@@ -163,6 +164,7 @@ export default function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         onMouseEnter={() => setHoveredIndex(index)}
+                                        onFocus={() => setHoveredIndex(index)}
                                         className={`relative z-10 p-2 whitespace-nowrap transition ${isActivePath(item.href)
                                             ? "text-primary dark:text-primary"
                                             : "text-neutral-700 dark:text-neutral-300"
@@ -201,6 +203,8 @@ export default function Navbar() {
                         ref={toggleButtonRef}
                         onClick={() => setIsOpen((prev) => !prev)}
                         aria-label="Toggle menu"
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-menu"
                         className="relative w-6 h-5 flex flex-col justify-between items-center z-[100]"
                     >
                         {/* Top Bar */}
@@ -230,6 +234,7 @@ export default function Navbar() {
                 {isOpen && (
                     <motion.div
                         ref={mobileMenuRef}
+                        id="mobile-menu"
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}

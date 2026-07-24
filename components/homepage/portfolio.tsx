@@ -18,7 +18,7 @@ export default function Portfolio({ allProjects }: { allProjects: ProjectPost[] 
     const recentProjects = sortedProjects.slice(0, 3);
 
     return (
-        <section className="py-20">
+        <section className="py-20 bg-slate-100 dark:bg-slate-900 border-b border-slate-300 dark:border-slate-700">
             <div className="container flex flex-col items-center">
                 <p className="text-center sub-title mb-6">Portfolio</p>
                 <h2 className="text-center text-slate-900 dark:text-slate-100 mb-12">Uitgelichte projecten</h2>
