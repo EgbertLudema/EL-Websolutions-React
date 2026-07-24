@@ -99,9 +99,20 @@ export default function USPS() {
                         <p className="text-gray-700 dark:text-gray-400">{reason.description}</p>
 
                         {reason.steps && (
-                            <p className="mt-2 text-xs text-slate-800 dark:text-slate-200 font-medium">
-                                {reason.steps.join(" > ")}
-                            </p>
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                                {reason.steps.map((step, stepIndex) => (
+                                    <div key={step} className="flex items-center gap-1.5">
+                                        <span className="rounded-full bg-white dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm">
+                                            {step}
+                                        </span>
+                                        {stepIndex < reason.steps!.length - 1 && (
+                                            <span aria-hidden="true" className="text-primary/50">
+                                                &rsaquo;
+                                            </span>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         )}
                     </motion.div>
                 ))}

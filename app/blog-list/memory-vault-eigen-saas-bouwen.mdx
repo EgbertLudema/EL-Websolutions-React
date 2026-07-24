@@ -1,0 +1,43 @@
+---
+title: "Memory Vault: hoe ik mijn eigen SaaS-product bouwde"
+description: "Een kijkje achter de schermen bij Memory Vault, mijn eigen SaaS-platform: van afstudeerproject tot een product waar ik nog actief aan doorontwikkel."
+date: 2026-07-24
+author: "Egbert Ludema"
+tags: ["Eigen product", "SaaS", "Next.js", "Payload CMS"]
+thumbnail: "/images/projects/memory-vault/MemoryVault-mockup.jpg"
+---
+
+Naast websites en webshops voor klanten bouw ik ook aan een eigen product: **[Memory Vault](https://www.memory-vault.app/)**, een digitale kluis waarmee je foto's, video's en persoonlijke berichten kunt achterlaten voor je dierbaren. Het begon als mijn afstudeerproject voor Communicatie en Multimedia Design aan NHL Stenden Leeuwarden, waarmee ik ben geslaagd, en ik werk er nog steeds actief aan door. In deze blog neem ik je mee in hoe het werkt en welke keuzes ik onderweg heb gemaakt.
+
+## Het idee: een digitale kluis voor nalatenschap
+
+Memory Vault slaat notities, foto's en video's op die pas worden vrijgegeven op het juiste moment, bijvoorbeeld nadat iemand is overleden. Geen berichten die te vroeg of nooit aankomen, maar een vault die veilig blijft totdat het moment daar is.
+
+## De grootste uitdaging: de vrijgave-flow
+
+Het lastigste onderdeel was niet de opslag, maar het moment van vrijgeven. Daarvoor heb ik een check-in systeem gebouwd:
+
+- Je wijst een **trusted contact** aan die de vault later kan bevestigen.
+- Elke **30 dagen** krijg je een check-in mail om te bevestigen dat alles goed is.
+- Reageer je niet binnen **14 dagen** op die mail, dan krijgt je trusted contact automatisch een bericht.
+- Bevestigt die persoon dat je bent overleden, dan wordt de vault pas dan vrijgegeven.
+
+Zo blijft alles privé en versleuteld totdat er daadwerkelijk bevestiging is, in plaats van te vertrouwen op één simpele timer.
+
+## De techstack
+
+Voor Memory Vault heb ik bewust verschillende techstacks tegen elkaar afgewogen voordat ik begon. Uiteindelijk kwam deze combinatie er als beste uit:
+
+- **Next.js** als framework voor de volledige applicatie.
+- **Payload CMS** voor de backend, databeheer en authenticatie. Ik kende Payload al goed vanuit klantprojecten, en na het vergelijken van alternatieven bleef dit de sterkste keuze qua flexibiliteit en snelheid van ontwikkelen.
+- **Neon** als serverless Postgres-database.
+- **Resend** voor het versturen van de check-in en notificatie-mails.
+- **Tailwind CSS** voor de styling en **GSAP** voor de animaties in de interface.
+
+## Nog steeds in ontwikkeling
+
+Memory Vault is geen afgerond project, ik werk er nog actief aan door. Het platform is open source en zelf te hosten, met daarnaast een gehost gratis- en betaald abonnement voor wie geen eigen server wil beheren. Nieuwsgierig? Bekijk de <a href="https://github.com/EgbertLudema/MemoryVault-Community-Edition" target="_blank" rel="noopener noreferrer">broncode op GitHub</a>.
+
+## Zelf een eigen platform of maatwerk website nodig?
+
+Dit soort maatwerk, van concept tot een werkend product, bouw ik ook voor bedrijven en agencies. Benieuwd wat dat voor jouw project kan betekenen? Bekijk mijn dienst [websites op maat](/diensten/websites-op-maat) of neem gewoon contact op.

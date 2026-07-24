@@ -20,7 +20,7 @@ export default function Blog({ allBlogs }: { allBlogs: BlogPost[] }) {
     const sortedBlogs = [...allBlogs].sort((a, b) => {
         if (!a.date) return -1;
         if (!b.date) return 1;
-        return new Date(b.date).getTime() - new Date(b.date).getTime();
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
 
     const recentBlogs = sortedBlogs.slice(0, 3);

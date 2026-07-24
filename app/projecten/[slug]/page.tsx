@@ -112,20 +112,19 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     {project.data?.links && project.data.links.length > 0 && (
                         <div className="mt-6">
                             <h2 className="text-2xl font-semibold mb-4 text-slate-700 dark:text-slate-300">Project Links</h2>
-                            <ul>
+                            <div className="flex flex-wrap gap-3">
                                 {project.data.links.map((link) => (
-                                    <li key={link.url}>
-                                        <a
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="primary-btn py-2 px-4 shadow-md hover:shadow-lg"
-                                        >
-                                            {link.caption ?? "Visit Link"}
-                                        </a>
-                                    </li>
+                                    <a
+                                        key={link.url}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center primary-btn py-2 px-4 shadow-md hover:shadow-lg"
+                                    >
+                                        {link.caption ?? "Visit Link"}
+                                    </a>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     )}
                 </div>
