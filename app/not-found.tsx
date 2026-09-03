@@ -1,13 +1,7 @@
 'use client'
 
 import { useRef } from 'react';
-import type { Metadata } from 'next';
 import { useEffect, useState } from 'react';
-
-export const metadata: Metadata = {
-    title: '404 - Niet gevonden - EL-Websolutions',
-    description: 'Benieuwd naar wat ik allemaal al heb opgeleverd? Bekijk hier mijn projecten.',
-};
 
 const size = 4;
 
